@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>ProSauce Signups</title>
+<style>
+:root {
+  --cream: #F2EBDB; --paper: #F7F1E2; --ink: #131210; --ink-2: #2A2823;
+  --muted: #6B675D; --red: #C8252C; --red-deep: #9C1B22; --green: #2F4A2A;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--cream); color: var(--ink); font-family: var(--body); }
+main { max-width: 1100px; margin: 0 auto; padding: 40px 16px 80px; }
+h1 { font-size: 28px; margin: 0 0 4px; letter-spacing: -0.02em; }
+.kicker { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
+.muted { color: var(--muted); font-size: 14px; }
+.card { background: var(--paper); border: 1px solid rgba(19,18,16,0.12); border-radius: 10px; padding: 24px; }
+.login { max-width: 380px; margin: 80px auto 0; }
+label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+input[type=password] { width: 100%; padding: 12px 16px; border-radius: 999px; border: 1px solid var(--ink); background: #fff; font-size: 15px; }
+button { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; padding: 12px 18px; border-radius: 999px; border: 1px solid var(--ink); background: var(--ink); color: var(--cream); cursor: pointer; }
+button:hover { background: var(--red); border-color: var(--red); }
+button.ghost { background: transparent; color: var(--ink); }
+button.ghost:hover { background: var(--ink); color: var(--cream); }
+.login button { width: 100%; margin-top: 14px; }
+.error { color: var(--red-deep); font-size: 14px; margin-top: 12px; min-height: 1em; }
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin: 24px 0 16px; }
+.toolbar .actions { display: flex; gap: 8px; }
+.stats { display: flex; gap: 24px; flex-wrap: wrap; font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; }
+.stats b { font-size: 18px; display: block; letter-spacing: 0; }
+.table-wrap { overflow-x: auto; background: var(--paper); border: 1px solid rgba(19,18,16,0.12); border-radius: 10px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid rgba(19,18,16,0.08); white-space: nowrap; }
+th { font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); background: var(--cream); position: sticky; top: 0; }
+tr:last-child td { border-bottom: 0; }
+.tag { font-family: var(--mono); font-size: 11px; padding: 2px 8px; border-radius: 4px; background: rgba(19,18,16,0.07); }
+.empty { padding: 40px; text-align: center; color: var(--muted); }
+[hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <section id="login" class="card login">
+    <div class="kicker">ProSauce · Admin</div>
+    <h1>Signups</h1>
+    <p class="muted">Enter the admin password to continue.</p>
+    <form id="login-form">
+      <label for="pw">Password</label>
+      <input id="pw" type="password" autocomplete="current-password" required />
+      <button type="submit">Unlock</button>
+      <div id="login-error" class="error" role="alert"></div>
+    </form>
+  </section>
+
+  <section id="app" hidden>
+    <div class="kicker">ProSauce · Admin</div>
+    <h1>Next drop signups</h1>
+    <div class="toolbar">
+      <div class="stats" id="stats"></div>
+      <div class="actions">
+        <button type="button" id="refresh" class="ghost">Refresh</button>
+        <button type="button" id="csv">Export CSV</button>
+        <button type="button" id="logout" class="ghost">Log out</button>
+      </div>
+    </div>
+    <div id="app-error" class="error" role="alert"></div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Name</th><th>Contact</th><th>Date / time</th><th>Source</th><th>SMS consent</th></tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<script>
+(function () {
+  var KEY = "prosauce-admin-pw";
+  var password = "";
+  try { password = sessionStorage.getItem(KEY) || ""; } catch (e) {}
+
+  var $ = function (id) { return document.getElementById(id); };
+
+  function authHeaders() { return { Authorization: "Bearer " + password }; }
+
+  function setPassword(pw) {
+    password = pw;
+    try { pw ? sessionStorage.setItem(KEY, pw) : sessionStorage.removeItem(KEY); } catch (e) {}
+  }
+
+  function showLogin(msg) {
+    $("app").hidden = true;
+    $("login").hidden = false;
+    $("login-error").textContent = msg || "";
+    $("pw").focus();
+  }
+
+  function cell(text) {
+    var td = document.createElement("td");
+    td.textContent = text;
+    return td;
+  }
+
+  function render(rows) {
+    var body = $("rows");
+    body.textContent = "";
+    if (!rows.length) {
+      var tr = document.createElement("tr");
+      var td = cell("No signups yet.");
+      td.colSpan = 5;
+      td.className = "empty";
+      tr.appendChild(td);
+      body.appendChild(tr);
+    }
+    rows.forEach(function (r) {
+      var tr = document.createElement("tr");
+      tr.appendChild(cell(r.name));
+      tr.appendChild(cell(r.contact));
+      tr.appendChild(cell(new Date(r.created_at).toLocaleString()));
+      var src = cell("");
+      var tag = document.createElement("span");
+      tag.className = "tag";
+      tag.textContent = r.source;
+      src.appendChild(tag);
+      tr.appendChild(src);
+      tr.appendChild(cell(r.contact_type === "phone" ? (r.sms_consent ? "Yes" : "No") : "—"));
+      body.appendChild(tr);
+    });
+
+    var emails = rows.filter(function (r) { return r.contact_type === "email"; }).length;
+    var stats = [["Total", rows.length], ["Emails", emails], ["Phones", rows.length - emails]];
+    $("stats").innerHTML = "";
+    stats.forEach(function (s) {
+      var d = document.createElement("div");
+      var b = document.createElement("b");
+      b.textContent = s[1];
+      d.appendChild(b);
+      d.appendChild(document.createTextNode(s[0].toUpperCase()));
+      $("stats").appendChild(d);
+    });
+  }
+
+  function load() {
+    $("app-error").textContent = "";
+    return fetch("/api/admin/signups", { headers: authHeaders(), cache: "no-store" })
+      .then(function (res) {
+        return res.json().catch(function () { return {}; }).then(function (body) {
+          if (res.status === 401) { setPassword(""); showLogin("Wrong password."); return; }
+          if (!res.ok) throw new Error(body.error || "Request failed (" + res.status + ")");
+          $("login").hidden = true;
+          $("app").hidden = false;
+          render(body.signups || []);
+        });
+      })
+      .catch(function (err) {
+        if ($("app").hidden) showLogin(err.message); else $("app-error").textContent = err.message;
+      });
+  }
+
+  $("login-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    setPassword($("pw").value);
+    $("pw").value = "";
+    load();
+  });
+
+  $("refresh").addEventListener("click", load);
+
+  $("logout").addEventListener("click", function () {
+    setPassword("");
+    $("rows").textContent = "";
+    showLogin("");
+  });
+
+  $("csv").addEventListener("click", function () {
+    $("app-error").textContent = "";
+    fetch("/api/admin/signups?format=csv", { headers: authHeaders(), cache: "no-store" })
+      .then(function (res) {
+        if (res.status === 401) { setPassword(""); showLogin("Wrong password."); return; }
+        if (!res.ok) throw new Error("Export failed (" + res.status + ")");
+        var name = "prosauce-signups.csv";
+        var m = /filename="([^"]+)"/.exec(res.headers.get("Content-Disposition") || "");
+        if (m) name = m[1];
+        return res.blob().then(function (blob) {
+          var url = URL.createObjectURL(blob);
+          var a = document.createElement("a");
+          a.href = url;
+          a.download = name;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+        });
+      })
+      .catch(function (err) { $("app-error").textContent = err.message; });
+  });
+
+  if (password) load(); else showLogin("");
+})();
+</script>
+</body>
+</html>

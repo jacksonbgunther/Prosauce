@@ -1,17 +1,17 @@
-const { useState, useEffect, useRef, useMemo } = React;
+const { useState, useEffect } = React;
 
 // ---------- Data ----------
 const PRODUCTS = [
   {
-    id: "chicken",
-    name: "Creamy Chicken",
-    fullName: "Creamy Chicken Protein Sauce",
+    id: "sweet-smoke",
+    name: "Sweet Smoke",
+    fullName: "Sweet Smoke Protein Sauce",
     accent: "#E78431",
     cap: "#E78431",
     sauce: "#F1A455",
     deep: "#A85618",
-    image: "bottle-chicken.png",
-    descriptor: "Restaurant-style. Cane's-leaning. Warm, garlicky, peppered.",
+    image: "bottle-sweet-smoke.png",
+    descriptor: "Sweet, smoky, tangy. The dipping sauce you already crave.",
     use: "Tenders · Fries · Wraps",
     tagline: "The dipper.",
   },
@@ -30,17 +30,129 @@ const PRODUCTS = [
   },
 ];
 
+const NOTIFY_LABEL = "Notify me for the next drop";
+const SMS_CONSENT_TEXT =
+  "By providing your phone number you agree to receive recurring marketing text messages from ProSauce. Message & data rates may apply. Reply STOP to opt out.";
+
+const scrollToDrop = () => {
+  const el = document.getElementById("drop");
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+};
+
+// Returns "email", "phone", "invalid", or null (empty). Mirrors api/_lib/contact.js.
+function contactType(raw) {
+  const v = raw.trim();
+  if (!v) return null;
+  if (v.includes("@")) return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? "email" : "invalid";
+  const digits = v.replace(/\D/g, "");
+  if (/^[\d\s()+.\-]+$/.test(v) && digits.length >= 10 && digits.length <= 15) return "phone";
+  return "invalid";
+}
+
+// ---------- Notify capture form ----------
+function NotifyForm({ source, variant = "light", compact = false }) {
+  const [name, setName] = useState("");
+  const [contact, setContact] = useState("");
+  const [consent, setConsent] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
+  const [status, setStatus] = useState("idle"); // idle | sending | done | error
+  const [error, setError] = useState("");
+
+  const type = contactType(contact);
+  const isPhone = type === "phone";
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    if (!name.trim()) return setError("Please enter your name.");
+    if (type !== "email" && type !== "phone") return setError("Enter a valid email or phone number.");
+    if (isPhone && !consent) return setError("Please check the box to agree to text messages.");
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, contact, source, smsConsent: isPhone && consent, company: honeypot }),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.error || "Something went wrong. Please try again.");
+      }
+      setStatus("done");
+    } catch (err) {
+      setStatus("error");
+      setError(err.message);
+    }
+  };
+
+  if (status === "done") {
+    return (
+      <div className={`notify notify-${variant} notify-done`} role="status">
+        <span className="notify-check" aria-hidden="true">✓</span>
+        <span>You're on the list — we'll reach out when the next drop lands.</span>
+      </div>
+    );
+  }
+
+  const id = `notify-${source}`;
+  return (
+    <form className={`notify notify-${variant} ${compact ? "notify-compact" : ""}`} onSubmit={onSubmit} noValidate>
+      <div className="notify-fields">
+        <label className="sr-only" htmlFor={`${id}-name`}>Name</label>
+        <input
+          id={`${id}-name`}
+          className="notify-input"
+          type="text"
+          autoComplete="name"
+          placeholder="Name"
+          value={name}
+          maxLength={100}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <label className="sr-only" htmlFor={`${id}-contact`}>Email or phone number</label>
+        <input
+          id={`${id}-contact`}
+          className="notify-input"
+          type="text"
+          inputMode="email"
+          autoComplete="email"
+          placeholder="Email or phone number"
+          value={contact}
+          maxLength={254}
+          onChange={(e) => setContact(e.target.value)}
+        />
+        <input
+          className="notify-hp"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+        />
+        <button className="btn btn-primary notify-btn" type="submit" disabled={status === "sending"}>
+          {status === "sending" ? "Sending…" : NOTIFY_LABEL}
+        </button>
+      </div>
+      {isPhone && (
+        <label className="notify-consent">
+          <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} required />
+          <span>I agree to receive recurring marketing text messages from ProSauce at this number.</span>
+        </label>
+      )}
+      {error && <div className="notify-error" role="alert">{error}</div>}
+      <p className="notify-fine">{SMS_CONSENT_TEXT}</p>
+    </form>
+  );
+}
+
 // ---------- Top Marquee ----------
 function Marquee() {
   const items = [
-    "FREE SHIPPING ON 6-PACK +",
+    "FREE SHIPPING ON 6-PACK",
     "12G PROTEIN · 160 CAL",
-    "NO SEED OILS",
-    "NOW IN 1,200+ STORES",
-    "WHEY ISOLATE PROTEIN SYSTEM",
-    "NO ADDED SUGAR",
   ];
-  const stream = [...items, ...items, ...items];
+  const stream = Array.from({ length: 8 }, () => items).flat();
   return (
     <div className="marquee">
       <div className="marquee-track">
@@ -56,7 +168,7 @@ function Marquee() {
 }
 
 // ---------- Nav ----------
-function Nav({ cartCount, onOpenCart }) {
+function Nav() {
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -67,20 +179,17 @@ function Nav({ cartCount, onOpenCart }) {
     <nav className={`nav ${scrolled ? "nav-scrolled" : ""}`}>
       <div className="nav-inner">
         <div className="nav-left">
-          <a href="#shop" className="nav-link">Shop</a>
           <a href="#flavors" className="nav-link">Flavors</a>
-          <a href="#nutrition" className="nav-link">Nutrition</a>
-          <a href="#stores" className="nav-link">Where to Buy</a>
+          <a href="#sweet-smoke" className="nav-link">Sweet Smoke</a>
+          <a href="#drop" className="nav-link">Next Drop</a>
         </div>
         <a href="#top" className="wordmark">
           <BullMark size={26} />
           <span>ProSauce</span>
         </a>
         <div className="nav-right">
-          <a href="#account" className="nav-link nav-link-muted">Account</a>
-          <button className="cart-btn" onClick={onOpenCart} aria-label="Open cart">
-            <span>Cart</span>
-            <span className="cart-count">{cartCount}</span>
+          <button className="cart-btn" onClick={scrollToDrop}>
+            <span>Notify Me</span>
           </button>
         </div>
       </div>
@@ -143,14 +252,14 @@ function BullMark({ size = 32, color = "#C8252C" }) {
 }
 
 // ---------- Hero ----------
-function Hero({ onAdd }) {
+function Hero() {
   return (
     <section className="hero" id="top">
       <div className="hero-grid">
         <div className="hero-copy">
           <div className="eyebrow">
             <span className="eyebrow-dash" />
-            <span>Premium Sauce · Est. 2026</span>
+            <span>Premium Sauce</span>
           </div>
           <h1 className="hero-title">
             <span>Better</span>
@@ -168,24 +277,17 @@ function Hero({ onAdd }) {
               <div className="spec-num">160</div>
               <div className="spec-label">Calories<br/>per serving</div>
             </div>
-            <div className="spec-divider" />
-            <div className="spec">
-              <div className="spec-num">0<span className="spec-unit">g</span></div>
-              <div className="spec-label">Added<br/>sugar</div>
-            </div>
           </div>
           <p className="hero-sub">
-            Two real sauces — Creamy Chicken and Ranch — built on a whey isolate protein
-            system. Restaurant-style flavor. Smooth, never chalky.
+            Two real sauces — Sweet Smoke and Ranch. Restaurant-style flavor.
+            Smooth, never chalky.
           </p>
-          <div className="hero-ctas">
-            <a href="#shop" className="btn btn-primary">Shop Now <span aria-hidden>→</span></a>
-            <a href="#flavors" className="btn btn-ghost">View Flavors</a>
-          </div>
-          <div className="hero-meta">
-            <span>★ ★ ★ ★ ★</span>
-            <span className="hero-meta-divider">·</span>
-            <span>4.8 from 2,431 reviews</span>
+          <div className="hero-notify">
+            <div className="hero-notify-label">
+              <span className="sold-out-pill">Sold out</span>
+              <span>The first drop is gone. Get first dibs on the next one.</span>
+            </div>
+            <NotifyForm source="hero" />
           </div>
         </div>
 
@@ -198,7 +300,7 @@ function Hero({ onAdd }) {
             <img src={PRODUCTS[1].image} alt="" />
           </div>
           <div className="hero-bottle hero-bottle-front">
-            <img src={PRODUCTS[0].image} alt="ProSauce Creamy Chicken bottle" />
+            <img src={PRODUCTS[0].image} alt="ProSauce Sweet Smoke bottle" />
           </div>
           <div className="hero-tag hero-tag-tl">
             <div className="hero-tag-num">02</div>
@@ -206,7 +308,7 @@ function Hero({ onAdd }) {
           </div>
           <div className="hero-tag hero-tag-br">
             <div className="hero-tag-num">01</div>
-            <div className="hero-tag-text">Creamy<br/>Chicken</div>
+            <div className="hero-tag-text">Sweet<br/>Smoke</div>
           </div>
           <div className="hero-stamp">
             <svg viewBox="0 0 200 200" width="120" height="120">
@@ -215,7 +317,7 @@ function Hero({ onAdd }) {
               </defs>
               <text className="stamp-text">
                 <textPath href="#circ" startOffset="0">
-                  · WHEY ISOLATE PROTEIN · NO SEED OILS · NO ADDED SUGAR ·
+                  · 12G PROTEIN · 160 CALORIES · RESTAURANT STYLE ·
                 </textPath>
               </text>
               <text x="100" y="95" textAnchor="middle" className="stamp-num">12g</text>
@@ -243,11 +345,11 @@ function SectionHead({ kicker, title, num }) {
 }
 
 // ---------- Product Card ----------
-function ProductCard({ product, qty, setQty, onAdd, featured }) {
+function ProductCard({ product }) {
   const [hovered, setHovered] = useState(false);
   return (
     <div
-      className={`product ${featured ? "product-featured" : ""}`}
+      className="product product-sold-out"
       style={{ "--accent": product.accent, "--cap": product.cap, "--sauce": product.sauce, "--deep": product.deep }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -255,14 +357,14 @@ function ProductCard({ product, qty, setQty, onAdd, featured }) {
       <div className="product-stage">
         <div className="product-stage-bg" />
         <div className="product-stage-letters" aria-hidden="true">
-          {product.id === "chicken" ? "01" : "02"}
+          {product.id === "sweet-smoke" ? "01" : "02"}
         </div>
         <img
           className={`product-bottle ${hovered ? "product-bottle-hover" : ""}`}
           src={product.image}
           alt={product.fullName}
         />
-        {featured && <div className="product-badge">HERO FLAVOR</div>}
+        <div className="product-badge product-badge-sold">SOLD OUT</div>
       </div>
 
       <div className="product-info">
@@ -285,10 +387,6 @@ function ProductCard({ product, qty, setQty, onAdd, featured }) {
             <div className="pspec-num">160</div>
             <div className="pspec-label">CAL</div>
           </div>
-          <div className="pspec">
-            <div className="pspec-num">0g</div>
-            <div className="pspec-label">ADDED SUGAR</div>
-          </div>
         </div>
 
         <div className="product-use">
@@ -296,102 +394,22 @@ function ProductCard({ product, qty, setQty, onAdd, featured }) {
           <span className="product-use-items">{product.use}</span>
         </div>
 
-        <div className="product-cart">
-          <div className="qty">
-            <button onClick={() => setQty(Math.max(1, qty - 1))} aria-label="Decrease">−</button>
-            <span>{qty}</span>
-            <button onClick={() => setQty(qty + 1)} aria-label="Increase">+</button>
-          </div>
-          <button className="btn btn-primary product-add" onClick={() => onAdd(product, qty)}>
-            Add to Cart · ${(12.99 * qty).toFixed(2)}
-          </button>
-        </div>
+        <NotifyForm source={`product-card-${product.id}`} compact />
       </div>
     </div>
   );
 }
 
 // ---------- Product Lineup ----------
-function Lineup({ onAdd }) {
-  const [qtys, setQtys] = useState({ chicken: 1, ranch: 1 });
+function Lineup() {
   return (
     <section className="lineup" id="flavors">
       <div className="lineup-inner">
         <SectionHead num="01" kicker="The Lineup" title={<>Two flavors.<br/>Built for everything.</>} />
         <div className="lineup-grid">
-          <ProductCard
-            product={PRODUCTS[0]}
-            qty={qtys.chicken}
-            setQty={(q) => setQtys({ ...qtys, chicken: q })}
-            onAdd={onAdd}
-            featured
-          />
-          <ProductCard
-            product={PRODUCTS[1]}
-            qty={qtys.ranch}
-            setQty={(q) => setQtys({ ...qtys, ranch: q })}
-            onAdd={onAdd}
-          />
-        </div>
-        <BundleStrip onAdd={onAdd} />
-      </div>
-    </section>
-  );
-}
-
-function BundleStrip({ onAdd }) {
-  return (
-    <div className="bundle">
-      <div className="bundle-left">
-        <div className="bundle-eyebrow">SAVE 15%</div>
-        <div className="bundle-title">The Duo · 2-Bottle Bundle</div>
-        <div className="bundle-sub">One Creamy Chicken. One Ranch. Free shipping.</div>
-      </div>
-      <div className="bundle-right">
-        <div className="bundle-price">
-          <span className="bundle-price-old">$25.98</span>
-          <span className="bundle-price-new">$21.99</span>
-        </div>
-        <button
-          className="btn btn-dark"
-          onClick={() => {
-            onAdd(PRODUCTS[0], 1);
-            onAdd(PRODUCTS[1], 1);
-          }}
-        >
-          Add Bundle
-        </button>
-      </div>
-    </div>
-  );
-}
-
-// ---------- Nutrition / Quality ----------
-function Nutrition() {
-  const facts = [
-    { k: "Protein system", v: "Whey isolate", n: "01" },
-    { k: "Texture", v: "Smooth · No chalk", n: "02" },
-    { k: "Built for", v: "Everyday food use", n: "03" },
-    { k: "Seed oils", v: "None", n: "04" },
-    { k: "Added sugar", v: "Zero grams", n: "05" },
-    { k: "Sourcing", v: "U.S. dairy", n: "06" },
-  ];
-  return (
-    <section className="nutrition" id="nutrition">
-      <div className="nutrition-inner">
-        <SectionHead num="02" kicker="What's Inside" title={<>The short list.</>} />
-        <div className="nutrition-grid">
-          {facts.map((f) => (
-            <div key={f.n} className="fact">
-              <div className="fact-num">{f.n}</div>
-              <div className="fact-k">{f.k}</div>
-              <div className="fact-v">{f.v}</div>
-            </div>
+          {PRODUCTS.map((p) => (
+            <ProductCard key={p.id} product={p} />
           ))}
-        </div>
-        <div className="nutrition-note">
-          <span>NO HYPE.</span>
-          <span>JUST SAUCE.</span>
         </div>
       </div>
     </section>
@@ -401,17 +419,15 @@ function Nutrition() {
 // ---------- Lifestyle / On Anything ----------
 function Lifestyle() {
   const tiles = [
-    { id: "tenders", label: "CRISPY TENDERS", flavor: "Creamy Chicken", n: "01", aspect: "tall" },
-    { id: "fries", label: "SHOESTRING FRIES", flavor: "Creamy Chicken", n: "02", aspect: "wide" },
-    { id: "bowl", label: "GRAIN BOWL", flavor: "Ranch", n: "03", aspect: "wide" },
-    { id: "veg", label: "ROASTED VEG", flavor: "Ranch", n: "04", aspect: "tall" },
-    { id: "sando", label: "TURKEY SANDO", flavor: "Ranch", n: "05", aspect: "wide" },
-    { id: "wing", label: "WINGS", flavor: "Creamy Chicken", n: "06", aspect: "tall" },
+    { id: "tenders-dip", label: "CHICKEN TENDERS", flavor: "Sweet Smoke", n: "01", img: "public/images/dip-orange-sauce.jpg", alt: "Hand dipping a crispy chicken tender into orange dipping sauce", pos: "center 40%" },
+    { id: "crispy-dip", label: "CRISPY CHICKEN", flavor: "Ranch", n: "02", img: "public/images/dip-white-sauce.jpg", alt: "Hand dipping crispy chicken into a pot of creamy white sauce", pos: "center 45%" },
+    { id: "nuggets", label: "NUGGETS", flavor: "Ranch", n: "03", img: "public/images/nuggets-herb-sauce.jpg", alt: "Crispy nuggets with a bowl of white herb dipping sauce", pos: "40% center" },
+    { id: "tenders", label: "CRISPY TENDERS", flavor: "Ranch", n: "04", img: "public/images/tenders-ramekin.jpg", alt: "Crispy fried chicken with a ramekin of white dipping sauce", pos: "center 62%" },
   ];
   return (
-    <section className="lifestyle">
+    <section className="lifestyle" id="ways">
       <div className="lifestyle-inner">
-        <SectionHead num="03" kicker="On Anything" title={<>Use it<br/>like a real sauce.</>} />
+        <SectionHead num="02" kicker="On Anything" title={<>Use it<br/>like a real sauce.</>} />
         <div className="lifestyle-grid">
           {tiles.map((t, i) => (
             <PhotoTile key={t.id} tile={t} idx={i} />
@@ -424,72 +440,71 @@ function Lifestyle() {
 
 function PhotoTile({ tile, idx }) {
   return (
-    <div className={`tile tile-${tile.aspect} tile-pos-${idx}`}>
-      <div className="tile-img" aria-label={`Photo placeholder: ${tile.label}`}>
-        <div className="tile-stripes" />
+    <div className={`tile tile-pos-${idx}`}>
+      <div className="tile-img">
+        <img src={tile.img} alt={tile.alt} loading="lazy" style={{ objectPosition: tile.pos }} />
         <div className="tile-meta-tl">
           <div className="tile-num">{tile.n}</div>
           <div className="tile-flavor">{tile.flavor}</div>
         </div>
         <div className="tile-meta-br">
           <div className="tile-label">{tile.label}</div>
-          <div className="tile-tag">FOOD PHOTO</div>
         </div>
       </div>
     </div>
   );
 }
 
-// ---------- Stores / Where to Buy ----------
-function Stores() {
-  const stores = ["Whole Foods", "Sprouts", "Erewhon", "Wegmans", "Bristol Farms", "H-E-B", "Gelson's", "The Fresh Market"];
+// ---------- Sweet Smoke feature ----------
+function SweetSmoke() {
   return (
-    <section className="stores" id="stores">
-      <div className="stores-inner">
-        <div className="stores-head">
-          <div className="section-kicker">
-            <span className="section-num">04</span>
+    <section className="sweet" id="sweet-smoke">
+      <div className="sweet-inner">
+        <div className="sweet-photo">
+          <img
+            src="public/images/dip-orange-sauce.jpg"
+            alt="Chicken tender dipped in ProSauce Sweet Smoke sauce"
+            loading="lazy"
+          />
+          <div className="sweet-photo-tag">Sweet Smoke</div>
+        </div>
+        <div className="sweet-copy">
+          <div className="section-kicker sweet-kicker">
+            <span className="section-num">03</span>
             <span className="section-line" />
-            <span>On the shelf</span>
+            <span>Sweet Smoke</span>
           </div>
-          <h2 className="stores-title">Find ProSauce in the refrigerated condiment aisle.</h2>
-        </div>
-        <div className="stores-marquee">
-          <div className="stores-track">
-            {[...stores, ...stores].map((s, i) => (
-              <span key={i} className="store-name">{s}</span>
-            ))}
-          </div>
-        </div>
-        <div className="stores-locator">
-          <input className="locator-input" placeholder="Enter ZIP code" defaultValue="" />
-          <button className="btn btn-dark">Find Stores</button>
+          <h2 className="section-title">Taste familiar?</h2>
+          <p className="sweet-body">
+            Our Sweet Smoke sauce is inspired by one of the most popular chicken sauces on the
+            market. We just made it better.
+          </p>
+          <button className="btn btn-primary btn-large" onClick={scrollToDrop}>
+            {NOTIFY_LABEL}
+          </button>
         </div>
       </div>
     </section>
   );
 }
 
-// ---------- Big Footer CTA ----------
-function FooterCTA({ onAdd }) {
+// ---------- Next Drop signup ----------
+function NextDrop() {
   return (
-    <section className="cta">
+    <section className="cta" id="drop">
       <div className="cta-inner">
         <div className="cta-bigword" aria-hidden>PROSAUCE</div>
         <div className="cta-content">
-          <div className="cta-line">12g protein. 160 calories.</div>
-          <div className="cta-line cta-line-italic">Available in Creamy Chicken and Ranch.</div>
-          <div className="cta-buttons">
-            <button
-              className="btn btn-primary btn-large"
-              onClick={() => {
-                onAdd(PRODUCTS[0], 1);
-                onAdd(PRODUCTS[1], 1);
-              }}
-            >
-              Shop ProSauce →
-            </button>
+          <div className="cta-kicker">
+            <span className="sold-out-pill sold-out-pill-light">Sold out</span>
           </div>
+          <h2 className="cta-line">The first drop sold out.</h2>
+          <div className="cta-line cta-line-italic">Sweet Smoke and Ranch are back soon.</div>
+          <p className="cta-sub">
+            We're making the next batch now. Leave your name and an email or phone number and
+            you'll be the first to know when it lands.
+          </p>
+          <NotifyForm source="drop-section" variant="dark" />
         </div>
         <div className="cta-bottles">
           <img src={PRODUCTS[0].image} alt="" />
@@ -512,18 +527,15 @@ function SiteFooter() {
         </div>
         <div className="foot-cols">
           <div className="foot-col">
-            <div className="foot-col-h">Shop</div>
-            <a>Creamy Chicken</a>
-            <a>Ranch</a>
-            <a>The Duo</a>
-            <a>6-Pack</a>
+            <div className="foot-col-h">Flavors</div>
+            <a href="#flavors">Sweet Smoke</a>
+            <a href="#flavors">Ranch</a>
+            <a href="#drop">Next Drop</a>
           </div>
           <div className="foot-col">
             <div className="foot-col-h">Brand</div>
             <a>Nutrition Facts</a>
-            <a>Sourcing</a>
             <a>FAQ</a>
-            <a>Reviews</a>
           </div>
           <div className="foot-col">
             <div className="foot-col-h">Support</div>
@@ -546,122 +558,18 @@ function SiteFooter() {
   );
 }
 
-// ---------- Cart Drawer ----------
-function CartDrawer({ open, onClose, items, setItems }) {
-  const subtotal = useMemo(
-    () => items.reduce((s, it) => s + it.qty * 8.5, 0),
-    [items]
-  );
-  const updateQty = (id, delta) => {
-    setItems(items
-      .map((it) => (it.id === id ? { ...it, qty: it.qty + delta } : it))
-      .filter((it) => it.qty > 0)
-    );
-  };
-  return (
-    <>
-      <div className={`drawer-scrim ${open ? "drawer-scrim-open" : ""}`} onClick={onClose} />
-      <aside className={`drawer ${open ? "drawer-open" : ""}`} aria-hidden={!open}>
-        <div className="drawer-head">
-          <div className="drawer-title">Your Cart</div>
-          <button className="drawer-close" onClick={onClose} aria-label="Close cart">×</button>
-        </div>
-        <div className="drawer-body">
-          {items.length === 0 ? (
-            <div className="drawer-empty">
-              <div className="drawer-empty-mark"><BullMark size={48} /></div>
-              <div className="drawer-empty-title">Cart's empty.</div>
-              <div className="drawer-empty-sub">Add a bottle to get started.</div>
-            </div>
-          ) : (
-            items.map((it) => {
-              const p = PRODUCTS.find((p) => p.id === it.id);
-              return (
-                <div key={it.id} className="drawer-item">
-                  <div className="drawer-item-img" style={{ background: `linear-gradient(180deg, #ECEAE5 0%, ${p.sauce}33 100%)` }}>
-                    <img src={p.image} alt="" />
-                  </div>
-                  <div className="drawer-item-info">
-                    <div className="drawer-item-name">{p.fullName}</div>
-                    <div className="drawer-item-price">${(12.99 * it.qty).toFixed(2)}</div>
-                    <div className="qty qty-sm">
-                      <button onClick={() => updateQty(it.id, -1)}>−</button>
-                      <span>{it.qty}</span>
-                      <button onClick={() => updateQty(it.id, 1)}>+</button>
-                    </div>
-                  </div>
-                </div>
-              );
-            })
-          )}
-        </div>
-        {items.length > 0 && (
-          <div className="drawer-foot">
-            <div className="drawer-totals">
-              <span>Subtotal</span>
-              <span className="drawer-total-num">${subtotal.toFixed(2)}</span>
-            </div>
-            <div className="drawer-shipping">FREE shipping on orders over $50</div>
-            <button className="btn btn-primary btn-block">Checkout →</button>
-          </div>
-        )}
-      </aside>
-    </>
-  );
-}
-
-// ---------- Toast (added to cart) ----------
-function Toast({ msg }) {
-  if (!msg) return null;
-  return (
-    <div className="toast">
-      <div className="toast-dot" />
-      <div>{msg}</div>
-    </div>
-  );
-}
-
 // ---------- App ----------
 function App() {
-  const [cart, setCart] = useState([]);
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const [toast, setToast] = useState("");
-
-  const cartCount = cart.reduce((s, it) => s + it.qty, 0);
-
-  const addToCart = (product, qty) => {
-    setCart((prev) => {
-      const existing = prev.find((it) => it.id === product.id);
-      if (existing) {
-        return prev.map((it) =>
-          it.id === product.id ? { ...it, qty: it.qty + qty } : it
-        );
-      }
-      return [...prev, { id: product.id, qty }];
-    });
-    setToast(`Added · ${product.name}`);
-    setTimeout(() => setToast(""), 1800);
-  };
-
   return (
     <div className="page">
       <Marquee />
-      <Nav cartCount={cartCount} onOpenCart={() => setDrawerOpen(true)} />
-      <Hero onAdd={addToCart} />
-      <div id="shop" />
-      <Lineup onAdd={addToCart} />
-      <Nutrition />
+      <Nav />
+      <Hero />
+      <Lineup />
       <Lifestyle />
-      <Stores />
-      <FooterCTA onAdd={addToCart} />
+      <SweetSmoke />
+      <NextDrop />
       <SiteFooter />
-      <CartDrawer
-        open={drawerOpen}
-        onClose={() => setDrawerOpen(false)}
-        items={cart}
-        setItems={setCart}
-      />
-      <Toast msg={toast} />
     </div>
   );
 }
