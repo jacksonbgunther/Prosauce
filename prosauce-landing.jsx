@@ -419,10 +419,10 @@ function Lineup() {
 // ---------- Lifestyle / On Anything ----------
 function Lifestyle() {
   const tiles = [
-    { id: "tenders-dip", label: "CHICKEN TENDERS", flavor: "Sweet Smoke", n: "01", img: "public/images/dip-orange-sauce.jpg", alt: "Hand dipping a crispy chicken tender into orange dipping sauce", pos: "center 40%" },
-    { id: "crispy-dip", label: "CRISPY CHICKEN", flavor: "Ranch", n: "02", img: "public/images/dip-white-sauce.jpg", alt: "Hand dipping crispy chicken into a pot of creamy white sauce", pos: "center 45%" },
-    { id: "nuggets", label: "NUGGETS", flavor: "Ranch", n: "03", img: "public/images/nuggets-herb-sauce.jpg", alt: "Crispy nuggets with a bowl of white herb dipping sauce", pos: "40% center" },
-    { id: "tenders", label: "CRISPY TENDERS", flavor: "Ranch", n: "04", img: "public/images/tenders-ramekin.jpg", alt: "Crispy fried chicken with a ramekin of white dipping sauce", pos: "center 62%" },
+    { id: "tenders-dip", label: "CHICKEN TENDERS", flavor: "Sweet Smoke", n: "01", img: "images/dip-orange-sauce.jpg", alt: "Hand dipping a crispy chicken tender into orange dipping sauce", pos: "center 40%" },
+    { id: "crispy-dip", label: "CRISPY CHICKEN", flavor: "Ranch", n: "02", img: "images/dip-white-sauce.jpg", alt: "Hand dipping crispy chicken into a pot of creamy white sauce", pos: "center 45%" },
+    { id: "nuggets", label: "NUGGETS", flavor: "Ranch", n: "03", img: "images/nuggets-herb-sauce.jpg", alt: "Crispy nuggets with a bowl of white herb dipping sauce", pos: "40% center" },
+    { id: "tenders", label: "CRISPY TENDERS", flavor: "Ranch", n: "04", img: "images/tenders-ramekin.jpg", alt: "Crispy fried chicken with a ramekin of white dipping sauce", pos: "center 62%" },
   ];
   return (
     <section className="lifestyle" id="ways">
@@ -462,7 +462,7 @@ function SweetSmoke() {
       <div className="sweet-inner">
         <div className="sweet-photo">
           <img
-            src="public/images/dip-orange-sauce.jpg"
+            src="images/dip-orange-sauce.jpg"
             alt="Chicken tender dipped in ProSauce Sweet Smoke sauce"
             loading="lazy"
           />

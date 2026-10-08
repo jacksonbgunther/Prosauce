@@ -8,7 +8,7 @@ plus two Vercel serverless functions for the pre-launch "notify me for the next 
 | Path | What it is |
 | --- | --- |
 | `index.html`, `prosauce-landing.jsx` | Homepage |
-| `public/images/` | Self-hosted food photos (Pexels free license: 8463470, 11519282, 29653190, 31300944) |
+| `images/` | Self-hosted food photos (Pexels free license: 8463470, 11519282, 29653190, 31300944) |
 | `api/signup.js` | `POST /api/signup`: stores `{ name, contact, source, smsConsent }` |
 | `api/admin/signups.js` | `GET /api/admin/signups` (JSON) and `?format=csv` (CSV), password-protected |
 | `admin/signups.html` | Admin page at `/admin/signups` |
