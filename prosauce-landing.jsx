@@ -1,4 +1,4 @@
-const { useState, useEffect } = React;
+const { useState, useEffect, useRef } = React;
 
 // ---------- Data ----------
 const PRODUCTS = [
@@ -50,7 +50,13 @@ function contactType(raw) {
 }
 
 // ---------- Notify capture form ----------
-function NotifyForm({ source, variant = "light", compact = false }) {
+function NotifyForm({ source, variant = "light", compact = false, collapsible = false }) {
+  const [open, setOpen] = useState(!collapsible);
+  const nameRef = useRef(null);
+  const expand = () => {
+    setOpen(true);
+    setTimeout(() => nameRef.current && nameRef.current.focus(), 0);
+  };
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [consent, setConsent] = useState(false);
@@ -63,6 +69,7 @@ function NotifyForm({ source, variant = "light", compact = false }) {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    if (!open) return expand();
     setError("");
     if (!name.trim()) return setError("Please enter your name.");
     if (type !== "email" && type !== "phone") return setError("Enter a valid email or phone number.");
@@ -96,11 +103,13 @@ function NotifyForm({ source, variant = "light", compact = false }) {
 
   const id = `notify-${source}`;
   return (
-    <form className={`notify notify-${variant} ${compact ? "notify-compact" : ""}`} onSubmit={onSubmit} noValidate>
-      <div className="notify-fields">
+    <form className={`notify notify-${variant} ${compact ? "notify-compact" : ""} ${collapsible ? "notify-collapsible" : ""}`} onSubmit={onSubmit} noValidate>
+      <div className={`notify-fields ${open ? "" : "notify-fields-closed"}`}>
+        <div className="notify-reveal">
         <label className="sr-only" htmlFor={`${id}-name`}>Name</label>
         <input
           id={`${id}-name`}
+          ref={nameRef}
           className="notify-input"
           type="text"
           autoComplete="name"
@@ -121,6 +130,7 @@ function NotifyForm({ source, variant = "light", compact = false }) {
           maxLength={254}
           onChange={(e) => setContact(e.target.value)}
         />
+        </div>
         <input
           className="notify-hp"
           type="text"
@@ -141,7 +151,7 @@ function NotifyForm({ source, variant = "light", compact = false }) {
         </label>
       )}
       {error && <div className="notify-error" role="alert">{error}</div>}
-      <p className="notify-fine">{SMS_CONSENT_TEXT}</p>
+      {open && <p className="notify-fine">{SMS_CONSENT_TEXT}</p>}
     </form>
   );
 }
@@ -184,7 +194,6 @@ function Nav() {
           <a href="#drop" className="nav-link">Next Drop</a>
         </div>
         <a href="#top" className="wordmark">
-          <BullMark size={26} />
           <span>ProSauce</span>
         </a>
         <div className="nav-right">
@@ -194,60 +203,6 @@ function Nav() {
         </div>
       </div>
     </nav>
-  );
-}
-
-// ---------- Bull Mark (matches bottle logo) ----------
-function BullMark({ size = 32, color = "#C8252C" }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" aria-hidden="true">
-      {/* Left horn — wide sweeping arc going up and out */}
-      <path
-        d="M40 38
-           C 30 28, 18 22, 6 18
-           C 8 12, 14 8, 22 8
-           C 30 12, 38 22, 44 34 Z"
-        fill={color}
-      />
-      {/* Right horn — wide sweeping arc going up and out */}
-      <path
-        d="M60 38
-           C 70 28, 82 22, 94 18
-           C 92 12, 86 8, 78 8
-           C 70 12, 62 22, 56 34 Z"
-        fill={color}
-      />
-      {/* Inner mane tufts between horns */}
-      <path
-        d="M44 30 C 46 22, 48 18, 50 14 C 52 18, 54 22, 56 30 Z"
-        fill={color}
-      />
-      {/* Head — bull head facing forward with muzzle */}
-      <path
-        d="M32 42
-           C 32 36, 38 32, 44 32
-           L 56 32
-           C 62 32, 68 36, 68 42
-           L 70 54
-           C 70 62, 66 68, 60 72
-           L 56 78
-           C 54 82, 50 84, 46 82
-           C 42 82, 40 78, 40 76
-           L 36 70
-           C 32 64, 30 58, 30 50 Z"
-        fill={color}
-      />
-      {/* Negative space — eyes/forehead gap */}
-      <path
-        d="M42 48
-           C 44 44, 48 42, 50 42
-           C 52 42, 56 44, 58 48
-           L 56 56
-           C 54 60, 50 62, 50 62
-           C 50 62, 46 60, 44 56 Z"
-        fill="#F2EBDB"
-      />
-    </svg>
   );
 }
 
@@ -394,7 +349,7 @@ function ProductCard({ product }) {
           <span className="product-use-items">{product.use}</span>
         </div>
 
-        <NotifyForm source={`product-card-${product.id}`} compact />
+        <NotifyForm source={`product-card-${product.id}`} compact collapsible />
       </div>
     </div>
   );
@@ -521,7 +476,6 @@ function SiteFooter() {
     <footer className="foot">
       <div className="foot-top">
         <div className="foot-brand">
-          <BullMark size={36} color="#F2EBDB" />
           <div className="foot-wordmark">ProSauce</div>
           <div className="foot-tag">Better sauces, upgraded nutrition.</div>
         </div>
