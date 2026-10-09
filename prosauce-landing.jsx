@@ -5,7 +5,7 @@ const PRODUCTS = [
   {
     id: "sweet-smoke",
     name: "Sweet Smoke",
-    fullName: "Sweet Smoke Protein Sauce",
+    fullName: "Protein Sweet Smoke",
     accent: "#E78431",
     cap: "#E78431",
     sauce: "#F1A455",
@@ -18,7 +18,7 @@ const PRODUCTS = [
   {
     id: "ranch",
     name: "Ranch",
-    fullName: "Protein Ranch Sauce",
+    fullName: "Protein Ranch",
     accent: "#3F6238",
     cap: "#2F4A2A",
     sauce: "#B5C19E",
