@@ -382,7 +382,17 @@ function Lifestyle() {
   return (
     <section className="lifestyle" id="ways">
       <div className="lifestyle-inner">
-        <SectionHead num="02" kicker="On Anything" title={<>Use it<br/>like a real sauce.</>} />
+        <div className="section-head">
+          <div className="section-kicker">
+            <span className="section-num">02</span>
+            <span className="section-line" />
+            <span>On Anything</span>
+          </div>
+          <h2 className="lifestyle-title">
+            <span>No hype.</span>
+            <span>Just sauce.</span>
+          </h2>
+        </div>
         <div className="lifestyle-grid">
           {tiles.map((t, i) => (
             <PhotoTile key={t.id} tile={t} idx={i} />
