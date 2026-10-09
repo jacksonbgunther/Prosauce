@@ -16,6 +16,8 @@ plus two Vercel serverless functions for the pre-launch "notify me for the next 
 
 Signup `source` values: `hero`, `drop-section`, `product-card-sweet-smoke`, `product-card-ranch`.
 
+> Don't add a top-level `public/` folder: for a static Vercel project it becomes the only directory served and the homepage 404s.
+
 ## Environment variables (Vercel → Project → Settings → Environment Variables)
 
 | Variable | Purpose |
