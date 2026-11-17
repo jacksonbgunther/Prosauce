@@ -77,12 +77,15 @@ a{color:inherit}
       </a>
     </header>
 
-    <div style="display: flex; justify-content: center; padding-bottom: 8px; background: #000000">
-      <h1 style="margin: 0; line-height: 0">
-        <a href="#sauces" aria-label="Shop ProToon Sauce Gold Rush" style="display: block; line-height: 0">
-          <img src="/assets/hero-goldrush.webp" alt="ProToon Sauce Gold Rush: the chef duck mascot in a splash of golden sauce, 80g protein per bottle" style="display: block; width: min(100vw, calc((100vh - 140px) * 0.97), 840px); min-width: min(100vw, 470px); height: auto">
-        </a>
-      </h1>
+    <img src="/assets/hero-tenders.jpg" alt="Crispy chicken tenders with golden sauce splashing around them" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 45%">
+    <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,0) 22%), linear-gradient(90deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.35) 42%, rgba(0,0,0,0) 65%), linear-gradient(0deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 30%)"></div>
+    <div class="wrap" style="position: relative; z-index: 1; min-height: clamp(560px, calc(100vh - 150px), 900px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 20px; padding-top: 40px; padding-bottom: 80px">
+      <h1 class="toon" style="margin: 0; font-size: clamp(52px, 7vw, 108px); line-height: .92; color: #FFF4E2; text-shadow: 4px 4px 0 #15121C, 7px 7px 0 #D9401F">Sauce just<br>had a<br>glow-up.</h1>
+      <p class="toon" style="margin: 0; font-size: clamp(19px, 2vw, 26px); line-height: 1.15; color: #FFC23D; text-shadow: 2px 2px 0 #15121C">7g protein. Real honey. Big flavor.</p>
+      <div class="lean-wrap">
+        <a href="#sauces" class="btn btn-gold">Shop the sauces</a>
+        <img class="lean-cat" src="/assets/mascot-cat.webp" alt="ProToon Sauce's cat mascot leaning on the Shop the sauces button">
+      </div>
     </div>
     <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0,44 C220,84 470,6 730,34 C990,62 1210,10 1440,40 L1440,80 L0,80 Z" fill="#15121C"></path></svg>
   </section><section id="sauces" class="wrap" style="padding-top: 64px; padding-bottom: 96px; display: flex; flex-direction: column; gap: 40px">
