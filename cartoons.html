@@ -6,6 +6,23 @@
 <meta name="facebook-domain-verification" content="r4as0ai3v45suzltbwqpyd1kb8acv7" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTGXZ5LCFG"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-BTGXZ5LCFG');</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1495416545782879');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1495416545782879&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <title>Cartoons — ProToon Sauce</title>
 <meta name="description" content="ProToon Sauce comics starring our sauce characters. Episode 01: Save your chicken.">
 <meta property="og:title" content="Cartoons — ProToon Sauce">
@@ -175,5 +192,15 @@ a{color:inherit}
   </footer>
 
 </div>
+<script>
+document.addEventListener('submit',function(e){
+  var form=e.target, input=form.querySelector('input[type="email"]');
+  if(!input) return;
+  e.preventDefault();
+  if(!input.checkValidity()||!input.value.trim()){input.reportValidity();return;}
+  if(typeof fbq==='function') fbq('track','Lead');
+  form.innerHTML='<p role="status" style="margin:0;font-family:Fredoka,system-ui,sans-serif;font-weight:700;font-size:20px;letter-spacing:.04em;text-transform:uppercase">You&#39;re in. Stay saucy.</p>';
+});
+</script>
 </body>
 </html>
