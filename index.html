@@ -87,6 +87,42 @@ a{color:inherit}
 .fnav{display:flex;flex-direction:column;gap:12px;font-size:15px}
 .fnav a{text-decoration:none;color:rgba(255,244,226,.72)}.fnav a:hover{color:#FFF8EE}
 .fnav .eb{margin-bottom:6px}
+.cream{background:#FFF6E9;color:#15121C}
+.cream .eb{color:#F2622E}
+.cream .h2{color:#15121C}
+.cream .lede{color:#5A5249}
+.k-ink{background:#15121C;color:#FFF6E9;border:1px solid #15121C}
+.k-ink:hover{background:#F2622E;border-color:#F2622E;color:#FFF6E9}
+.k-line{background:transparent;color:#15121C;border:1.5px solid #15121C}
+.k-line:hover{background:#15121C;color:#FFF6E9}
+.fam{position:relative;display:flex;flex-direction:column;align-items:center;gap:16px;padding:60px 22px 28px;border-radius:28px;text-align:center;overflow:hidden}
+.fam h3{margin:0;font-family:'Fredoka',system-ui,sans-serif;font-weight:700;font-size:26px;text-transform:uppercase;color:#15121C}
+.fam .sub{margin:-8px 0 0;font-size:15px;color:#5A5249}
+.fam img{display:block;width:100%;max-width:300px;aspect-ratio:1;object-fit:cover;border-radius:20px;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.fam:hover img{transform:scale(1.04) rotate(-1deg)}
+.fam .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%}
+.fam .pr{font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:20px;color:#15121C}
+.flag{position:absolute;left:18px;top:18px;padding:6px 12px 5px;border-radius:999px;background:#FFF6E9;font-family:'Fredoka',system-ui,sans-serif;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#15121C}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.mq{display:flex;width:max-content;animation:mq 38s linear infinite}
+@media (prefers-reduced-motion:reduce){.mq{animation:none}}
+.mq span{display:inline-flex;align-items:center;gap:12px;padding:0 26px;font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:15px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:16px}
+.cmp th,.cmp td{padding:18px 16px;text-align:left;border-bottom:1px solid #EADFCF}
+.cmp thead th{border-bottom:0;font-family:'Fredoka',system-ui,sans-serif;font-weight:700;font-size:15px;letter-spacing:.14em;text-transform:uppercase}
+.cmp .us{background:#FFE1C9}
+.cmp thead .us{border-radius:20px 20px 0 0;color:#F2622E;font-size:18px}
+.cmp tbody tr:last-child .us{border-radius:0 0 20px 20px}
+.cmp tbody th{font-weight:600;color:#5A5249}
+.cmp td div{display:flex;align-items:center;gap:10px}
+.faq details{border-top:1px solid #EADFCF;padding:22px 0}
+.faq details:last-child{border-bottom:1px solid #EADFCF}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:19px;color:#15121C}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';font-size:26px;line-height:1;color:#F2622E;transition:transform .25s ease}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:12px 0 0;max-width:620px;font-size:16px;line-height:1.7;color:#5A5249}
+.ft a{text-decoration:none;color:rgba(255,246,233,.72)}.ft a:hover{color:#FFF6E9}
 </style>
 </head>
 <body>
@@ -124,107 +160,142 @@ a{color:inherit}
     </div>
     <div class="p-badge" role="img" aria-label="7 grams of protein per serving"><b>7G</b><span>Protein</span><i>per serving</i></div>
     <a href="#sauces" aria-label="Scroll to the sauces" class="hero-scroll"><span></span></a>
-  </section><section id="sauces" class="wrap sec" style="padding-top: clamp(72px, 8vw, 110px)">
-    <div class="head">
-      <p class="eb">The lineup</p>
-      <h2 class="h2">Our sauces</h2>
-      <p class="lede">Protein-packed, made with real honey, built for the food you already eat.</p>
+  </section><!-- CLAIMS STRIP -->
+  <div style="background: #15121C; color: #FFF6E9; overflow: hidden; padding: 20px 0; border-bottom: 1px solid rgba(255,246,233,.08)">
+    <p style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">7g protein per serving, made with real honey, fewer calories, non-GMO.</p>
+    <div class="mq" aria-hidden="true"><span><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z" fill="#FFC23D"></path></svg>7g protein per serving</span><span><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z" fill="#FFC23D"></path></svg>Made with real honey</span><span><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z" fill="#FFC23D"></path></svg>Fewer calories</span><span><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z" fill="#FFC23D"></path></svg>Non-GMO</span><span><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z" fill="#FFC23D"></path></svg>Gourmet finish</span><span><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z" fill="#FFC23D"></path></svg>Stay saucy</span><span><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z" fill="#FFC23D"></path></svg>7g protein per serving</span><span><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z" fill="#FFC23D"></path></svg>Made with real honey</span><span><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z" fill="#FFC23D"></path></svg>Fewer calories</span><span><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z" fill="#FFC23D"></path></svg>Non-GMO</span><span><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z" fill="#FFC23D"></path></svg>Gourmet finish</span><span><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z" fill="#FFC23D"></path></svg>Stay saucy</span></div>
+  </div>
+
+  <div class="cream">
+
+  <!-- MEET THE LINEUP -->
+  <section id="sauces" class="wrap sec" style="padding-bottom: 40px">
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 40px">
+      <div style="display: flex; flex-direction: column; gap: 14px">
+        <p class="eb">The lineup</p>
+        <h2 class="h2">Meet the crew</h2>
+      </div>
+      <a href="#sauces" class="pill k-line">Shop all</a>
     </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 24px">
-      <article class="card">
-        <a href="/cool-ranch" class="ph"><img src="/assets/cool-ranch-bottle.webp" alt="Cool Ranch squeeze bottle with the cat mascot"></a>
-        <div class="row"><h3>Cool Ranch</h3><span class="pr">$12.99</span></div>
-        <p>Creamy, herby and cool. 7g protein per serving.</p>
-        <a href="/cool-ranch" class="pill pill-solid">Add to cart</a>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr)); gap: 20px">
+      <article class="fam" style="background: #D9F1EF">
+        <span class="flag">Best seller</span>
+        <h3>Cool Ranch</h3><p class="sub">Creamy, herby and cool</p>
+        <a href="/cool-ranch" style="display: block; width: 100%; line-height: 0"><img src="/assets/cool-ranch-bottle.webp" alt="Cool Ranch bottle with the cat mascot" style="margin: 0 auto"></a>
+        <div class="bar"><span class="pr">$12.99</span><a href="/cool-ranch" class="pill k-ink" style="height: 46px; padding: 0 24px">Shop now</a></div>
       </article>
-      <article class="card">
-        <a href="#sauces" class="ph"><img src="/assets/gold-rush-bottle.webp" alt="Gold Rush squeeze bottle with the cowboy chicken mascot"></a>
-        <div class="row"><h3>Gold Rush</h3><span class="pr">$12.99</span></div>
-        <p>Sweet, smoky and golden. 7g protein per serving.</p>
-        <a href="#sauces" class="pill pill-solid">Add to cart</a>
+      <article class="fam" style="background: #FFE3BF">
+        <span class="flag">New look</span>
+        <h3>Gold Rush</h3><p class="sub">Sweet, smoky and golden</p>
+        <a href="#sauces" style="display: block; width: 100%; line-height: 0"><img src="/assets/gold-rush-bottle.webp" alt="Gold Rush bottle with the cowboy chicken mascot" style="margin: 0 auto"></a>
+        <div class="bar"><span class="pr">$12.99</span><a href="#sauces" class="pill k-ink" style="height: 46px; padding: 0 24px">Shop now</a></div>
       </article>
-      <article class="card">
-        <span class="tag">Best way to try</span>
-        <a href="#sauces" class="ph"><img src="/assets/packaging.webp" alt="Cool Ranch and Gold Rush packaging together"></a>
-        <div class="row"><h3>The Duo</h3><span class="pr">$25.98</span></div>
-        <p>One Cool Ranch and one Gold Rush.</p>
-        <a href="#sauces" class="pill pill-solid">Add to cart</a>
+      <article class="fam" style="background: #FFD5C4">
+        <span class="flag">Best value</span>
+        <h3>The Duo</h3><p class="sub">One of each flavor</p>
+        <a href="#sauces" style="display: block; width: 100%; line-height: 0"><img src="/assets/packaging.webp" alt="Cool Ranch and Gold Rush packaging" style="margin: 0 auto"></a>
+        <div class="bar"><span class="pr">$25.98</span><a href="#sauces" class="pill k-ink" style="height: 46px; padding: 0 24px">Shop now</a></div>
       </article>
     </div>
   </section>
 
-  <!-- PHOTO BAND -->
-  <section aria-labelledby="band-h" style="position: relative; overflow: hidden; background: #000">
-    <img src="/assets/hero-tenders.jpg" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 45%">
-    <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, #15121C 0%, rgba(21,18,28,0) 18%, rgba(21,18,28,0) 82%, #15121C 100%), radial-gradient(70% 70% at 50% 50%, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 70%)"></div>
-    <div class="wrap" style="position: relative; min-height: clamp(460px, 70vh, 680px); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 24px">
-      <p class="eb" style="color: #FFF8EE; background: rgba(11,10,14,.55); padding: 8px 14px 7px; border-radius: 999px; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px)">Save your chicken</p>
-      <h2 id="band-h" class="h2" style="font-size: clamp(40px, 5.4vw, 82px); text-shadow: 0 2px 3px rgba(0,0,0,.45), 0 8px 34px rgba(0,0,0,.7)">Your plate's<br>new best friend.</h2>
-      <a href="#sauces" class="pill pill-solid" style="margin-top: 8px">Shop now</a>
-    </div>
-  </section>
-
-  <!-- NUTRITION -->
-  <section id="nutrition" class="wrap sec">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: clamp(40px, 6vw, 88px); align-items: center">
-      <div style="display: flex; flex-direction: column; gap: 20px; align-items: flex-start">
-        <p class="eb">Nutrition</p>
-        <h2 class="h2">Better for you.<br>No, really.</h2>
-        <p class="lede">Most sauces are fat and sugar in a nice bottle. We started with protein, then built the flavor around it. It's not diet food. It just eats like it isn't.</p>
-        <a href="/cool-ranch" class="pill pill-line" style="margin-top: 8px">See the label</a>
-      </div>
-      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
-        <div class="stat"><b>7g</b><span>Protein</span></div>
-        <div class="stat"><b>Real</b><span>Honey</span></div>
-        <div class="stat"><b>Fewer</b><span>Calories</span></div>
-        <div class="stat"><b>Non-GMO</b><span>Ingredients</span></div>
+  <!-- WHY STOP AT ONE -->
+  <section class="wrap" style="padding-bottom: clamp(88px, 10vw, 140px)">
+    <div style="position: relative; overflow: hidden; border-radius: 28px; min-height: 260px; background: #15121C; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); align-items: center">
+      <img src="/assets/hero-tenders.jpg" alt="Crispy chicken tenders with golden sauce splashing" style="display: block; width: 100%; height: 100%; min-height: 260px; object-fit: cover; object-position: 60% 45%">
+      <div style="padding: clamp(32px, 5vw, 64px); display: flex; flex-direction: column; gap: 18px; align-items: flex-start; color: #FFF6E9">
+        <p class="eb" style="color: #FFC23D">Bundle &amp; save</p>
+        <h2 class="h2" style="color: #FFF8EE">Why stop at one?</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.65; color: rgba(255,246,233,.72)">Grab both flavors and keep every plate covered.</p>
+        <a href="#sauces" class="pill pill-solid">Get the duo</a>
       </div>
     </div>
   </section>
 
-  <!-- HOW TO USE -->
-  <section id="how" style="background: #100E15; border-top: 1px solid rgba(255,244,226,.06); border-bottom: 1px solid rgba(255,244,226,.06)">
-    <div class="wrap sec">
-      <div class="head">
-        <p class="eb">How to use</p>
-        <h2 class="h2">Three steps. Zero sad chicken.</h2>
+  <!-- FEATURE -->
+  <section id="nutrition" class="wrap" style="padding-bottom: clamp(88px, 10vw, 140px)">
+    <div style="border-radius: 32px; background: #FFE1C9; padding: clamp(14px, 1.6vw, 22px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: clamp(28px, 4vw, 56px); align-items: center">
+      <div style="position: relative; border-radius: 22px; overflow: hidden; line-height: 0">
+        <img src="/assets/hero-pour2.jpg" alt="Golden sauce pouring over crispy fried chicken" style="display: block; width: 100%; aspect-ratio: 1; object-fit: cover; object-position: 50% 55%">
+        <div class="p-badge" role="img" aria-label="7 grams of protein per serving" style="top: 22px; right: 22px; bottom: auto; transform: rotate(8deg); width: clamp(104px, 9vw, 140px)"><b style="font-size: clamp(38px, 3.4vw, 54px)">7G</b><span>Protein</span><i>per serving</i></div>
       </div>
-      <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 40px">
-        <li class="step"><span class="n">01</span><h3>Pick your plate</h3><p>Chicken, rice, eggs, wraps. Whatever's looking a little plain.</p></li>
-        <li class="step"><span class="n">02</span><h3>Squeeze generously</h3><p>7g of protein in every serving, made with real honey.</p></li>
-        <li class="step"><span class="n">03</span><h3>Stay saucy</h3><p>Big flavor, still on plan. That's the whole cartoon.</p></li>
-      </ol>
+      <div style="padding: clamp(12px, 3vw, 40px); display: flex; flex-direction: column; gap: 20px">
+        <p class="eb">Sauce, upgraded</p>
+        <h2 class="h2">Packed with protein.<br>Made with real honey.</h2>
+        <p class="lede">Most sauces are fat and sugar in a nice bottle. We started with protein, then built big flavor around it.</p>
+        <ul style="list-style: none; margin: 8px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 24px; font-family: 'Fredoka', system-ui, sans-serif; font-weight: 600; font-size: 17px">
+          <li style="display: flex; align-items: center; gap: 10px"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#F2622E"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#FFF6E9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>7g protein</li>
+          <li style="display: flex; align-items: center; gap: 10px"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#F2622E"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#FFF6E9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>Real honey</li>
+          <li style="display: flex; align-items: center; gap: 10px"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#F2622E"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#FFF6E9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>Fewer calories</li>
+          <li style="display: flex; align-items: center; gap: 10px"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#F2622E"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#FFF6E9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>Non-GMO</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE'RE DIFFERENT -->
+  <section id="how" class="wrap" style="padding-bottom: clamp(88px, 10vw, 140px)">
+    <div class="head"><p class="eb">The difference</p><h2 class="h2">How we're different</h2></div>
+    <div style="max-width: 900px; margin: 0 auto; background: #FFFFFF; border-radius: 28px; padding: clamp(12px, 2vw, 28px); overflow-x: auto">
+      <table class="cmp">
+        <thead><tr><th scope="col"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Feature</span></th><th scope="col" class="us">ProToon</th><th scope="col" style="color: #8A8178">Typical sauce</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Protein</th><td class="us"><div><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#F2622E"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#FFF6E9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>7g per serving</div></td><td><div><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#B7AFA4" stroke-width="1.5"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#B7AFA4" stroke-width="1.8" stroke-linecap="round"></path></svg>Usually under 1g</div></td></tr>
+          <tr><th scope="row">Sweetener</th><td class="us"><div><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#F2622E"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#FFF6E9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>Real honey</div></td><td><div><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#B7AFA4" stroke-width="1.5"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#B7AFA4" stroke-width="1.8" stroke-linecap="round"></path></svg>Often added sugars</div></td></tr>
+          <tr><th scope="row">Calories</th><td class="us"><div><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#F2622E"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#FFF6E9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>Fewer</div></td><td><div><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#B7AFA4" stroke-width="1.5"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#B7AFA4" stroke-width="1.8" stroke-linecap="round"></path></svg>More</div></td></tr>
+          <tr><th scope="row">Ingredients</th><td class="us"><div><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#F2622E"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#FFF6E9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>Non-GMO</div></td><td><div><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#B7AFA4" stroke-width="1.5"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#B7AFA4" stroke-width="1.8" stroke-linecap="round"></path></svg>Not always</div></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="wrap" style="padding-bottom: clamp(88px, 10vw, 140px)">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: clamp(32px, 5vw, 72px); align-items: start">
+      <div style="display: flex; flex-direction: column; gap: 16px">
+        <p class="eb">FAQs</p>
+        <h2 class="h2">Got questions?<br>We've got sauce.</h2>
+        <img src="/assets/mascot-cat.webp" alt="" aria-hidden="true" class="hide-sm" style="width: 150px; height: auto; margin-top: 16px">
+      </div>
+      <div class="faq">
+        <details open><summary>How much protein is in each serving?</summary><p>7g of protein per serving, in both Cool Ranch and Gold Rush.</p></details>
+        <details><summary>Is it really made with real honey?</summary><p>Yes. Real honey gives both flavors their smooth finish.</p></details>
+        <details><summary>Is ProToon Sauce non-GMO?</summary><p>Yes, our sauces are non-GMO.</p></details>
+        <details><summary>What do I put it on?</summary><p>Chicken, wings, burgers, rice bowls, wraps, fries and salads. Basically anything that's looking a little plain.</p></details>
+        <details><summary>How fast does it ship?</summary><p>[SHIPPING DETAILS]</p></details>
+      </div>
     </div>
   </section>
 
   <!-- NEWSLETTER -->
-  <section id="join" class="wrap sec" style="position: relative">
-    <div style="position: relative; overflow: hidden; border-radius: 32px; background: radial-gradient(120% 120% at 50% 0%, #2A2131 0%, #1B1722 55%); border: 1px solid rgba(255,244,226,.08); padding: clamp(48px, 7vw, 88px) clamp(24px, 5vw, 64px); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px">
-      <img class="hide-sm" src="/assets/mascot-cat.webp" alt="" aria-hidden="true" style="position: absolute; left: clamp(16px, 4vw, 56px); bottom: -4px; width: clamp(96px, 9vw, 140px); height: auto">
-      <p class="eb">The Sauce Club</p>
-      <h2 class="h2">Join the club.</h2>
-      <p class="lede" style="max-width: 440px">New flavors and restocks, first. No spam, just sauce.</p>
-      <form style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; width: 100%; max-width: 500px; margin-top: 10px">
+  <section id="join" class="wrap" style="padding-bottom: clamp(88px, 10vw, 140px)">
+    <div style="position: relative; overflow: hidden; border-radius: 32px; background: #F2622E; color: #FFF6E9; padding: clamp(44px, 6vw, 80px) clamp(24px, 5vw, 72px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 32px; align-items: center">
+      <div style="display: flex; flex-direction: column; gap: 14px">
+        <p class="eb" style="color: #FFE1C9">The Sauce Club</p>
+        <h2 class="h2" style="color: #FFF8EE">Join the club.</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: rgba(255,246,233,.9)">New flavors and restocks, first. No spam, just sauce.</p>
+      </div>
+      <form style="display: flex; flex-wrap: wrap; gap: 12px">
         <label for="email" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Email address</label>
-        <input id="email" type="email" placeholder="Your email" style="flex: 1 1 240px; min-width: 0; height: 52px; box-sizing: border-box; padding: 0 24px; font: inherit; font-size: 15px; color: #FFF8EE; background: rgba(255,244,226,.06); border: 1px solid rgba(255,244,226,.18); border-radius: 999px">
-        <button type="submit" class="pill pill-solid">Subscribe</button>
+        <input id="email" type="email" placeholder="Your email" style="flex: 1 1 220px; min-width: 0; height: 54px; box-sizing: border-box; padding: 0 24px; font: inherit; font-size: 15px; color: #15121C; background: #FFF6E9; border: 0; border-radius: 999px">
+        <button type="submit" class="pill k-ink" style="height: 54px">Subscribe</button>
       </form>
     </div>
   </section>
 
+  </div>
+
   <!-- FOOTER -->
-  <footer style="border-top: 1px solid rgba(255,244,226,.08)">
+  <footer style="background: #15121C; color: #FFF6E9">
     <div class="wrap" style="padding-top: 72px; padding-bottom: 36px; display: flex; flex-direction: column; gap: 56px">
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: 40px">
-        <div style="display: flex; flex-direction: column; gap: 14px">
-          <img src="/assets/logo.webp" alt="ProToon Sauce" style="height: 96px; width: auto; align-self: flex-start">
-        </div>
-        <nav aria-label="Shop" class="fnav"><span class="eb">Shop</span><a href="/cool-ranch">Cool Ranch</a><a href="#sauces">Gold Rush</a><a href="#sauces">The Duo</a></nav>
-        <nav aria-label="Company" class="fnav"><span class="eb">Company</span><a href="#">About</a><a href="#">Wholesale</a><a href="#">Contact</a></nav>
-        <nav aria-label="Support" class="fnav"><span class="eb">Help</span><a href="#">FAQ</a><a href="#">Shipping</a><a href="#">Returns</a></nav>
-        <nav aria-label="Follow" class="fnav"><span class="eb">Follow</span><a href="#">Instagram</a><a href="#">TikTok</a></nav>
+        <div style="display: flex; flex-direction: column; gap: 14px"><img src="/assets/logo.webp" alt="ProToon Sauce" style="height: 96px; width: auto; align-self: flex-start"><span style="font-size: 14px; color: rgba(255,246,233,.6)">Sauce just had a glow-up.</span></div>
+        <nav aria-label="Shop" class="fnav ft"><span class="eb">Shop</span><a href="/cool-ranch">Cool Ranch</a><a href="#sauces">Gold Rush</a><a href="#sauces">The Duo</a></nav>
+        <nav aria-label="Company" class="fnav ft"><span class="eb">Company</span><a href="#">About</a><a href="#">Wholesale</a><a href="#">Contact</a></nav>
+        <nav aria-label="Support" class="fnav ft"><span class="eb">Help</span><a href="#">FAQ</a><a href="#">Shipping</a><a href="#">Returns</a></nav>
+        <nav aria-label="Follow" class="fnav ft"><span class="eb">Follow</span><a href="#">Instagram</a><a href="#">TikTok</a></nav>
       </div>
-      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; padding-top: 24px; border-top: 1px solid rgba(255,244,226,.08); font-size: 13px; color: rgba(255,244,226,.5)">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; padding-top: 24px; border-top: 1px solid rgba(255,246,233,.1); font-size: 13px; color: rgba(255,246,233,.5)">
         <span>© 2026 ProToon Sauce. All rights reserved.</span>
         <span style="display: flex; gap: 22px"><a href="#" style="text-decoration: none">Privacy</a><a href="#" style="text-decoration: none">Terms</a></span>
       </div>
