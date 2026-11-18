@@ -31,25 +31,29 @@ src="https://www.facebook.com/tr?id=1495416545782879&ev=PageView&noscript=1"
 <meta name="theme-color" content="#0A0A0A">
 <link rel="icon" href="/assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&amp;family=Fredoka:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&amp;family=Fredoka:wght@600;700&amp;display=swap" rel="stylesheet">
 <style>
 body{margin:0;background:#0C0B0E}
 a{color:inherit}
 *{box-sizing:border-box}
 .wrap{max-width:1360px;margin:0 auto;padding-left:clamp(20px,3.6vw,56px);padding-right:clamp(20px,3.6vw,56px)}
-.d{margin:0;font-family:'Barlow',system-ui,sans-serif;font-weight:500;text-transform:uppercase;letter-spacing:.02em;line-height:1.02;color:#F5F3EF}
+.d{margin:0;font-family:'Barlow',system-ui,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.02em;line-height:1.02;color:#F5F3EF}
 .toon{font-family:'Fredoka',system-ui,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.01em}
-.lede{margin:0;font-size:16px;line-height:1.65;letter-spacing:.02em;color:#B9B3BE}
-.lbl{display:inline-flex;align-items:center;height:32px;padding:0 14px;border:1px solid rgba(245,243,239,.35);border-radius:999px;font-family:'Barlow',system-ui,sans-serif;font-weight:500;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#C9C3CE}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:54px;padding:0 44px;border-radius:999px;font-family:'Barlow',system-ui,sans-serif;font-weight:600;font-size:15px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:0;transition:background .2s ease,transform .2s ease}
-.btn-o{background:#F2622E;color:#14111C}.btn-o:hover{background:#FF7A47}
+.lede{margin:0;font-size:17px;line-height:1.6;letter-spacing:.01em;color:#DAD5DE;font-weight:500}
+.lbl{display:inline-flex;align-items:center;height:32px;padding:0 14px;border:1px solid rgba(245,243,239,.35);border-radius:999px;font-family:'Barlow',system-ui,sans-serif;font-weight:500;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#F2622E;border-color:rgba(242,98,46,.6);font-weight:700}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:60px;padding:0 40px;border-radius:999px;font-family:'Barlow',system-ui,sans-serif;font-weight:800;font-size:17px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:0;transition:background .2s ease,transform .2s ease,box-shadow .2s ease}
+.btn::after{content:'→';font-size:20px;transition:transform .2s ease}
+.btn:hover::after{transform:translateX(4px)}
+.btn-o{background:#F2622E;color:#0C0B0E;box-shadow:0 0 0 0 rgba(242,98,46,.55),0 12px 34px rgba(242,98,46,.45);animation:pulse 2.6s ease-out infinite}.btn-o:hover{background:#FF7A47;transform:translateY(-2px)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(242,98,46,.55),0 12px 34px rgba(242,98,46,.45)}70%{box-shadow:0 0 0 14px rgba(242,98,46,0),0 12px 34px rgba(242,98,46,.45)}100%{box-shadow:0 0 0 0 rgba(242,98,46,0),0 12px 34px rgba(242,98,46,.45)}}
+@media (prefers-reduced-motion:reduce){.btn-o{animation:none}}
 .btn-w{background:#F5F3EF;color:#0C0B0E}.btn-w:hover{background:#FFFFFF;transform:translateY(-1px)}
 .va{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:999px;border:1px solid rgba(245,243,239,.3);font-family:'Barlow',system-ui,sans-serif;font-weight:500;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#F5F3EF;text-decoration:none}
 .va:hover{border-color:#F5F3EF}
 .cen{display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;margin-bottom:44px}
-.cen h2{font-size:clamp(32px,3.6vw,52px);font-weight:400}
+.cen h2{font-size:clamp(36px,4.2vw,62px);font-weight:800;letter-spacing:.01em}
 .shead{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:26px}
-.shead h2{font-size:clamp(26px,2.6vw,38px);font-weight:400}
+.shead h2{font-size:clamp(28px,2.9vw,42px);font-weight:800}
 .sec{padding-top:clamp(80px,9vw,128px)}
 .rail{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 18px;margin:0 -2px;scrollbar-width:none}
 .rail::-webkit-scrollbar{display:none}
@@ -57,7 +61,7 @@ a{color:inherit}
 .card{display:flex;flex-direction:column;background:#18161C;border-radius:12px;overflow:hidden;text-decoration:none;color:#F5F3EF;transition:transform .3s ease,background .3s ease}
 a.card:hover{transform:translateY(-4px);background:#1F1C24}
 .card img{display:block;width:100%;object-fit:cover}
-.meta{display:flex;justify-content:space-between;gap:10px;font-family:'Barlow',system-ui,sans-serif;font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#8E8794}
+.meta{display:flex;justify-content:space-between;gap:10px;font-family:'Barlow',system-ui,sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#A9A2AF}
 .nav{display:flex;align-items:center;gap:30px;font-family:'Barlow',system-ui,sans-serif;font-weight:500;font-size:15px;letter-spacing:.1em;text-transform:uppercase}
 .nav a{text-decoration:none;color:#F5F3EF;padding:6px 0;border-bottom:1px solid transparent}
 .nav a:hover,.nav a.on{border-bottom-color:#F5F3EF}
@@ -148,7 +152,7 @@ a.card:hover{transform:translateY(-4px);background:#1F1C24}
         <h2 class="toon" style="margin: 0; font-size: clamp(48px, 5.4vw, 84px); line-height: .92; color: #F5F3EF; text-shadow: 0 0 40px #5FD3D155">Cool Ranch</h2>
         <p class="lede" style="max-width: 520px">Creamy, herby and chill. Made for wings, wraps and anything that needs to cool down.</p>
         <p style="margin: 0; font-family: 'Barlow', system-ui, sans-serif; font-weight: 500; font-size: 15px; letter-spacing: .1em; text-transform: uppercase; color: #F5F3EF">7g protein &#8226; Real honey &#8226; Non-GMO</p>
-        <a href="/cool-ranch" class="btn btn-w" style="margin-top: 6px; box-shadow: 0 10px 30px #5FD3D140">Shop Cool Ranch · $12.99</a>
+        <a href="/cool-ranch" class="btn btn-o" style="margin-top: 6px">Shop Cool Ranch · $12.99</a>
       </div><div class="vis" style="background: radial-gradient(55% 55% at 50% 50%, #5FD3D1AA 0%, #1E6F7066 42%, #0C0B0E 78%)">
         <span class="bigword" aria-hidden="true" style="-webkit-text-stroke: 2px #5FD3D140">RANCH</span>
         <div class="stage"><img class="bottle" src="/assets/cool-ranch-cutout.png" alt="Cool Ranch squeeze bottle" style="filter: drop-shadow(0 24px 30px rgba(0,0,0,.55));"></div>
@@ -160,7 +164,7 @@ a.card:hover{transform:translateY(-4px);background:#1F1C24}
         <h2 class="toon" style="margin: 0; font-size: clamp(48px, 5.4vw, 84px); line-height: .92; color: #F5F3EF; text-shadow: 0 0 40px #F7832B55">Gold Rush</h2>
         <p class="lede" style="max-width: 520px">Sweet, smoky and golden, made with real honey. The one that turns a plain bowl into the main event.</p>
         <p style="margin: 0; font-family: 'Barlow', system-ui, sans-serif; font-weight: 500; font-size: 15px; letter-spacing: .1em; text-transform: uppercase; color: #F5F3EF">7g protein &#8226; Real honey &#8226; Non-GMO</p>
-        <a href="#sauces" class="btn btn-w" style="margin-top: 6px; box-shadow: 0 10px 30px #F7832B40">Shop Gold Rush · $12.99</a>
+        <a href="#sauces" class="btn btn-o" style="margin-top: 6px">Shop Gold Rush · $12.99</a>
       </div><div class="vis" style="background: radial-gradient(55% 55% at 50% 50%, #F7832BAA 0%, #8A3A0C66 42%, #0C0B0E 78%)">
         <span class="bigword" aria-hidden="true" style="-webkit-text-stroke: 2px #F7832B40">GOLD</span>
         <div class="stage"><img class="bottle" src="/assets/gold-rush-cutout.png" alt="Gold Rush squeeze bottle" style="--tilt: 10deg; filter: drop-shadow(0 24px 30px rgba(0,0,0,.55));"></div>
@@ -172,7 +176,7 @@ a.card:hover{transform:translateY(-4px);background:#1F1C24}
         <h2 class="toon" style="margin: 0; font-size: clamp(48px, 5.4vw, 84px); line-height: .92; color: #F5F3EF; text-shadow: 0 0 40px #FFC23D55">The Duo</h2>
         <p class="lede" style="max-width: 520px">One Cool Ranch and one Gold Rush. Every plate covered.</p>
         <p style="margin: 0; font-family: 'Barlow', system-ui, sans-serif; font-weight: 500; font-size: 15px; letter-spacing: .1em; text-transform: uppercase; color: #F5F3EF">Two bottles &#8226; Both flavors</p>
-        <a href="#sauces" class="btn btn-w" style="margin-top: 6px; box-shadow: 0 10px 30px #FFC23D40">Shop the Duo · $25.98</a>
+        <a href="#sauces" class="btn btn-o" style="margin-top: 6px">Shop the Duo · $25.98</a>
       </div><div class="vis" style="background: radial-gradient(55% 55% at 50% 50%, #FFC23DAA 0%, #7A4A0A66 42%, #0C0B0E 78%)">
         <span class="bigword" aria-hidden="true" style="-webkit-text-stroke: 2px #FFC23D40">DUO</span>
         <div class="stage"><img class="bottle" src="/assets/packaging.webp" alt="The Duo squeeze bottle" style="border-radius: 14px; box-shadow: 0 30px 60px rgba(0,0,0,.5); width: 92%; height: auto;"></div>
@@ -188,17 +192,17 @@ a.card:hover{transform:translateY(-4px);background:#1F1C24}
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 24px">
       <div class="card" style="padding: clamp(16px, 1.6vw, 26px); gap: 22px">
         <img src="/assets/hero-pour2.jpg" alt="" style="aspect-ratio: 1.25; border-radius: 8px; object-position: 50% 55%">
-        <h3 class="d" style="font-size: clamp(20px, 1.8vw, 26px); font-weight: 400">Protein-packed</h3>
+        <h3 class="d" style="font-size: clamp(20px, 1.8vw, 26px); font-weight: 800">Protein-packed</h3>
         <p class="lede" style="font-size: 15px">Every serving brings 7g of protein, so the sauce pulls its weight instead of just adding calories.</p>
       </div>
       <div class="card" style="padding: clamp(16px, 1.6vw, 26px); gap: 22px">
         <img src="/assets/hero-tenders.jpg" alt="" style="aspect-ratio: 1.25; border-radius: 8px; object-position: 60% 45%">
-        <h3 class="d" style="font-size: clamp(20px, 1.8vw, 26px); font-weight: 400">Made with real honey</h3>
+        <h3 class="d" style="font-size: clamp(20px, 1.8vw, 26px); font-weight: 800">Made with real honey</h3>
         <p class="lede" style="font-size: 15px">Real honey gives both flavors a smooth finish. Big flavor without the usual trade-off.</p>
       </div>
       <div class="card" style="padding: clamp(16px, 1.6vw, 26px); gap: 22px">
         <img src="/assets/packaging.webp" alt="" style="aspect-ratio: 1.25; border-radius: 8px; object-position: 50% 50%">
-        <h3 class="d" style="font-size: clamp(20px, 1.8vw, 26px); font-weight: 400">Non-GMO, fewer calories</h3>
+        <h3 class="d" style="font-size: clamp(20px, 1.8vw, 26px); font-weight: 800">Non-GMO, fewer calories</h3>
         <p class="lede" style="font-size: 15px">Non-GMO ingredients and fewer calories than typical sauce. Flip the bottle and see for yourself.</p>
       </div>
     </div>
@@ -335,7 +339,7 @@ a.card:hover{transform:translateY(-4px);background:#1F1C24}
   <!-- FAQ -->
   <section id="faq" aria-labelledby="f-h" class="wrap sec">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: clamp(32px, 5vw, 72px); align-items: start">
-      <div style="display: flex; flex-direction: column; gap: 18px; align-items: flex-start"><span class="lbl">FAQs</span><h2 id="f-h" class="d" style="font-size: clamp(32px, 3.6vw, 52px); font-weight: 400">Got questions?<br>We've got sauce.</h2></div>
+      <div style="display: flex; flex-direction: column; gap: 18px; align-items: flex-start"><span class="lbl">FAQs</span><h2 id="f-h" class="d" style="font-size: clamp(32px, 3.6vw, 52px); font-weight: 800">Got questions?<br>We've got sauce.</h2></div>
       <div class="faq">
         <details open><summary>How much protein per serving?</summary><p>7g of protein per serving, in both Cool Ranch and Gold Rush.</p></details>
         <details><summary>Is it really made with real honey?</summary><p>Yes. Real honey gives both flavors their smooth finish.</p></details>
@@ -349,7 +353,7 @@ a.card:hover{transform:translateY(-4px);background:#1F1C24}
   <!-- NEWSLETTER -->
   <section id="join" aria-labelledby="j-h" class="wrap sec">
     <div class="card" style="padding: clamp(32px, 5vw, 64px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 28px; align-items: center; background: linear-gradient(120deg, #2A1408 0%, #18161C 70%)">
-      <div style="display: flex; flex-direction: column; gap: 12px"><span class="lbl" style="align-self: flex-start">The Sauce Club</span><h2 id="j-h" class="d" style="font-size: clamp(30px, 3vw, 44px); font-weight: 400">Join the club</h2><p class="lede">New flavors and restocks, first. No spam, just sauce.</p></div>
+      <div style="display: flex; flex-direction: column; gap: 12px"><span class="lbl" style="align-self: flex-start">The Sauce Club</span><h2 id="j-h" class="d" style="font-size: clamp(30px, 3vw, 44px); font-weight: 800">Join the club</h2><p class="lede">New flavors and restocks, first. No spam, just sauce.</p></div>
       <form style="display: flex; flex-wrap: wrap; gap: 12px">
         <label for="email" class="sr">Email address</label>
         <input id="email" type="email" placeholder="Your email" style="flex: 1 1 220px; min-width: 0; height: 54px; padding: 0 22px; font: inherit; font-size: 15px; color: #F5F3EF; background: rgba(245,243,239,.06); border: 1px solid rgba(245,243,239,.2); border-radius: 999px">
