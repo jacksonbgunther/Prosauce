@@ -72,9 +72,18 @@ a.card:hover{transform:translateY(-4px);background:#1F1C24}
 .goal::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.6) 0%,rgba(0,0,0,0) 45%)}
 .goal span{position:absolute;z-index:1;left:24px;bottom:22px;font-family:'Barlow',system-ui,sans-serif;font-weight:500;font-size:clamp(20px,1.8vw,26px);letter-spacing:.04em;text-transform:uppercase;color:#FFFFFF;text-shadow:0 2px 14px rgba(0,0,0,.35)}
 .feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(36px,5vw,80px);align-items:center}
-.feat .vis{position:relative;border-radius:18px;overflow:hidden;background:#000;border:1px solid rgba(245,243,239,.08)}
-.feat .vis img{display:block;width:100%;aspect-ratio:1.2;object-fit:cover}
-.strip{display:flex;align-items:center;gap:14px;padding:16px clamp(16px,2.4vw,28px);background:#18161C;border-top:1px solid rgba(245,243,239,.08);color:#E8E3DC;font-size:15px;line-height:1.4}
+.feat .vis{position:relative;border-radius:18px;overflow:hidden;border:1px solid rgba(245,243,239,.08)}
+.feat .stage{display:flex;align-items:center;justify-content:center;aspect-ratio:1.15;padding:4% 0}
+.feat .bottle{display:block;height:100%;width:auto;max-width:100%;object-fit:contain;animation:floaty 5s ease-in-out infinite;transition:transform .5s ease;}
+.feat .vis:hover .bottle{transform:scale(1.04) rotate(-2deg)}
+@keyframes floaty{0%,100%{translate:0 0}50%{translate:0 -12px}}
+.bigword{position:absolute;z-index:0;left:50%;top:44%;transform:translate(-50%,-50%) rotate(-8deg);font-family:'Fredoka',system-ui,sans-serif;font-weight:700;font-size:clamp(120px,17vw,260px);line-height:1;color:transparent;white-space:nowrap;pointer-events:none}
+.drop{position:absolute;z-index:0;border-radius:50%;opacity:.8;box-shadow:0 0 18px currentColor;animation:bob2 4s ease-in-out infinite}
+@keyframes bob2{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.masc{position:absolute;z-index:2;display:block;filter:drop-shadow(0 10px 20px rgba(0,0,0,.5))}
+@media (prefers-reduced-motion:reduce){.feat .bottle,.drop{animation:none}}
+@media (max-width:900px){.feat>*{order:0 !important}}
+.strip{position:relative;z-index:2;display:flex;align-items:center;gap:14px;padding:16px clamp(16px,2.4vw,28px);background:rgba(24,22,28,.92);border-top:1px solid rgba(245,243,239,.08);color:#E8E3DC;font-size:15px;line-height:1.4}
 .strip strong{color:#FFFFFF}
 .cmp{width:100%;border-collapse:collapse;font-size:16px}
 .cmp th,.cmp td{padding:18px 16px;text-align:left;border-bottom:1px solid rgba(245,243,239,.08)}
