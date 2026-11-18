@@ -31,325 +31,330 @@ src="https://www.facebook.com/tr?id=1495416545782879&ev=PageView&noscript=1"
 <meta name="theme-color" content="#0A0A0A">
 <link rel="icon" href="/assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&amp;family=Fredoka:wght@600;700&amp;display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#F3F2EF}
+body{margin:0;background:#0C0B0E}
 a{color:inherit}
 *{box-sizing:border-box}
-.wrap{max-width:1280px;margin:0 auto;padding-left:clamp(20px,4vw,56px);padding-right:clamp(20px,4vw,56px)}
-.h{margin:0;font-family:'Fredoka',system-ui,sans-serif;font-weight:600;letter-spacing:-.01em;color:#14111C}
-.lede{margin:0;font-size:17px;line-height:1.6;color:#4E4856}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 26px;border-radius:999px;font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:16px;text-decoration:none;cursor:pointer;border:0;transition:background .2s ease,transform .2s ease}
-.btn-o{background:#F2622E;color:#14111C}.btn-o:hover{background:#FF7A47;transform:translateY(-1px)}
-.btn-d{background:#14111C;color:#FFFFFF}.btn-d:hover{background:#2A2533}
-.va{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 16px;border-radius:999px;background:#FFFFFF;border:1px solid #DDD9D2;font-family:'Fredoka',system-ui,sans-serif;font-weight:500;font-size:14px;color:#14111C;text-decoration:none}
-.va:hover{border-color:#14111C}
-.shead{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px}
-.shead h2{font-size:clamp(26px,2.6vw,34px)}
-.rail{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 4px 20px;margin:0 -4px;scrollbar-width:none}
+.wrap{max-width:1360px;margin:0 auto;padding-left:clamp(20px,3.6vw,56px);padding-right:clamp(20px,3.6vw,56px)}
+.d{margin:0;font-family:'Barlow',system-ui,sans-serif;font-weight:500;text-transform:uppercase;letter-spacing:.02em;line-height:1.02;color:#F5F3EF}
+.toon{font-family:'Fredoka',system-ui,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.01em}
+.lede{margin:0;font-size:16px;line-height:1.65;letter-spacing:.02em;color:#B9B3BE}
+.lbl{display:inline-flex;align-items:center;height:32px;padding:0 14px;border:1px solid rgba(245,243,239,.35);border-radius:999px;font-family:'Barlow',system-ui,sans-serif;font-weight:500;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#C9C3CE}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:54px;padding:0 44px;border-radius:999px;font-family:'Barlow',system-ui,sans-serif;font-weight:600;font-size:15px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:0;transition:background .2s ease,transform .2s ease}
+.btn-o{background:#F2622E;color:#14111C}.btn-o:hover{background:#FF7A47}
+.btn-w{background:#F5F3EF;color:#0C0B0E}.btn-w:hover{background:#FFFFFF;transform:translateY(-1px)}
+.va{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:999px;border:1px solid rgba(245,243,239,.3);font-family:'Barlow',system-ui,sans-serif;font-weight:500;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#F5F3EF;text-decoration:none}
+.va:hover{border-color:#F5F3EF}
+.cen{display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;margin-bottom:44px}
+.cen h2{font-size:clamp(32px,3.6vw,52px);font-weight:400}
+.shead{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:26px}
+.shead h2{font-size:clamp(26px,2.6vw,38px);font-weight:400}
+.sec{padding-top:clamp(80px,9vw,128px)}
+.rail{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 18px;margin:0 -2px;scrollbar-width:none}
 .rail::-webkit-scrollbar{display:none}
-.rail>*{flex:0 0 clamp(250px,22vw,290px);scroll-snap-align:start}
-.card{display:flex;flex-direction:column;background:#FFFFFF;border-radius:14px;overflow:hidden;text-decoration:none;color:#14111C;box-shadow:0 1px 2px rgba(20,17,28,.06),0 6px 20px rgba(20,17,28,.06);transition:transform .3s ease,box-shadow .3s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 2px 4px rgba(20,17,28,.08),0 14px 34px rgba(20,17,28,.12)}
+.rail>*{flex:0 0 clamp(250px,22vw,300px);scroll-snap-align:start}
+.card{display:flex;flex-direction:column;background:#18161C;border-radius:12px;overflow:hidden;text-decoration:none;color:#F5F3EF;transition:transform .3s ease,background .3s ease}
+a.card:hover{transform:translateY(-4px);background:#1F1C24}
 .card img{display:block;width:100%;object-fit:cover}
-.meta{display:flex;justify-content:space-between;gap:10px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#7A7383}
-.sec{padding-top:clamp(56px,7vw,88px)}
-.pnav{display:flex;align-items:center;gap:4px;padding:5px;border-radius:999px;font-family:'Fredoka',system-ui,sans-serif;font-weight:500;font-size:15px}
-.pnav a{padding:8px 16px;border-radius:999px;text-decoration:none}
-.pnav.glass{background:rgba(20,17,28,.45);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);color:#FFFFFF}
-.pnav.glass a:hover{background:rgba(255,255,255,.14)}
-.pnav.solid{background:#14111C;color:#FFFFFF}
-.pnav.solid a:hover{background:rgba(255,255,255,.12)}
-.pnav a.on{background:#F2622E;color:#14111C}
-@media (max-width:820px){.hide-sm{display:none !important}.pnav{font-size:14px}.pnav a{padding:7px 12px}}
-.p-badge{position:absolute;z-index:2;right:clamp(20px,6vw,110px);top:44%;width:clamp(110px,10vw,150px);aspect-ratio:1;transform:translateY(-50%) rotate(8deg);border-radius:50%;background:radial-gradient(circle at 35% 30%,#2A2433 0%,#15121C 70%);border:4px solid #F7832B;box-shadow:0 0 0 3px #15121C,0 0 0 7px #FFC23D,0 14px 34px rgba(0,0,0,.55);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Fredoka',system-ui,sans-serif;text-align:center;line-height:1}
-.p-badge b{font-weight:700;font-size:clamp(40px,3.8vw,58px);color:#FFF8EE;text-shadow:3px 3px 0 #D9401F}
-.p-badge span{margin-top:4px;font-weight:700;font-size:clamp(11px,1vw,15px);letter-spacing:.18em;text-transform:uppercase;color:#FFC23D}
-.p-badge i{font-style:normal;margin-top:4px;font-weight:600;font-size:clamp(8px,.7vw,10px);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,244,226,.75)}
-@media (max-width:820px){.p-badge{top:96px;transform:rotate(8deg);width:96px}.p-badge b{font-size:34px}.p-badge span{font-size:10px}.p-badge i{display:none}}
-.faq details{border-top:1px solid #ECE8E1;padding:20px 0}
-.faq details:first-child{border-top:0;padding-top:4px}
-.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:18px;color:#14111C}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:'+';font-size:26px;line-height:1;color:#F2622E;transition:transform .25s ease}
-.faq details[open] summary::after{transform:rotate(45deg)}
-.faq details p{margin:10px 0 0;font-size:16px;line-height:1.65;color:#4E4856}
+.meta{display:flex;justify-content:space-between;gap:10px;font-family:'Barlow',system-ui,sans-serif;font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#8E8794}
+.nav{display:flex;align-items:center;gap:30px;font-family:'Barlow',system-ui,sans-serif;font-weight:500;font-size:15px;letter-spacing:.1em;text-transform:uppercase}
+.nav a{text-decoration:none;color:#F5F3EF;padding:6px 0;border-bottom:1px solid transparent}
+.nav a:hover,.nav a.on{border-bottom-color:#F5F3EF}
+@media (max-width:820px){.hide-sm{display:none !important}.nav{gap:18px;font-size:13px}}
+.trust{display:flex;align-items:center;gap:16px}
+.mini{flex:0 0 auto;width:74px;height:74px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#2A2433 0%,#15121C 70%);border:3px solid #F7832B;box-shadow:0 0 0 2px #15121C,0 0 0 5px #FFC23D;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;transform:rotate(-8deg)}
+.mini b{font-family:'Fredoka',system-ui,sans-serif;font-weight:700;font-size:26px;color:#FFF8EE;text-shadow:2px 2px 0 #D9401F}
+.mini span{font-family:'Fredoka',system-ui,sans-serif;font-weight:700;font-size:8px;letter-spacing:.16em;color:#FFC23D;margin-top:2px}
+.goal{position:relative;display:block;aspect-ratio:1/1.05;border-radius:12px;overflow:hidden;text-decoration:none;background:linear-gradient(180deg,#F6EDE6 0%,#E3A27E 100%)}
+.goal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;filter:grayscale(.15) contrast(1.05);transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.goal:hover img{transform:scale(1.05)}
+.goal::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.6) 0%,rgba(0,0,0,0) 45%)}
+.goal span{position:absolute;z-index:1;left:24px;bottom:22px;font-family:'Barlow',system-ui,sans-serif;font-weight:500;font-size:clamp(20px,1.8vw,26px);letter-spacing:.04em;text-transform:uppercase;color:#FFFFFF;text-shadow:0 2px 14px rgba(0,0,0,.35)}
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(36px,5vw,80px);align-items:center}
+.feat .vis{position:relative;border-radius:18px;overflow:hidden;background:#000;border:1px solid rgba(245,243,239,.08)}
+.feat .vis img{display:block;width:100%;aspect-ratio:1.2;object-fit:cover}
+.strip{display:flex;align-items:center;gap:14px;padding:16px clamp(16px,2.4vw,28px);background:#18161C;border-top:1px solid rgba(245,243,239,.08);color:#E8E3DC;font-size:15px;line-height:1.4}
+.strip strong{color:#FFFFFF}
 .cmp{width:100%;border-collapse:collapse;font-size:16px}
-.cmp th,.cmp td{padding:16px 14px;text-align:left;border-bottom:1px solid #ECE8E1}
+.cmp th,.cmp td{padding:18px 16px;text-align:left;border-bottom:1px solid rgba(245,243,239,.08)}
 .cmp tr:last-child th,.cmp tr:last-child td{border-bottom:0}
-.cmp thead th{font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:15px;color:#7A7383}
-.cmp .us{background:#FFF1E8}
-.cmp thead .us{color:#C2410C;border-radius:10px 10px 0 0}
+.cmp thead th{font-family:'Barlow',system-ui,sans-serif;font-weight:500;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#8E8794}
+.cmp .us{background:rgba(242,98,46,.1)}
+.cmp thead .us{color:#F2622E;border-radius:10px 10px 0 0}
+.cmp tbody th{font-weight:500;color:#B9B3BE}
 .cmp td div{display:flex;align-items:center;gap:10px}
 .cmp svg{flex:0 0 auto}
 @media (max-width:600px){.cmp{font-size:14px}.cmp th,.cmp td{padding:12px 8px}.cmp td div{gap:6px}}
-.fnav{display:flex;flex-direction:column;gap:12px;font-size:15px}
-.fnav a{text-decoration:none;color:rgba(255,255,255,.72)}.fnav a:hover{color:#FFFFFF}
-.fnav .fh{font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:15px;color:#FFFFFF;margin-bottom:4px}
+.faq details{border-top:1px solid rgba(245,243,239,.1);padding:22px 0}
+.faq details:last-child{border-bottom:1px solid rgba(245,243,239,.1)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;font-family:'Barlow',system-ui,sans-serif;font-weight:500;font-size:19px;letter-spacing:.04em;text-transform:uppercase;color:#F5F3EF}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';font-size:26px;line-height:1;color:#F2622E;transition:transform .25s ease}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:10px 0 0;font-size:16px;line-height:1.65;color:#B9B3BE}
+.fnav{display:flex;flex-direction:column;gap:14px;font-size:15px;letter-spacing:.03em}
+.fnav a{text-decoration:none;color:#F5F3EF}.fnav a:hover{color:#F2622E}
+.fnav .fh{font-family:'Barlow',system-ui,sans-serif;font-weight:500;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#8E8794;margin-bottom:4px}
+.hov2{display:none}
+@media (max-width:820px){.hov2{display:block;position:absolute;inset:0;background:rgba(0,0,0,.5)}}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 </style>
 </head>
 <body>
-<div style="font-family: 'Nunito', system-ui, sans-serif; color: #14111C; background: #F3F2EF; overflow-x: hidden">
+<div style="font-family: 'Barlow', system-ui, sans-serif; color: #F5F3EF; background: #0C0B0E; overflow-x: hidden">
+
+  <div style="background: linear-gradient(90deg, #2A1408 0%, #5A2A10 50%, #2A1408 100%); text-align: center; padding: 11px 16px; font-family: 'Barlow', system-ui, sans-serif; font-weight: 500; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #F5F3EF; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">7g protein per serving<span class="hide-sm">&#160;&#160;·&#160;&#160;Made with real honey</span></div>
 
   <!-- HERO -->
-  <section id="top" style="position: relative; overflow: hidden; background: #000; color: #FFFFFF">
-    <header class="wrap" style="position: absolute; left: 0; right: 0; top: 0; z-index: 3; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px; padding-top: 16px; padding-bottom: 16px">
-      <a href="#top" aria-label="Toon Sauce home" style="display: block; line-height: 0; justify-self: start"><img src="/assets/logo.webp" alt="Toon Sauce" style="height: clamp(52px, 5vw, 68px); width: auto"></a>
-      <nav aria-label="Main" class="pnav glass"><a href="#sauces">Sauces</a><a href="/cartoons">Cartoons</a><a href="#different" class="hide-sm">Nutrition</a><a href="#faq" class="hide-sm">FAQ</a></nav>
-      <a href="/cool-ranch" aria-label="Cart, 0 items" style="justify-self: end; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-family: 'Fredoka', system-ui, sans-serif; font-weight: 600; color: #FFFFFF">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg>
+  <section id="top" style="position: relative; overflow: hidden; background: #000">
+    <header style="position: absolute; left: 0; right: 0; top: 0; z-index: 3">
+    <div class="wrap" style="display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px; padding-top: 14px; padding-bottom: 14px">
+      <nav aria-label="Main" class="nav"><a href="#sauces">Sauces</a><a href="/cartoons">Cartoons</a><a href="#different" class="hide-sm">Nutrition</a></nav>
+      <a href="#top" aria-label="Toon Sauce home" style="display: block; line-height: 0"><img src="/assets/logo.webp" alt="Toon Sauce" style="height: clamp(54px, 5vw, 72px); width: auto"></a>
+      <a href="/cool-ranch" aria-label="Cart, 0 items" style="justify-self: end; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-family: 'Barlow', system-ui, sans-serif; font-weight: 500; color: #F5F3EF">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg>
         <span>0</span>
       </a>
-    </header>
-    <img src="/assets/hero-pour2.jpg" alt="Thick golden sauce pouring over crispy fried chicken" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%">
-    <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,0) 22%), linear-gradient(0deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,0) 48%), linear-gradient(90deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,0) 55%)"></div>
-    <div class="p-badge" role="img" aria-label="7 grams of protein per serving"><b>7G</b><span>Protein</span><i>per serving</i></div>
-    <div class="wrap" style="position: relative; z-index: 1; min-height: clamp(600px, 92vh, 900px); display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; gap: 16px; padding-top: 120px; padding-bottom: clamp(72px, 9vh, 110px)">
-      <h1 class="h" style="color: #FFFFFF; font-size: clamp(42px, 5.6vw, 80px); line-height: 1; max-width: 12ch; text-shadow: 0 4px 30px rgba(0,0,0,.4)">Sauce just had a glow-up.</h1>
-      <p style="margin: 0; max-width: 460px; font-size: 18px; line-height: 1.55; color: rgba(255,255,255,.88)">7g of protein per serving, made with real honey. Big flavor for the food you already eat.</p>
+    </div>
+  </header>
+    <img src="/assets/hero-pour2.jpg" alt="Thick golden sauce pouring over crispy fried chicken" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 55%">
+    <div aria-hidden="true" class="hov" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.55) 38%, rgba(0,0,0,0) 70%), linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 22%, rgba(0,0,0,0) 80%, #0C0B0E 100%)"></div>
+    <div class="hov2" aria-hidden="true"></div>
+    <div class="wrap" style="position: relative; z-index: 1; min-height: clamp(640px, 94vh, 940px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 22px; padding-top: 130px; padding-bottom: 90px">
+      <span class="meta" style="font-size: 14px; color: #E8E3DC"><span style="color: #F2622E">●</span>&#160;&#160;Made with real honey · Non-GMO</span>
+      <h1 class="toon" style="margin: 0; font-size: clamp(50px, 6.6vw, 104px); line-height: .92; color: #F5F3EF; max-width: 11ch">Sauce just had a glow-up.</h1>
+      <p class="lede" style="max-width: 520px; color: #E8E3DC">High-protein sauces with big flavor. Built for chicken, bowls, wraps and everything in between.</p>
       <a href="#sauces" class="btn btn-o" style="margin-top: 6px">Shop the sauces</a>
+      <div class="trust" style="margin-top: 14px"><span class="mini" role="img" aria-label="7 grams of protein per serving"><b>7G</b><span>PROTEIN</span></span><p style="margin: 0; max-width: 300px; font-size: 16px; line-height: 1.45; color: #E8E3DC"><strong style="color: #FFFFFF">7g of protein</strong> in every serving, with fewer calories than typical sauce.</p></div>
     </div>
   </section>
 
-  <div style="position: relative; z-index: 2; margin-top: -28px; background: #F3F2EF; border-radius: 28px 28px 0 0; padding-bottom: clamp(56px, 7vw, 88px)">
-
-  <!-- SAUCES -->
-  <section id="sauces" aria-labelledby="s-h" class="wrap" style="padding-top: clamp(44px, 5vw, 64px)">
-    <div class="shead"><h2 id="s-h" class="h">Our Sauces</h2><a href="/cool-ranch" class="va">View all <span aria-hidden="true">›</span></a></div>
-    <div class="rail" tabindex="0" aria-label="Sauces">
-      <a href="/cool-ranch" class="card" style="position: relative">
-          <span style="position: absolute; left: 14px; top: 14px; padding: 5px 10px 4px; border-radius: 999px; background: #F2622E; font-family: 'Fredoka', system-ui, sans-serif; font-weight: 600; font-size: 12px; color: #14111C">Best seller</span>
-          <div style="padding: 48px 20px 18px; text-align: center">
-            <h3 class="h" style="font-size: 24px; line-height: 1.1">Cool Ranch</h3>
-            <p style="margin: 6px 0 0; font-size: 14px; color: #7A7383">Creamy &amp; herby · <strong style="color: #14111C">$12.99</strong></p>
-          </div>
-          <img src="/assets/cool-ranch-bottle.webp" alt="" style="aspect-ratio: 1 / 1.05; background: #000">
-        </a>
-      <a href="#sauces" class="card" style="position: relative">
-          <span style="position: absolute; left: 14px; top: 14px; padding: 5px 10px 4px; border-radius: 999px; background: #F2622E; font-family: 'Fredoka', system-ui, sans-serif; font-weight: 600; font-size: 12px; color: #14111C">New look</span>
-          <div style="padding: 48px 20px 18px; text-align: center">
-            <h3 class="h" style="font-size: 24px; line-height: 1.1">Gold Rush</h3>
-            <p style="margin: 6px 0 0; font-size: 14px; color: #7A7383">Sweet &amp; smoky · <strong style="color: #14111C">$12.99</strong></p>
-          </div>
-          <img src="/assets/gold-rush-bottle.webp" alt="" style="aspect-ratio: 1 / 1.05; background: #000">
-        </a>
-      <a href="#sauces" class="card" style="position: relative">
-          <span style="position: absolute; left: 14px; top: 14px; padding: 5px 10px 4px; border-radius: 999px; background: #F2622E; font-family: 'Fredoka', system-ui, sans-serif; font-weight: 600; font-size: 12px; color: #14111C">Best value</span>
-          <div style="padding: 48px 20px 18px; text-align: center">
-            <h3 class="h" style="font-size: 24px; line-height: 1.1">The Duo</h3>
-            <p style="margin: 6px 0 0; font-size: 14px; color: #7A7383">One of each · <strong style="color: #14111C">$25.98</strong></p>
-          </div>
-          <img src="/assets/packaging.webp" alt="" style="aspect-ratio: 1 / 1.05; background: #000">
-        </a>
+  <!-- WHY -->
+  <section aria-labelledby="why-h" class="wrap sec" style="padding-top: clamp(64px, 7vw, 96px)">
+    <div class="cen"><span class="lbl">Why Toon Sauce</span><h2 id="why-h" class="d">Only eat what you trust</h2></div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 24px">
+      <div class="card" style="padding: clamp(16px, 1.6vw, 26px); gap: 22px">
+        <img src="/assets/hero-pour2.jpg" alt="" style="aspect-ratio: 1.25; border-radius: 8px; object-position: 50% 55%">
+        <h3 class="d" style="font-size: clamp(20px, 1.8vw, 26px); font-weight: 400">Protein-packed</h3>
+        <p class="lede" style="font-size: 15px">Every serving brings 7g of protein, so the sauce pulls its weight instead of just adding calories.</p>
+      </div>
+      <div class="card" style="padding: clamp(16px, 1.6vw, 26px); gap: 22px">
+        <img src="/assets/hero-tenders.jpg" alt="" style="aspect-ratio: 1.25; border-radius: 8px; object-position: 60% 45%">
+        <h3 class="d" style="font-size: clamp(20px, 1.8vw, 26px); font-weight: 400">Made with real honey</h3>
+        <p class="lede" style="font-size: 15px">Real honey gives both flavors a smooth finish. Big flavor without the usual trade-off.</p>
+      </div>
+      <div class="card" style="padding: clamp(16px, 1.6vw, 26px); gap: 22px">
+        <img src="/assets/packaging.webp" alt="" style="aspect-ratio: 1.25; border-radius: 8px; object-position: 50% 50%">
+        <h3 class="d" style="font-size: clamp(20px, 1.8vw, 26px); font-weight: 400">Non-GMO, fewer calories</h3>
+        <p class="lede" style="font-size: 15px">Non-GMO ingredients and fewer calories than typical sauce. Flip the bottle and see for yourself.</p>
+      </div>
     </div>
   </section>
 
-  <!-- CARTOONS -->
+  <!-- SHOP BY CRAVING -->
+  <section aria-labelledby="crave-h" class="wrap sec">
+    <div class="cen"><span class="lbl">Shop by craving</span><h2 id="crave-h" class="d">What are you saucing tonight?</h2></div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 24px">
+      <a href="#sauces" class="goal"><img src="/assets/hero-pour2.jpg" alt="" style="object-position: 50% 60%"><span>Chicken <span aria-hidden="true" style="position: static">→</span></span></a>
+      <a href="#sauces" class="goal"><img src="/assets/hero-tenders.jpg" alt="" style="object-position: 60% 45%"><span>Tenders <span aria-hidden="true" style="position: static">→</span></span></a>
+      <a href="#sauces" class="goal"><img src="/assets/comic-1-p4.webp" alt="" style="object-position: 50% 70%"><span>Game day <span aria-hidden="true" style="position: static">→</span></span></a>
+      <a href="#sauces" class="goal"><img src="/assets/packaging.webp" alt="" style="object-position: 50% 50%; mix-blend-mode: normal"><span>Everything <span aria-hidden="true" style="position: static">→</span></span></a>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="sauces" aria-labelledby="sauces-h" class="wrap sec">
+    <div class="cen" style="margin-bottom: clamp(48px, 6vw, 80px)"><span class="lbl">The lineup</span><h2 id="sauces-h" class="d">Pick your flavor</h2></div>
+    <div style="display: flex; flex-direction: column; gap: clamp(80px, 9vw, 130px)">
+      <div class="feat"><div style="display: flex; flex-direction: column; gap: 22px; align-items: flex-start; ">
+        <span class="meta" style="font-size: 14px; color: #B9B3BE">Creamy &amp; herby /</span>
+        <h2 class="toon" style="margin: 0; font-size: clamp(44px, 5vw, 76px); line-height: .95; color: #F5F3EF">Cool Ranch</h2>
+        <p class="lede" style="max-width: 520px">Creamy, herby and chill. Made for wings, wraps and anything that needs to cool down.</p>
+        <p style="margin: 0; font-family: 'Barlow', system-ui, sans-serif; font-weight: 500; font-size: 15px; letter-spacing: .1em; text-transform: uppercase; color: #F5F3EF">7g protein &#8226; Real honey &#8226; Non-GMO</p>
+        <a href="/cool-ranch" class="btn btn-w" style="margin-top: 6px">Shop Cool Ranch · $12.99</a>
+      </div><div class="vis">
+        <img src="/assets/cool-ranch-bottle.webp" alt="Cool Ranch squeeze bottle">
+        <div class="strip"><span class="mini" role="img" aria-label="7 grams of protein per serving"><b>7G</b><span>PROTEIN</span></span><span><strong>7g of protein</strong> in every serving, made with real honey.</span></div>
+      </div></div>
+      <div class="feat"><div style="display: flex; flex-direction: column; gap: 22px; align-items: flex-start; order: 2;">
+        <span class="meta" style="font-size: 14px; color: #B9B3BE">Sweet &amp; smoky /</span>
+        <h2 class="toon" style="margin: 0; font-size: clamp(44px, 5vw, 76px); line-height: .95; color: #F5F3EF">Gold Rush</h2>
+        <p class="lede" style="max-width: 520px">Sweet, smoky and golden, made with real honey. The one that turns a plain bowl into the main event.</p>
+        <p style="margin: 0; font-family: 'Barlow', system-ui, sans-serif; font-weight: 500; font-size: 15px; letter-spacing: .1em; text-transform: uppercase; color: #F5F3EF">7g protein &#8226; Real honey &#8226; Non-GMO</p>
+        <a href="#sauces" class="btn btn-w" style="margin-top: 6px">Shop Gold Rush · $12.99</a>
+      </div><div class="vis">
+        <img src="/assets/gold-rush-bottle.webp" alt="Gold Rush squeeze bottle">
+        <div class="strip"><span class="mini" role="img" aria-label="7 grams of protein per serving"><b>7G</b><span>PROTEIN</span></span><span><strong>7g of protein</strong> in every serving, made with real honey.</span></div>
+      </div></div>
+      <div class="feat"><div style="display: flex; flex-direction: column; gap: 22px; align-items: flex-start; ">
+        <span class="meta" style="font-size: 14px; color: #B9B3BE">Best value /</span>
+        <h2 class="toon" style="margin: 0; font-size: clamp(44px, 5vw, 76px); line-height: .95; color: #F5F3EF">The Duo</h2>
+        <p class="lede" style="max-width: 520px">One Cool Ranch and one Gold Rush. Every plate covered.</p>
+        <p style="margin: 0; font-family: 'Barlow', system-ui, sans-serif; font-weight: 500; font-size: 15px; letter-spacing: .1em; text-transform: uppercase; color: #F5F3EF">Two bottles &#8226; Both flavors</p>
+        <a href="#sauces" class="btn btn-w" style="margin-top: 6px">Shop the Duo · $25.98</a>
+      </div><div class="vis">
+        <img src="/assets/packaging.webp" alt="The Duo squeeze bottle">
+        <div class="strip"><span class="mini" role="img" aria-label="7 grams of protein per serving"><b>7G</b><span>PROTEIN</span></span><span><strong>7g of protein</strong> in every serving, made with real honey.</span></div>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- STORIES -->
   <section aria-labelledby="c-h" class="wrap sec">
-    <div class="shead"><h2 id="c-h" class="h">Toon Stories</h2><a href="/cartoons" class="va">View all <span aria-hidden="true">›</span></a></div>
-    <div class="rail" tabindex="0" aria-label="Episode 01 panels">
-      <a href="/cartoons" class="card">
+    <div class="shead"><h2 id="c-h" class="d">Toon Stories</h2><a href="/cartoons" class="va">View all <span aria-hidden="true">›</span></a></div>
+    <div class="rail" tabindex="0" aria-label="Episode 01 panels"><a href="/cartoons" class="card">
           <img src="/assets/comic-1-p1.webp" alt="" style="aspect-ratio: 4 / 3; object-position: 50% 30%">
-          <div style="padding: 16px 16px 14px; display: flex; flex-direction: column; gap: 8px; flex: 1">
-            <h3 class="h" style="font-size: 18px; line-height: 1.25">Tired of boring meals?</h3>
-            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #4E4856; flex: 1">The cowboy has had enough of plain plates.</p>
+          <div style="padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1">
+            <h3 class="d" style="font-size: 18px; line-height: 1.2">Tired of boring meals?</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #B9B3BE; flex: 1">The cowboy has had enough of plain plates.</p>
             <div class="meta"><span>Episode 01</span><span>Panel 1</span></div>
           </div>
         </a><a href="/cartoons" class="card">
           <img src="/assets/comic-1-p2.webp" alt="" style="aspect-ratio: 4 / 3; object-position: 50% 30%">
-          <div style="padding: 16px 16px 14px; display: flex; flex-direction: column; gap: 8px; flex: 1">
-            <h3 class="h" style="font-size: 18px; line-height: 1.25">Get more protein...</h3>
-            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #4E4856; flex: 1">Straight to the gym, obviously.</p>
+          <div style="padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1">
+            <h3 class="d" style="font-size: 18px; line-height: 1.2">Get more protein...</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #B9B3BE; flex: 1">Straight to the gym, obviously.</p>
             <div class="meta"><span>Episode 01</span><span>Panel 2</span></div>
           </div>
         </a><a href="/cartoons" class="card">
           <img src="/assets/comic-1-p3.webp" alt="" style="aspect-ratio: 4 / 3; object-position: 50% 30%">
-          <div style="padding: 16px 16px 14px; display: flex; flex-direction: column; gap: 8px; flex: 1">
-            <h3 class="h" style="font-size: 18px; line-height: 1.25">...with better sauce.</h3>
-            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #4E4856; flex: 1">Gold Rush, straight from the bottle.</p>
+          <div style="padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1">
+            <h3 class="d" style="font-size: 18px; line-height: 1.2">...with better sauce.</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #B9B3BE; flex: 1">Gold Rush, straight from the bottle.</p>
             <div class="meta"><span>Episode 01</span><span>Panel 3</span></div>
           </div>
         </a><a href="/cartoons" class="card">
           <img src="/assets/comic-1-p4.webp" alt="" style="aspect-ratio: 4 / 3; object-position: 50% 30%">
-          <div style="padding: 16px 16px 14px; display: flex; flex-direction: column; gap: 8px; flex: 1">
-            <h3 class="h" style="font-size: 18px; line-height: 1.25">Because life's too short for boring food.</h3>
-            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #4E4856; flex: 1">Couch, wings, remote. Fully sauced.</p>
+          <div style="padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1">
+            <h3 class="d" style="font-size: 18px; line-height: 1.2">Because life's too short for boring food.</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #B9B3BE; flex: 1">Couch, wings, remote. Fully sauced.</p>
             <div class="meta"><span>Episode 01</span><span>Panel 4</span></div>
           </div>
         </a><a href="/cartoons" class="card">
           <img src="/assets/comic-1-p5.webp" alt="" style="aspect-ratio: 4 / 3; object-position: 50% 30%">
-          <div style="padding: 16px 16px 14px; display: flex; flex-direction: column; gap: 8px; flex: 1">
-            <h3 class="h" style="font-size: 18px; line-height: 1.25">Toon Sauce.</h3>
-            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #4E4856; flex: 1">The moment it all comes together.</p>
+          <div style="padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1">
+            <h3 class="d" style="font-size: 18px; line-height: 1.2">Toon Sauce.</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #B9B3BE; flex: 1">The moment it all comes together.</p>
             <div class="meta"><span>Episode 01</span><span>Panel 5</span></div>
           </div>
         </a><a href="/cartoons" class="card">
           <img src="/assets/comic-1-p6.webp" alt="" style="aspect-ratio: 4 / 3; object-position: 50% 30%">
-          <div style="padding: 16px 16px 14px; display: flex; flex-direction: column; gap: 8px; flex: 1">
-            <h3 class="h" style="font-size: 18px; line-height: 1.25">Save your chicken.</h3>
-            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #4E4856; flex: 1">The bottle that started it all.</p>
+          <div style="padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1">
+            <h3 class="d" style="font-size: 18px; line-height: 1.2">Save your chicken.</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #B9B3BE; flex: 1">The bottle that started it all.</p>
             <div class="meta"><span>Episode 01</span><span>Panel 6</span></div>
           </div>
-        </a>
-    </div>
+        </a></div>
   </section>
 
   <!-- CHARACTERS -->
-  <section id="characters" aria-labelledby="ch-h" class="wrap sec">
-    <div class="shead"><h2 id="ch-h" class="h">The Characters</h2><a href="/cartoons" class="va">View all <span aria-hidden="true">›</span></a></div>
+  <section id="characters" aria-labelledby="ch-h" class="wrap sec" style="padding-top: clamp(56px, 6vw, 80px)">
+    <div class="shead"><h2 id="ch-h" class="d">The Characters</h2><a href="/cartoons" class="va">View all <span aria-hidden="true">›</span></a></div>
     <div class="rail" tabindex="0" aria-label="Characters">
       <a href="/cool-ranch" class="card" style="text-align: center">
-          <div style="position: relative; height: 170px; background: #14111C">
-            <img src="/assets/cool-ranch-bottle.webp" alt="" style="height: 100%; object-position: 50% 40%; opacity: .9">
-            <span style="position: absolute; left: 50%; bottom: -44px; transform: translateX(-50%); width: 92px; height: 92px; border-radius: 50%; overflow: hidden; border: 4px solid #FFFFFF; background: #D9F1EF; box-shadow: 0 6px 16px rgba(20,17,28,.2)"><img src="/assets/mascot-cat.webp" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; transform: scale(1.35); transform-origin: 50% 12%"></span>
+          <div style="position: relative; height: 170px; background: #000">
+            <img src="/assets/cool-ranch-bottle.webp" alt="" style="height: 100%; object-position: 50% 40%; opacity: .75">
+            <span style="position: absolute; left: 50%; bottom: -44px; transform: translateX(-50%); width: 92px; height: 92px; border-radius: 50%; overflow: hidden; border: 4px solid #18161C; background: #D9F1EF"><img src="/assets/mascot-cat.webp" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; transform: scale(1.35); transform-origin: 50% 12%"></span>
           </div>
-          <div style="padding: 54px 16px 22px; display: flex; flex-direction: column; gap: 4px">
-            <span style="font-size: 13px; color: #7A7383">Cool Ranch</span>
-            <h3 class="h" style="font-size: 20px">The Cat</h3>
-            <span style="font-size: 13px; color: #4E4856">Bucket hat, gold chain</span>
+          <div style="padding: 54px 16px 24px; display: flex; flex-direction: column; gap: 6px">
+            <span class="meta" style="justify-content: center">Cool Ranch</span>
+            <h3 class="d" style="font-size: 22px">The Cat</h3>
+            <span style="font-size: 14px; color: #B9B3BE">Bucket hat, gold chain</span>
           </div>
         </a>
       <a href="/cartoons" class="card" style="text-align: center">
-          <div style="position: relative; height: 170px; background: #14111C">
-            <img src="/assets/gold-rush-bottle.webp" alt="" style="height: 100%; object-position: 50% 40%; opacity: .9">
-            <span style="position: absolute; left: 50%; bottom: -44px; transform: translateX(-50%); width: 92px; height: 92px; border-radius: 50%; overflow: hidden; border: 4px solid #FFFFFF; background: #FFE3BF; box-shadow: 0 6px 16px rgba(20,17,28,.2)"><img src="/assets/comic-1-p2.webp" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; transform: scale(1.9); transform-origin: 66% 38%"></span>
+          <div style="position: relative; height: 170px; background: #000">
+            <img src="/assets/gold-rush-bottle.webp" alt="" style="height: 100%; object-position: 50% 40%; opacity: .75">
+            <span style="position: absolute; left: 50%; bottom: -44px; transform: translateX(-50%); width: 92px; height: 92px; border-radius: 50%; overflow: hidden; border: 4px solid #18161C; background: #FFE3BF"><img src="/assets/comic-1-p2.webp" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; transform: scale(1.9); transform-origin: 66% 38%"></span>
           </div>
-          <div style="padding: 54px 16px 22px; display: flex; flex-direction: column; gap: 4px">
-            <span style="font-size: 13px; color: #7A7383">Gold Rush</span>
-            <h3 class="h" style="font-size: 20px">The Cowboy</h3>
-            <span style="font-size: 13px; color: #4E4856">Star of Episode 01</span>
-          </div>
-        </a>
-      <a href="#characters" class="card" style="text-align: center">
-          <div style="position: relative; height: 170px; background: #14111C">
-            <img src="/assets/packaging.webp" alt="" style="height: 100%; object-position: 50% 50%; opacity: .9">
-            <span style="position: absolute; left: 50%; bottom: -44px; transform: translateX(-50%); width: 92px; height: 92px; border-radius: 50%; overflow: hidden; border: 4px solid #FFFFFF; background: #FFF3C4; box-shadow: 0 6px 16px rgba(20,17,28,.2)"><img src="/assets/mascot-bee.webp" alt="" style="width: 100%; height: 100%; object-fit: contain; object-position: 50% 30%; "></span>
-          </div>
-          <div style="padding: 54px 16px 22px; display: flex; flex-direction: column; gap: 4px">
-            <span style="font-size: 13px; color: #7A7383">Coming soon</span>
-            <h3 class="h" style="font-size: 20px">The Bee</h3>
-            <span style="font-size: 13px; color: #4E4856">Flavor in the works</span>
+          <div style="padding: 54px 16px 24px; display: flex; flex-direction: column; gap: 6px">
+            <span class="meta" style="justify-content: center">Gold Rush</span>
+            <h3 class="d" style="font-size: 22px">The Cowboy</h3>
+            <span style="font-size: 14px; color: #B9B3BE">Star of Episode 01</span>
           </div>
         </a>
       <a href="#characters" class="card" style="text-align: center">
-          <div style="position: relative; height: 170px; background: #14111C">
-            <img src="/assets/packaging.webp" alt="" style="height: 100%; object-position: 20% 50%; opacity: .9">
-            <span style="position: absolute; left: 50%; bottom: -44px; transform: translateX(-50%); width: 92px; height: 92px; border-radius: 50%; overflow: hidden; border: 4px solid #FFFFFF; background: #FFD9CF; box-shadow: 0 6px 16px rgba(20,17,28,.2)"><img src="/assets/mascot-pepper.webp" alt="" style="width: 100%; height: 100%; object-fit: contain; object-position: 50% 40%; "></span>
+          <div style="position: relative; height: 170px; background: #000">
+            <img src="/assets/packaging.webp" alt="" style="height: 100%; object-position: 50% 50%; opacity: .75">
+            <span style="position: absolute; left: 50%; bottom: -44px; transform: translateX(-50%); width: 92px; height: 92px; border-radius: 50%; overflow: hidden; border: 4px solid #18161C; background: #FFF3C4"><img src="/assets/mascot-bee.webp" alt="" style="width: 100%; height: 100%; object-fit: contain; object-position: 50% 30%; "></span>
           </div>
-          <div style="padding: 54px 16px 22px; display: flex; flex-direction: column; gap: 4px">
-            <span style="font-size: 13px; color: #7A7383">Coming soon</span>
-            <h3 class="h" style="font-size: 20px">The Pepper</h3>
-            <span style="font-size: 13px; color: #4E4856">Flavor in the works</span>
+          <div style="padding: 54px 16px 24px; display: flex; flex-direction: column; gap: 6px">
+            <span class="meta" style="justify-content: center">Coming soon</span>
+            <h3 class="d" style="font-size: 22px">The Bee</h3>
+            <span style="font-size: 14px; color: #B9B3BE">Flavor in the works</span>
+          </div>
+        </a>
+      <a href="#characters" class="card" style="text-align: center">
+          <div style="position: relative; height: 170px; background: #000">
+            <img src="/assets/packaging.webp" alt="" style="height: 100%; object-position: 20% 50%; opacity: .75">
+            <span style="position: absolute; left: 50%; bottom: -44px; transform: translateX(-50%); width: 92px; height: 92px; border-radius: 50%; overflow: hidden; border: 4px solid #18161C; background: #FFD9CF"><img src="/assets/mascot-pepper.webp" alt="" style="width: 100%; height: 100%; object-fit: contain; object-position: 50% 40%; "></span>
+          </div>
+          <div style="padding: 54px 16px 24px; display: flex; flex-direction: column; gap: 6px">
+            <span class="meta" style="justify-content: center">Coming soon</span>
+            <h3 class="d" style="font-size: 22px">The Pepper</h3>
+            <span style="font-size: 14px; color: #B9B3BE">Flavor in the works</span>
           </div>
         </a>
     </div>
   </section>
 
   <!-- DIFFERENT -->
-  <section id="different" aria-labelledby="d-h" class="wrap sec">
-    <div class="shead"><h2 id="d-h" class="h">How We're Different</h2></div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 20px; align-items: stretch">
-      <div class="card" style="padding: clamp(14px, 2vw, 24px); overflow-x: auto">
+  <section id="different" aria-labelledby="d-h" style="margin-top: clamp(80px, 9vw, 128px); background: #141217; padding: clamp(72px, 8vw, 110px) 0">
+    <div class="wrap">
+      <div class="cen"><span class="lbl">The difference</span><h2 id="d-h" class="d">How we're different</h2></div>
+      <div class="card" style="max-width: 920px; margin: 0 auto; padding: clamp(12px, 2vw, 28px); overflow-x: auto; background: #1C1A21">
         <table class="cmp">
           <thead><tr><th scope="col"><span class="sr">Feature</span></th><th scope="col" class="us">Toon Sauce</th><th scope="col">Typical sauce</th></tr></thead>
           <tbody>
-            <tr><th scope="row" style="font-weight: 600; color: #4E4856">Protein</th><td class="us"><div><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#F2622E"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#14111C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>7g per serving</div></td><td><div><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#A39CAB" stroke-width="1.5"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#A39CAB" stroke-width="1.8" stroke-linecap="round"></path></svg>Usually under 1g</div></td></tr>
-            <tr><th scope="row" style="font-weight: 600; color: #4E4856">Sweetener</th><td class="us"><div><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#F2622E"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#14111C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Real honey</div></td><td><div><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#A39CAB" stroke-width="1.5"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#A39CAB" stroke-width="1.8" stroke-linecap="round"></path></svg>Often added sugars</div></td></tr>
-            <tr><th scope="row" style="font-weight: 600; color: #4E4856">Calories</th><td class="us"><div><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#F2622E"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#14111C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Fewer</div></td><td><div><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#A39CAB" stroke-width="1.5"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#A39CAB" stroke-width="1.8" stroke-linecap="round"></path></svg>More</div></td></tr>
-            <tr><th scope="row" style="font-weight: 600; color: #4E4856">Ingredients</th><td class="us"><div><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#F2622E"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#14111C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Non-GMO</div></td><td><div><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#A39CAB" stroke-width="1.5"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#A39CAB" stroke-width="1.8" stroke-linecap="round"></path></svg>Not always</div></td></tr>
+            <tr><th scope="row">Protein</th><td class="us"><div><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#F2622E"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#14111C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>7g per serving</div></td><td><div><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#6E6875" stroke-width="1.5"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#6E6875" stroke-width="1.8" stroke-linecap="round"></path></svg>Usually under 1g</div></td></tr>
+            <tr><th scope="row">Sweetener</th><td class="us"><div><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#F2622E"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#14111C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Real honey</div></td><td><div><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#6E6875" stroke-width="1.5"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#6E6875" stroke-width="1.8" stroke-linecap="round"></path></svg>Often added sugars</div></td></tr>
+            <tr><th scope="row">Calories</th><td class="us"><div><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#F2622E"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#14111C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Fewer</div></td><td><div><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#6E6875" stroke-width="1.5"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#6E6875" stroke-width="1.8" stroke-linecap="round"></path></svg>More</div></td></tr>
+            <tr><th scope="row">Ingredients</th><td class="us"><div><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#F2622E"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#14111C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Non-GMO</div></td><td><div><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#6E6875" stroke-width="1.5"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#6E6875" stroke-width="1.8" stroke-linecap="round"></path></svg>Not always</div></td></tr>
           </tbody>
         </table>
-      </div>
-      <div class="card" style="position: relative; min-height: 320px; justify-content: flex-end; color: #FFFFFF">
-        <img src="/assets/hero-tenders.jpg" alt="Crispy chicken tenders with golden sauce splashing" style="position: absolute; inset: 0; height: 100%; object-position: 60% 45%">
-        <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,0) 60%)"></div>
-        <div style="position: relative; padding: 24px; display: flex; flex-direction: column; gap: 10px; align-items: flex-start">
-          <h3 class="h" style="color: #FFFFFF; font-size: 28px; line-height: 1.1">Packed with protein.<br>Made with real honey.</h3>
-          <a href="#sauces" class="btn btn-o" style="height: 42px; font-size: 15px">Shop now</a>
-        </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
   <section id="faq" aria-labelledby="f-h" class="wrap sec">
-    <div class="shead"><h2 id="f-h" class="h">FAQs</h2></div>
-    <div class="card faq" style="padding: clamp(20px, 3vw, 36px)">
-      <details open><summary>How much protein is in each serving?</summary><p>7g of protein per serving, in both Cool Ranch and Gold Rush.</p></details>
-      <details><summary>Is it really made with real honey?</summary><p>Yes. Real honey gives both flavors their smooth finish.</p></details>
-      <details><summary>Is Toon Sauce non-GMO?</summary><p>Yes, our sauces are non-GMO.</p></details>
-      <details><summary>What do I put it on?</summary><p>Chicken, wings, burgers, rice bowls, wraps, fries and salads.</p></details>
-      <details><summary>How fast does it ship?</summary><p>[SHIPPING DETAILS]</p></details>
-    </div>
-  </section>
-
-  </div>
-
-  <!-- MORE FROM -->
-  <section aria-labelledby="m-h" style="background: #1B1726; color: #FFFFFF; padding: clamp(64px, 8vw, 104px) 0">
-    <div class="wrap">
-      <h2 id="m-h" class="h" style="color: #FFFFFF; text-align: center; font-size: clamp(28px, 2.8vw, 38px); margin-bottom: 36px">More from Toon Sauce</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 20px">
-        <a href="/cartoons" class="card">
-          <img src="/assets/comic-1-p5.webp" alt="" style="aspect-ratio: 4 / 3; object-position: 50% 30%">
-          <div style="padding: 16px 16px 14px; display: flex; flex-direction: column; gap: 8px; flex: 1">
-            <h3 class="h" style="font-size: 18px; line-height: 1.25">Episode 01: Save your chicken</h3>
-            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #4E4856; flex: 1">The Gold Rush cowboy takes on boring food in six panels.</p>
-            <div class="meta"><span>Cartoons</span><span>6 panels</span></div>
-          </div>
-        </a>
-        <a href="#different" class="card">
-          <img src="/assets/hero-pour2.jpg" alt="" style="aspect-ratio: 4 / 3; object-position: 50% 55%">
-          <div style="padding: 16px 16px 14px; display: flex; flex-direction: column; gap: 8px; flex: 1">
-            <h3 class="h" style="font-size: 18px; line-height: 1.25">7g of protein in every serving</h3>
-            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #4E4856; flex: 1">How we built big flavor around protein and real honey.</p>
-            <div class="meta"><span>Nutrition</span><span>2 min read</span></div>
-          </div>
-        </a>
-        <a href="#characters" class="card">
-          <img src="/assets/packaging.webp" alt="" style="aspect-ratio: 4 / 3; object-position: 50% 50%">
-          <div style="padding: 16px 16px 14px; display: flex; flex-direction: column; gap: 8px; flex: 1">
-            <h3 class="h" style="font-size: 18px; line-height: 1.25">Meet the crew</h3>
-            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #4E4856; flex: 1">Every bottle has a character. Here is who is in the lineup.</p>
-            <div class="meta"><span>Characters</span><span>4 characters</span></div>
-          </div>
-        </a>
-        <a href="/cool-ranch" class="card">
-          <img src="/assets/cool-ranch-bottle.webp" alt="" style="aspect-ratio: 4 / 3; object-position: 50% 40%">
-          <div style="padding: 16px 16px 14px; display: flex; flex-direction: column; gap: 8px; flex: 1">
-            <h3 class="h" style="font-size: 18px; line-height: 1.25">Cool Ranch, up close</h3>
-            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #4E4856; flex: 1">Creamy, herby and cool. Everything on the label.</p>
-            <div class="meta"><span>Sauces</span><span>$12.99</span></div>
-          </div>
-        </a>
-      </div>
-
-      <div id="join" class="card" style="margin-top: 32px; padding: clamp(28px, 4vw, 48px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 24px; align-items: center">
-        <div style="display: flex; flex-direction: column; gap: 8px">
-          <h2 class="h" style="font-size: clamp(26px, 2.6vw, 34px)">Join the Sauce Club</h2>
-          <p class="lede" style="font-size: 16px">New flavors and restocks, first. No spam, just sauce.</p>
-        </div>
-        <form style="display: flex; flex-wrap: wrap; gap: 10px">
-          <label for="email" class="sr">Email address</label>
-          <input id="email" type="email" placeholder="Your email" style="flex: 1 1 220px; min-width: 0; height: 48px; padding: 0 20px; font: inherit; font-size: 15px; color: #14111C; background: #F3F2EF; border: 1px solid #DDD9D2; border-radius: 999px">
-          <button type="submit" class="btn btn-o">Subscribe</button>
-        </form>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: clamp(32px, 5vw, 72px); align-items: start">
+      <div style="display: flex; flex-direction: column; gap: 18px; align-items: flex-start"><span class="lbl">FAQs</span><h2 id="f-h" class="d" style="font-size: clamp(32px, 3.6vw, 52px); font-weight: 400">Got questions?<br>We've got sauce.</h2></div>
+      <div class="faq">
+        <details open><summary>How much protein per serving?</summary><p>7g of protein per serving, in both Cool Ranch and Gold Rush.</p></details>
+        <details><summary>Is it really made with real honey?</summary><p>Yes. Real honey gives both flavors their smooth finish.</p></details>
+        <details><summary>Is Toon Sauce non-GMO?</summary><p>Yes, our sauces are non-GMO.</p></details>
+        <details><summary>What do I put it on?</summary><p>Chicken, wings, burgers, rice bowls, wraps, fries and salads.</p></details>
+        <details><summary>How fast does it ship?</summary><p>[SHIPPING DETAILS]</p></details>
       </div>
     </div>
   </section>
 
-  <footer style="background: #14111C; color: #FFFFFF">
-    <div class="wrap" style="padding-top: 64px; padding-bottom: 32px; display: flex; flex-direction: column; gap: 48px">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: 36px">
-        <div style="display: flex; flex-direction: column; gap: 12px"><img src="/assets/logo.webp" alt="Toon Sauce" style="height: 88px; width: auto; align-self: flex-start"><span style="font-size: 14px; color: rgba(255,255,255,.6)">Sauce just had a glow-up.</span></div>
-        <nav aria-label="Sauces" class="fnav"><span class="fh">Sauces</span><a href="/cool-ranch">Cool Ranch</a><a href="/#sauces">Gold Rush</a><a href="/#sauces">The Duo</a></nav>
-        <nav aria-label="Discover" class="fnav"><span class="fh">Discover</span><a href="/cartoons">Cartoons</a><a href="/#characters">Characters</a><a href="/#different">Nutrition</a></nav>
-        <nav aria-label="Help" class="fnav"><span class="fh">Help</span><a href="/#faq">FAQ</a><a href="#">Shipping</a><a href="#">Contact</a></nav>
-        <nav aria-label="Follow" class="fnav"><span class="fh">Follow</span><a href="#">Instagram</a><a href="#">TikTok</a></nav>
-      </div>
-      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.1); font-size: 13px; color: rgba(255,255,255,.55)">
-        <span>© 2026 Toon Sauce. All rights reserved.</span>
+  <!-- NEWSLETTER -->
+  <section id="join" aria-labelledby="j-h" class="wrap sec">
+    <div class="card" style="padding: clamp(32px, 5vw, 64px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 28px; align-items: center; background: linear-gradient(120deg, #2A1408 0%, #18161C 70%)">
+      <div style="display: flex; flex-direction: column; gap: 12px"><span class="lbl" style="align-self: flex-start">The Sauce Club</span><h2 id="j-h" class="d" style="font-size: clamp(30px, 3vw, 44px); font-weight: 400">Join the club</h2><p class="lede">New flavors and restocks, first. No spam, just sauce.</p></div>
+      <form style="display: flex; flex-wrap: wrap; gap: 12px">
+        <label for="email" class="sr">Email address</label>
+        <input id="email" type="email" placeholder="Your email" style="flex: 1 1 220px; min-width: 0; height: 54px; padding: 0 22px; font: inherit; font-size: 15px; color: #F5F3EF; background: rgba(245,243,239,.06); border: 1px solid rgba(245,243,239,.2); border-radius: 999px">
+        <button type="submit" class="btn btn-o" style="padding: 0 30px">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <footer style="background: #0C0B0E; color: #F5F3EF; overflow: hidden">
+    <div class="wrap" style="padding-top: clamp(72px, 8vw, 110px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: 36px">
+      <nav aria-label="Sauces" class="fnav"><span class="fh">Sauces</span><a href="/cool-ranch">Cool Ranch</a><a href="/#sauces">Gold Rush</a><a href="/#sauces">The Duo</a></nav>
+      <nav aria-label="Discover" class="fnav"><span class="fh">Discover</span><a href="/cartoons">Cartoons</a><a href="/#characters">Characters</a><a href="/#different">Nutrition</a></nav>
+      <nav aria-label="Help" class="fnav"><span class="fh">Help</span><a href="/#faq">FAQ</a><a href="#">Shipping</a><a href="#">Contact</a></nav>
+      <nav aria-label="Follow" class="fnav"><span class="fh">Follow</span><a href="#">Instagram</a><a href="#">TikTok</a></nav>
+    </div>
+    <div aria-hidden="true" class="toon" style="text-align: center; font-size: clamp(64px, 15.5vw, 250px); line-height: .9; color: #2B2830; letter-spacing: .02em; margin: clamp(48px, 6vw, 80px) 0 0; white-space: nowrap">Toon Sauce</div>
+    <div style="border-top: 1px solid rgba(245,243,239,.08)">
+      <div class="wrap" style="padding-top: 26px; padding-bottom: 26px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; font-family: 'Barlow', system-ui, sans-serif; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: #8E8794">
+        <img src="/assets/logo.webp" alt="Toon Sauce" style="height: 44px; width: auto">
+        <span>© 2026 - Toon Sauce</span>
         <span style="display: flex; gap: 22px"><a href="#" style="text-decoration: none">Privacy</a><a href="#" style="text-decoration: none">Terms</a></span>
       </div>
     </div>
