@@ -74,8 +74,8 @@ a.card:hover{transform:translateY(-4px);background:#1F1C24}
 .feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(36px,5vw,80px);align-items:center}
 .feat .vis{position:relative;border-radius:18px;overflow:hidden;border:1px solid rgba(245,243,239,.08)}
 .feat .stage{display:flex;align-items:center;justify-content:center;aspect-ratio:1.15;padding:4% 0}
-.feat .bottle{display:block;height:100%;width:auto;max-width:100%;object-fit:contain;animation:floaty 5s ease-in-out infinite;transition:transform .5s ease;}
-.feat .vis:hover .bottle{transform:scale(1.04) rotate(-2deg)}
+.feat .bottle{display:block;height:92%;width:auto;max-width:100%;object-fit:contain;animation:floaty 5s ease-in-out infinite;transform:rotate(var(--tilt,-10deg));transition:transform .5s ease;}
+.feat .vis:hover .bottle{transform:rotate(calc(var(--tilt,-10deg) * .4)) scale(1.04)}
 @keyframes floaty{0%,100%{translate:0 0}50%{translate:0 -12px}}
 .bigword{position:absolute;z-index:0;left:50%;top:44%;transform:translate(-50%,-50%) rotate(-8deg);font-family:'Fredoka',system-ui,sans-serif;font-weight:700;font-size:clamp(120px,17vw,260px);line-height:1;color:transparent;white-space:nowrap;pointer-events:none}
 .drop{position:absolute;z-index:0;border-radius:50%;opacity:.8;box-shadow:0 0 18px currentColor;animation:bob2 4s ease-in-out infinite}
