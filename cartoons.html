@@ -33,164 +33,162 @@ src="https://www.facebook.com/tr?id=1495416545782879&ev=PageView&noscript=1"
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#0E0C12}
+body{margin:0;background:#F3F2EF}
 a{color:inherit}
-.toon{font-family:'Fredoka',system-ui,sans-serif;font-weight:700;letter-spacing:.02em;text-transform:uppercase}
-.h-gold{color:#FFC23D;text-shadow:3px 3px 0 #D9401F,4px 4px 0 #15121C}
-.wrap{max-width:1280px;box-sizing:border-box;margin:0 auto;padding-left:clamp(20px,4vw,56px);padding-right:clamp(20px,4vw,56px)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:4px 26px 0;border-radius:14px;font-family:'Fredoka',system-ui,sans-serif;font-weight:700;font-size:20px;letter-spacing:.03em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:2px solid #15121C;transition:transform .12s ease,box-shadow .12s ease}
-.btn:hover{transform:translateY(2px)}
-.btn-gold{background:#FFC23D;color:#15121C;box-shadow:0 5px 0 #B8341A}
-.btn-gold:hover{box-shadow:0 3px 0 #B8341A}
-.btn-ink{background:#15121C;color:#FFC23D;box-shadow:0 5px 0 #000}
-.pdp{display:grid;grid-template-columns:minmax(0,1fr);gap:48px;align-items:start}
-@media (min-width:960px){.pdp{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:72px}}
-.wave{display:block;width:100%;height:clamp(36px,5vw,72px)}
-.logo-wrap{position:relative;display:inline-block;line-height:0}
-.pro-tag{position:absolute;right:97%;top:14%;font-family:"Fredoka",system-ui,sans-serif;font-size:calc(var(--h) * .3);line-height:1;letter-spacing:.04em;text-transform:uppercase;color:#FFF4E2;background:#D9401F;border:2px solid #15121C;border-radius:.3em;padding:.22em .38em .08em;transform:rotate(-12deg);box-shadow:2px 2px 0 #15121C}
-@media (max-width:820px){.hide-sm{display:none !important}}
-.eb{margin:0;font-family:'Fredoka',system-ui,sans-serif;font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#F7832B}
-.h2{margin:0;font-family:'Fredoka',system-ui,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.01em;line-height:.95;font-size:clamp(36px,4.4vw,62px);color:#FFF8EE}
-.lede{margin:0;max-width:520px;font-size:17px;line-height:1.7;color:rgba(255,244,226,.72)}
-.sec{padding-top:clamp(88px,10vw,140px);padding-bottom:clamp(88px,10vw,140px)}
-.head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;margin-bottom:56px}
-.pill{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 30px;border-radius:999px;font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:13px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .25s ease,color .25s ease,border-color .25s ease}
-.pill-solid{background:#FFF4E2;color:#15121C;border:1px solid #FFF4E2}
-.pill-solid:hover{background:#FFC23D;border-color:#FFC23D}
-.pill-line{background:transparent;color:#FFF4E2;border:1px solid rgba(255,244,226,.35)}
-.pill-line:hover{border-color:#FFF4E2}
-.card{position:relative;display:flex;flex-direction:column;gap:22px;padding:14px 14px 26px;border-radius:28px;background:#1B1722;border:1px solid rgba(255,244,226,.07)}
-.card .ph{display:block;overflow:hidden;border-radius:20px;background:#000}
-.card .ph img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
-.card:hover .ph img{transform:scale(1.04)}
-.card .row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:0 10px}
-.card h3{margin:0;font-family:'Fredoka',system-ui,sans-serif;font-weight:700;font-size:24px;text-transform:uppercase;letter-spacing:.02em;color:#FFF8EE}
-.card .pr{font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:20px;color:#FFF8EE}
-.card p{flex:1;margin:-12px 10px 0;font-size:15px;line-height:1.6;color:rgba(255,244,226,.6)}
-.card .pill{margin:0 10px}
-.tag{position:absolute;z-index:1;left:30px;top:30px;padding:8px 14px 7px;border-radius:999px;background:rgba(11,10,14,.6);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);font-family:'Fredoka',system-ui,sans-serif;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#FFF8EE}
-.stat{display:flex;flex-direction:column;align-items:center;gap:10px;padding:34px 20px;border-radius:24px;background:#1B1722;border:1px solid rgba(255,244,226,.07);text-align:center}
-.stat b{font-family:'Fredoka',system-ui,sans-serif;font-weight:700;font-size:clamp(34px,3.4vw,48px);line-height:1;color:#FFF8EE}
-.stat span{font-family:'Fredoka',system-ui,sans-serif;font-size:12px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#F7832B}
-.step{display:flex;flex-direction:column;gap:14px;padding-top:28px;border-top:1px solid rgba(255,244,226,.12)}
-.step .n{font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:13px;letter-spacing:.24em;color:#F7832B}
-.step h3{margin:0;font-family:'Fredoka',system-ui,sans-serif;font-weight:700;font-size:26px;text-transform:uppercase;color:#FFF8EE}
-.step p{margin:0;font-size:16px;line-height:1.65;color:rgba(255,244,226,.62)}
+*{box-sizing:border-box}
+.wrap{max-width:1280px;margin:0 auto;padding-left:clamp(20px,4vw,56px);padding-right:clamp(20px,4vw,56px)}
+.h{margin:0;font-family:'Fredoka',system-ui,sans-serif;font-weight:600;letter-spacing:-.01em;color:#14111C}
+.lede{margin:0;font-size:17px;line-height:1.6;color:#4E4856}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 26px;border-radius:999px;font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:16px;text-decoration:none;cursor:pointer;border:0;transition:background .2s ease,transform .2s ease}
+.btn-o{background:#F2622E;color:#14111C}.btn-o:hover{background:#FF7A47;transform:translateY(-1px)}
+.btn-d{background:#14111C;color:#FFFFFF}.btn-d:hover{background:#2A2533}
+.va{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 16px;border-radius:999px;background:#FFFFFF;border:1px solid #DDD9D2;font-family:'Fredoka',system-ui,sans-serif;font-weight:500;font-size:14px;color:#14111C;text-decoration:none}
+.va:hover{border-color:#14111C}
+.shead{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px}
+.shead h2{font-size:clamp(26px,2.6vw,34px)}
+.rail{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 4px 20px;margin:0 -4px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.rail>*{flex:0 0 clamp(250px,22vw,290px);scroll-snap-align:start}
+.card{display:flex;flex-direction:column;background:#FFFFFF;border-radius:14px;overflow:hidden;text-decoration:none;color:#14111C;box-shadow:0 1px 2px rgba(20,17,28,.06),0 6px 20px rgba(20,17,28,.06);transition:transform .3s ease,box-shadow .3s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 2px 4px rgba(20,17,28,.08),0 14px 34px rgba(20,17,28,.12)}
+.card img{display:block;width:100%;object-fit:cover}
+.meta{display:flex;justify-content:space-between;gap:10px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#7A7383}
+.sec{padding-top:clamp(56px,7vw,88px)}
+.pnav{display:flex;align-items:center;gap:4px;padding:5px;border-radius:999px;font-family:'Fredoka',system-ui,sans-serif;font-weight:500;font-size:15px}
+.pnav a{padding:8px 16px;border-radius:999px;text-decoration:none}
+.pnav.glass{background:rgba(20,17,28,.45);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);color:#FFFFFF}
+.pnav.glass a:hover{background:rgba(255,255,255,.14)}
+.pnav.solid{background:#14111C;color:#FFFFFF}
+.pnav.solid a:hover{background:rgba(255,255,255,.12)}
+.pnav a.on{background:#F2622E;color:#14111C}
+@media (max-width:820px){.hide-sm{display:none !important}.pnav{font-size:14px}.pnav a{padding:7px 12px}}
+.p-badge{position:absolute;z-index:2;right:clamp(20px,6vw,110px);top:44%;width:clamp(110px,10vw,150px);aspect-ratio:1;transform:translateY(-50%) rotate(8deg);border-radius:50%;background:radial-gradient(circle at 35% 30%,#2A2433 0%,#15121C 70%);border:4px solid #F7832B;box-shadow:0 0 0 3px #15121C,0 0 0 7px #FFC23D,0 14px 34px rgba(0,0,0,.55);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Fredoka',system-ui,sans-serif;text-align:center;line-height:1}
+.p-badge b{font-weight:700;font-size:clamp(40px,3.8vw,58px);color:#FFF8EE;text-shadow:3px 3px 0 #D9401F}
+.p-badge span{margin-top:4px;font-weight:700;font-size:clamp(11px,1vw,15px);letter-spacing:.18em;text-transform:uppercase;color:#FFC23D}
+.p-badge i{font-style:normal;margin-top:4px;font-weight:600;font-size:clamp(8px,.7vw,10px);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,244,226,.75)}
+@media (max-width:820px){.p-badge{top:96px;transform:rotate(8deg);width:96px}.p-badge b{font-size:34px}.p-badge span{font-size:10px}.p-badge i{display:none}}
+.faq details{border-top:1px solid #ECE8E1;padding:20px 0}
+.faq details:first-child{border-top:0;padding-top:4px}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:18px;color:#14111C}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';font-size:26px;line-height:1;color:#F2622E;transition:transform .25s ease}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:10px 0 0;font-size:16px;line-height:1.65;color:#4E4856}
+.cmp{width:100%;border-collapse:collapse;font-size:16px}
+.cmp th,.cmp td{padding:16px 14px;text-align:left;border-bottom:1px solid #ECE8E1}
+.cmp tr:last-child th,.cmp tr:last-child td{border-bottom:0}
+.cmp thead th{font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:15px;color:#7A7383}
+.cmp .us{background:#FFF1E8}
+.cmp thead .us{color:#C2410C;border-radius:10px 10px 0 0}
+.cmp td div{display:flex;align-items:center;gap:10px}
+.cmp svg{flex:0 0 auto}
+@media (max-width:600px){.cmp{font-size:14px}.cmp th,.cmp td{padding:12px 8px}.cmp td div{gap:6px}}
 .fnav{display:flex;flex-direction:column;gap:12px;font-size:15px}
-.fnav a{text-decoration:none;color:rgba(255,244,226,.72)}.fnav a:hover{color:#FFF8EE}
-.fnav .eb{margin-bottom:6px}
-.thumb{padding:0;border:1px solid rgba(255,244,226,.12);border-radius:14px;overflow:hidden;background:#000;cursor:pointer}
-.thumb.on{border-color:#FFF4E2}
-.thumb img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
-.chip{padding:9px 14px 8px;border-radius:999px;border:1px solid rgba(255,244,226,.18);font-family:'Fredoka',system-ui,sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,244,226,.85)}
-.acc{border-top:1px solid rgba(255,244,226,.1);padding:22px 0;display:flex;flex-direction:column;gap:10px}
-.acc h2{margin:0}
-.acc p,.acc td,.acc th{font-size:15px;line-height:1.65;color:rgba(255,244,226,.65)}
-.nav-top{display:flex;gap:34px;font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
-.nav-top a{text-decoration:none;color:#FFF4E2}
-.cream{background:#FFF6E9;color:#15121C}
-.cream .eb{color:#F2622E}
-.cream .h2{color:#15121C}
-.cream .lede{color:#5A5249}
-.k-ink{background:#15121C;color:#FFF6E9;border:1px solid #15121C}
-.k-ink:hover{background:#F2622E;border-color:#F2622E;color:#FFF6E9}
-.k-line{background:transparent;color:#15121C;border:1.5px solid #15121C}
-.k-line:hover{background:#15121C;color:#FFF6E9}
-.k-ink{background:#15121C;color:#FFF6E9;border:1px solid #15121C}
-.k-ink:hover{background:#F2622E;border-color:#F2622E;color:#FFF6E9}
-.k-line{background:transparent;color:#15121C;border:1.5px solid #15121C}
-.k-line:hover{background:#15121C;color:#FFF6E9}
-.cream .chip{border-color:#E4D6C3;color:#15121C;background:#FFFFFF}
-.cream .acc{border-top-color:#EADFCF}
-.cream .acc p,.cream .acc td,.cream .acc th{color:#5A5249}
-.cream .acc td{color:#15121C}
-.cream .thumb{border-color:#E4D6C3}.cream .thumb.on{border-color:#15121C}
-.dk{background:#0E0C12;color:#FFF6E9}
-.dk .lede{color:rgba(255,246,233,.66)}
-.dk .h2{color:#FFF8EE}
-.big{font-size:clamp(44px,5.6vw,88px) !important;line-height:.9 !important}
-.o{color:#F2622E}
-.sq{border-radius:10px !important}
-.o-btn{background:#F2622E;color:#0E0C12;border:1px solid #F2622E}
-.o-btn:hover{background:#FFF6E9;border-color:#FFF6E9;color:#0E0C12}
-.dk .chip{border-radius:6px}
-.dk .thumb{border-radius:10px}
-.comic{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:10px;background:#FFF6E9;border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
-@media (max-width:820px){.comic{grid-template-columns:minmax(0,1fr)}}
-.comic figure{margin:0;position:relative;overflow:hidden;border:3px solid #0E0C12;border-radius:4px;background:#0E0C12}
-.comic img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
-.comic figure:hover img{transform:scale(1.04)}
-.comic .pn{position:absolute;left:8px;bottom:8px;padding:4px 8px 3px;border-radius:4px;background:#0E0C12;color:#FFF6E9;font-family:'Fredoka',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em}
-.ep{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px}
-.ep .eptag{padding:8px 12px 7px;border-radius:6px;background:#F2622E;color:#0E0C12;font-family:'Fredoka',system-ui,sans-serif;font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase}
-.soon{border:1.5px dashed rgba(255,246,233,.2);border-radius:14px;padding:clamp(28px,4vw,48px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+.fnav a{text-decoration:none;color:rgba(255,255,255,.72)}.fnav a:hover{color:#FFFFFF}
+.fnav .fh{font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:15px;color:#FFFFFF;margin-bottom:4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 </style>
 </head>
 <body>
-<div style="font-family: 'Nunito', system-ui, sans-serif; color: #FFF4E2; background: #15121C; overflow-x: hidden">
+<div style="font-family: 'Nunito', system-ui, sans-serif; color: #14111C; background: #F3F2EF; overflow-x: hidden">
 
-  <!-- ANNOUNCEMENT -->
-  <div style="background: #0B0A0E; border-bottom: 1px solid rgba(255,244,226,.08); text-align: center; padding: 10px 20px; font-family: 'Fredoka', system-ui, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,244,226,.72); white-space: nowrap; overflow: hidden; text-overflow: ellipsis">7g protein per serving<span class="hide-sm"> <span style="color: #F7832B; padding: 0 10px" aria-hidden="true">·</span> Made with real honey</span></div>
-
-  <!-- HEADER -->
-  <header style="border-bottom: 1px solid rgba(255,244,226,.08)">
-    <div class="wrap" style="display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; padding-top: 14px; padding-bottom: 14px">
-      <nav aria-label="Main" class="nav-top">
-        <a href="/#sauces" class="hide-sm">Shop</a>
-        <a href="/#nutrition" class="hide-sm">Nutrition</a>
-        <a href="/#how" class="hide-sm">How to use</a>
-        <a href="/cartoons" style="text-decoration: none; color: #F2622E">Cartoons</a>
-      </nav>
-      <a href="/" aria-label="Toon Sauce home" style="display: block; line-height: 0"><img src="/assets/logo.webp" alt="Toon Sauce" style="height: 76px; width: auto"></a>
-      <a href="#" aria-label="Cart, 0 items" style="justify-self: end; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-family: 'Fredoka', system-ui, sans-serif; font-weight: 600">
+  <header class="wrap" style="position: relative; left: 0; right: 0; top: 0; z-index: 3; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px; padding-top: 16px; padding-bottom: 16px">
+      <a href="/" aria-label="Toon Sauce home" style="display: block; line-height: 0; justify-self: start"><img src="/assets/logo.webp" alt="Toon Sauce" style="height: clamp(52px, 5vw, 68px); width: auto"></a>
+      <nav aria-label="Main" class="pnav solid"><a href="/#sauces">Sauces</a><a href="/cartoons" class="on" aria-current="page">Cartoons</a><a href="/#different" class="hide-sm">Nutrition</a><a href="/#faq" class="hide-sm">FAQ</a></nav>
+      <a href="/cool-ranch" aria-label="Cart, 0 items" style="justify-self: end; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-family: 'Fredoka', system-ui, sans-serif; font-weight: 600; color: #14111C">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg>
         <span>0</span>
       </a>
-    </div>
-  </header>
+    </header>
 
-  <div class="dk">
-  <!-- CARTOONS -->
-  <div class="dk">
-  <main class="wrap" style="padding-top: clamp(56px, 7vw, 96px); padding-bottom: clamp(88px, 10vw, 140px)">
-    <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 44px">
-      <p class="eb">Toon Sauce Comics</p>
-      <h1 class="h2 big">The <span class="o">cartoons.</span></h1>
+  <main class="wrap" style="padding-top: 8px; padding-bottom: clamp(56px, 7vw, 88px)">
+    <div style="display: flex; flex-direction: column; gap: 10px; margin: 24px 0 28px">
+      <h1 class="h" style="font-size: clamp(40px, 4.8vw, 64px); line-height: 1">Toon Stories</h1>
       <p class="lede">Every bottle has a character. Here's what they get up to.</p>
     </div>
 
-    <article aria-labelledby="ep1">
-      <div class="ep" style="margin-bottom: 22px">
-        <span class="eptag">Episode 01</span>
-        <h2 id="ep1" class="h2" style="font-size: clamp(26px, 2.8vw, 38px)">Save your chicken</h2>
-        <span class="eb" style="color: rgba(255,246,233,.5)">Starring the Gold Rush cowboy</span>
+    <article class="card" aria-labelledby="ep1" style="padding: clamp(16px, 2.4vw, 28px)">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px">
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <span class="meta" style="justify-content: flex-start">Episode 01 · Starring the Gold Rush cowboy</span>
+          <h2 id="ep1" class="h" style="font-size: clamp(24px, 2.4vw, 32px)">Save your chicken</h2>
+        </div>
+        <a href="/#sauces" class="btn btn-o">Shop Gold Rush · $12.99</a>
       </div>
-      <div class="comic"><figure><img src="/assets/comic-1-p1.webp" alt="Cowboy chicken: "Tired of boring meals?"" loading="lazy"><span class="pn" aria-hidden="true">01</span></figure><figure><img src="/assets/comic-1-p2.webp" alt="Cowboy chicken lifting a dumbbell: "Get more protein..."" loading="lazy"><span class="pn" aria-hidden="true">02</span></figure><figure><img src="/assets/comic-1-p3.webp" alt="Cowboy chicken pouring Gold Rush into his mouth: "...with better sauce."" loading="lazy"><span class="pn" aria-hidden="true">03</span></figure><figure><img src="/assets/comic-1-p4.webp" alt="Cowboy chicken on the couch with a bowl of sauced wings: "Because life's too short for boring food."" loading="lazy"><span class="pn" aria-hidden="true">04</span></figure><figure><img src="/assets/comic-1-p5.webp" alt="Cowboy chicken celebrating in a sauce splash: "Toon Sauce."" loading="lazy"><span class="pn" aria-hidden="true">05</span></figure><figure><img src="/assets/comic-1-p6.webp" alt="Gold Rush bottle: "Save your chicken."" loading="lazy"><span class="pn" aria-hidden="true">06</span></figure></div>
-      <div style="margin-top: 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 18px">
-        <a href="/#sauces" class="pill o-btn sq">Shop Gold Rush · $12.99</a>
-        <a href="/#sauces" style="font-family: 'Fredoka', system-ui, sans-serif; font-weight: 600; font-size: 13px; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid rgba(255,246,233,.4); padding-bottom: 3px">See all sauces</a>
-      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 10px"><figure style="margin: 0; border: 3px solid #14111C; border-radius: 6px; overflow: hidden; background: #14111C; line-height: 0"><img src="/assets/comic-1-p1.webp" alt="Panel 1: Tired of boring meals?" loading="lazy" style="display: block; width: 100%; aspect-ratio: 1; object-fit: cover"></figure><figure style="margin: 0; border: 3px solid #14111C; border-radius: 6px; overflow: hidden; background: #14111C; line-height: 0"><img src="/assets/comic-1-p2.webp" alt="Panel 2: Get more protein..." loading="lazy" style="display: block; width: 100%; aspect-ratio: 1; object-fit: cover"></figure><figure style="margin: 0; border: 3px solid #14111C; border-radius: 6px; overflow: hidden; background: #14111C; line-height: 0"><img src="/assets/comic-1-p3.webp" alt="Panel 3: ...with better sauce." loading="lazy" style="display: block; width: 100%; aspect-ratio: 1; object-fit: cover"></figure><figure style="margin: 0; border: 3px solid #14111C; border-radius: 6px; overflow: hidden; background: #14111C; line-height: 0"><img src="/assets/comic-1-p4.webp" alt="Panel 4: Because life's too short for boring food." loading="lazy" style="display: block; width: 100%; aspect-ratio: 1; object-fit: cover"></figure><figure style="margin: 0; border: 3px solid #14111C; border-radius: 6px; overflow: hidden; background: #14111C; line-height: 0"><img src="/assets/comic-1-p5.webp" alt="Panel 5: Toon Sauce." loading="lazy" style="display: block; width: 100%; aspect-ratio: 1; object-fit: cover"></figure><figure style="margin: 0; border: 3px solid #14111C; border-radius: 6px; overflow: hidden; background: #14111C; line-height: 0"><img src="/assets/comic-1-p6.webp" alt="Panel 6: Save your chicken." loading="lazy" style="display: block; width: 100%; aspect-ratio: 1; object-fit: cover"></figure></div>
     </article>
 
-    <div class="soon" style="margin-top: clamp(64px, 8vw, 110px)">
-      <div style="display: flex; flex-direction: column; gap: 10px">
-        <p class="eb">Coming soon</p>
-        <h2 class="h2" style="font-size: clamp(26px, 2.8vw, 38px)">Episode 02: Cool Ranch</h2>
+    <section aria-labelledby="ch2-h" class="sec">
+      <div class="shead"><h2 id="ch2-h" class="h">The Characters</h2><a href="/#characters" class="va">View all <span aria-hidden="true">›</span></a></div>
+      <div class="rail" tabindex="0" aria-label="Characters">
+        <a href="/cool-ranch" class="card" style="text-align: center">
+          <div style="position: relative; height: 170px; background: #14111C">
+            <img src="/assets/cool-ranch-bottle.webp" alt="" style="height: 100%; object-position: 50% 40%; opacity: .9">
+            <span style="position: absolute; left: 50%; bottom: -44px; transform: translateX(-50%); width: 92px; height: 92px; border-radius: 50%; overflow: hidden; border: 4px solid #FFFFFF; background: #D9F1EF; box-shadow: 0 6px 16px rgba(20,17,28,.2)"><img src="/assets/mascot-cat.webp" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; transform: scale(1.35); transform-origin: 50% 12%"></span>
+          </div>
+          <div style="padding: 54px 16px 22px; display: flex; flex-direction: column; gap: 4px">
+            <span style="font-size: 13px; color: #7A7383">Cool Ranch</span>
+            <h3 class="h" style="font-size: 20px">The Cat</h3>
+            <span style="font-size: 13px; color: #4E4856">Bucket hat, gold chain</span>
+          </div>
+        </a>
+        <a href="/#sauces" class="card" style="text-align: center">
+          <div style="position: relative; height: 170px; background: #14111C">
+            <img src="/assets/gold-rush-bottle.webp" alt="" style="height: 100%; object-position: 50% 40%; opacity: .9">
+            <span style="position: absolute; left: 50%; bottom: -44px; transform: translateX(-50%); width: 92px; height: 92px; border-radius: 50%; overflow: hidden; border: 4px solid #FFFFFF; background: #FFE3BF; box-shadow: 0 6px 16px rgba(20,17,28,.2)"><img src="/assets/comic-1-p2.webp" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; transform: scale(1.9); transform-origin: 66% 38%"></span>
+          </div>
+          <div style="padding: 54px 16px 22px; display: flex; flex-direction: column; gap: 4px">
+            <span style="font-size: 13px; color: #7A7383">Gold Rush</span>
+            <h3 class="h" style="font-size: 20px">The Cowboy</h3>
+            <span style="font-size: 13px; color: #4E4856">Star of Episode 01</span>
+          </div>
+        </a>
+        <a href="#ch2-h" class="card" style="text-align: center">
+          <div style="position: relative; height: 170px; background: #14111C">
+            <img src="/assets/packaging.webp" alt="" style="height: 100%; object-position: 50% 50%; opacity: .9">
+            <span style="position: absolute; left: 50%; bottom: -44px; transform: translateX(-50%); width: 92px; height: 92px; border-radius: 50%; overflow: hidden; border: 4px solid #FFFFFF; background: #FFF3C4; box-shadow: 0 6px 16px rgba(20,17,28,.2)"><img src="/assets/mascot-bee.webp" alt="" style="width: 100%; height: 100%; object-fit: contain; object-position: 50% 30%; "></span>
+          </div>
+          <div style="padding: 54px 16px 22px; display: flex; flex-direction: column; gap: 4px">
+            <span style="font-size: 13px; color: #7A7383">Coming soon</span>
+            <h3 class="h" style="font-size: 20px">The Bee</h3>
+            <span style="font-size: 13px; color: #4E4856">Flavor in the works</span>
+          </div>
+        </a>
+        <a href="#ch2-h" class="card" style="text-align: center">
+          <div style="position: relative; height: 170px; background: #14111C">
+            <img src="/assets/packaging.webp" alt="" style="height: 100%; object-position: 20% 50%; opacity: .9">
+            <span style="position: absolute; left: 50%; bottom: -44px; transform: translateX(-50%); width: 92px; height: 92px; border-radius: 50%; overflow: hidden; border: 4px solid #FFFFFF; background: #FFD9CF; box-shadow: 0 6px 16px rgba(20,17,28,.2)"><img src="/assets/mascot-pepper.webp" alt="" style="width: 100%; height: 100%; object-fit: contain; object-position: 50% 40%; "></span>
+          </div>
+          <div style="padding: 54px 16px 22px; display: flex; flex-direction: column; gap: 4px">
+            <span style="font-size: 13px; color: #7A7383">Coming soon</span>
+            <h3 class="h" style="font-size: 20px">The Pepper</h3>
+            <span style="font-size: 13px; color: #4E4856">Flavor in the works</span>
+          </div>
+        </a>
       </div>
-      <a href="/#join" class="pill pill-line sq">Get notified</a>
+    </section>
+
+    <div class="card" style="margin-top: clamp(40px, 5vw, 64px); padding: clamp(22px, 3vw, 36px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+      <div style="display: flex; flex-direction: column; gap: 4px"><span class="meta" style="justify-content: flex-start">Coming soon</span><h2 class="h" style="font-size: clamp(22px, 2.2vw, 30px)">Episode 02: Cool Ranch</h2></div>
+      <a href="/#join" class="btn btn-d">Get notified</a>
     </div>
   </main>
-  </div>
 
-  <!-- FOOTER -->
-  <footer style="background: #08070A; border-top: 1px solid rgba(255,246,233,.06)">
-    <div class="wrap" style="padding-top: 36px; padding-bottom: 36px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; font-size: 13px; color: rgba(255,244,226,.5)">
-      <img src="/assets/logo.webp" alt="Toon Sauce" style="height: 64px; width: auto">
-      <span>© 2026 Toon Sauce. All rights reserved.</span>
-      <span style="display: flex; gap: 22px"><a href="#" style="text-decoration: none">Privacy</a><a href="#" style="text-decoration: none">Terms</a></span>
+  <footer style="background: #14111C; color: #FFFFFF">
+    <div class="wrap" style="padding-top: 64px; padding-bottom: 32px; display: flex; flex-direction: column; gap: 48px">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: 36px">
+        <div style="display: flex; flex-direction: column; gap: 12px"><img src="/assets/logo.webp" alt="Toon Sauce" style="height: 88px; width: auto; align-self: flex-start"><span style="font-size: 14px; color: rgba(255,255,255,.6)">Sauce just had a glow-up.</span></div>
+        <nav aria-label="Sauces" class="fnav"><span class="fh">Sauces</span><a href="/cool-ranch">Cool Ranch</a><a href="/#sauces">Gold Rush</a><a href="/#sauces">The Duo</a></nav>
+        <nav aria-label="Discover" class="fnav"><span class="fh">Discover</span><a href="/cartoons">Cartoons</a><a href="/#characters">Characters</a><a href="/#different">Nutrition</a></nav>
+        <nav aria-label="Help" class="fnav"><span class="fh">Help</span><a href="/#faq">FAQ</a><a href="#">Shipping</a><a href="#">Contact</a></nav>
+        <nav aria-label="Follow" class="fnav"><span class="fh">Follow</span><a href="#">Instagram</a><a href="#">TikTok</a></nav>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.1); font-size: 13px; color: rgba(255,255,255,.55)">
+        <span>© 2026 Toon Sauce. All rights reserved.</span>
+        <span style="display: flex; gap: 22px"><a href="#" style="text-decoration: none">Privacy</a><a href="#" style="text-decoration: none">Terms</a></span>
+      </div>
     </div>
   </footer>
-
 </div>
 <script>
 document.addEventListener('submit',function(e){
