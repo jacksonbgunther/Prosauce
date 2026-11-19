@@ -72,6 +72,16 @@ a.card:hover{transform:translateY(-4px);background:#1F1C24}
 .hbadge span{font-family:'Schibsted Grotesk',system-ui,sans-serif;font-weight:800;font-size:calc(var(--s)*.11);letter-spacing:.12em;text-transform:uppercase;color:#FFC23D;margin-top:calc(var(--s)*.02)}
 .hbadge i{font-style:normal;font-family:'Schibsted Grotesk',system-ui,sans-serif;font-weight:600;font-size:calc(var(--s)*.065);letter-spacing:.14em;text-transform:uppercase;color:#E8E3DC;margin-top:calc(var(--s)*.035)}
 @media (max-width:760px){.hbadge{--s:128px;position:relative;right:auto;top:auto;margin-top:18px;align-self:flex-end;margin-right:4px}}
+.tq{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}.tq figure:nth-child(-n+3){grid-column:span 2}.tq figure:nth-child(n+4){grid-column:span 3}@media (max-width:900px){.tq{grid-template-columns:1fr}.tq figure:nth-child(n){grid-column:auto}}
+.tq figure{margin:0;background:#141217;border:1px solid rgba(245,243,239,.07);border-radius:16px;padding:26px 26px 22px;display:flex;flex-direction:column;gap:18px}
+.tq blockquote{margin:0;font-size:18px;line-height:1.5;color:#F5F3EF;font-weight:500}
+.tq figcaption{display:flex;align-items:center;gap:12px;font-weight:700;font-size:15px;color:#DAD5DE}
+.tq figcaption span{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#F2622E;color:#fff;font-family:'Shrikhand',Georgia,serif;font-size:17px;line-height:1}
+.tqf{margin:0;display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,3vw,40px);align-items:start;margin-bottom:clamp(28px,3vw,44px)}
+.tqf .qm{font-family:'Shrikhand',Georgia,serif;font-size:clamp(110px,12vw,180px);line-height:.8;color:#F2622E}
+.tqf blockquote{margin:0;font-family:'Shrikhand',Georgia,serif;font-size:clamp(24px,2.6vw,38px);line-height:1.25;color:#F5F3EF;max-width:30ch}
+.tqf figcaption{margin-top:18px;font-weight:700;font-size:16px;color:#DAD5DE;letter-spacing:.02em}
+@media (max-width:640px){.tqf{grid-template-columns:1fr}.tqf .qm{font-size:90px;height:52px}}
 .mini{flex:0 0 auto;width:74px;height:74px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#2A2433 0%,#15121C 70%);border:3px solid #F7832B;box-shadow:0 0 0 2px #15121C,0 0 0 5px #FFC23D;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;transform:rotate(-8deg)}
 .mini b{font-family:'Shrikhand',system-ui,sans-serif;font-weight:700;font-size:26px;color:#FFF8EE;text-shadow:2px 2px 0 #D9401F}
 .mini span{font-family:'Shrikhand',system-ui,sans-serif;font-weight:700;font-size:8px;letter-spacing:.16em;color:#FFC23D;margin-top:2px}
