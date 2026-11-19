@@ -23,9 +23,9 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1495416545782879&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-<title>Toon Sauce | Your favorite chicken sauce, now with 70g of protein</title>
+<title>Toon Sauce | Your favorite sauce, now with 70g of protein</title>
 <meta name="description" content="Restaurant-style chicken sauce made with real honey. 7g protein per serving, 70g per bottle. Join the list for launch-day access.">
-<meta property="og:title" content="Toon Sauce | Your favorite chicken sauce, now with 70g of protein">
+<meta property="og:title" content="Toon Sauce | Your favorite sauce, now with 70g of protein">
 <meta property="og:description" content="Restaurant-style chicken sauce made with real honey. 7g protein per serving, 70g per bottle. Join the list for launch-day access.">
 <meta property="og:image" content="https://toonsauce.com/assets/hero.jpg">
 <meta name="theme-color" content="#141414">
@@ -76,6 +76,8 @@ img{max-width:100%}
 .stk b{font-family:'Shrikhand',Georgia,serif;font-weight:400;font-size:calc(var(--s)*.34);color:#FFF8EE;text-shadow:calc(var(--s)*.018) calc(var(--s)*.018) 0 #D9401F}
 .stk span{font-family:'Fredoka',system-ui,sans-serif;font-weight:700;font-size:calc(var(--s)*.078);letter-spacing:.1em;text-transform:uppercase;color:#FFC23D;margin-top:calc(var(--s)*.04);max-width:72%;line-height:1.15}
 .stk i{font-style:normal;font-family:'Fredoka',system-ui,sans-serif;font-weight:500;font-size:calc(var(--s)*.075);color:#F6EEDF;margin-top:calc(var(--s)*.04)}
+.spec{margin:-4px 0 4px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 0;font-size:14.5px;font-weight:500;color:rgba(246,238,223,.82)}
+.spec span+span:before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--amber);margin:0 12px 2px;vertical-align:middle}
 .cal{display:inline-flex;align-items:center;min-height:40px;padding:8px 16px;border-radius:999px;background:rgba(20,20,20,.88);border:1px solid rgba(242,169,59,.7);color:var(--cream);font-size:14.5px;font-weight:500;white-space:nowrap;box-shadow:0 10px 24px rgba(0,0,0,.4)}
 /* form */
 .signup{width:100%;max-width:540px}
@@ -178,8 +180,9 @@ img{max-width:100%}
     <div class="bgw" aria-hidden="true"><img class="bgimg" src="/assets/hero.jpg" alt="" data-slot="hero.jpg"><div class="shade"></div></div>
     <div class="wrap in">
       <div class="copy">
-        <h1 id="h1" class="d"><span class="ln">Your favorite chicken sauce.</span><br><span class="ln">Now with <span class="amb">70g of protein.</span></span></h1>
+        <h1 id="h1" class="d"><span class="ln">Your favorite sauce.</span><br><span class="ln">Now with <span class="amb">70g of protein.</span></span></h1>
         <p class="sub">Restaurant-style chicken sauce made with real honey. 7g protein per serving. Same dinner, more protein.</p>
+        <p class="spec"><span>7g protein</span><span>120 calories</span><span>per serving</span></p>
         <div class="signup" data-source="hero" id="signup">
           <form class="ef" novalidate><label class="sr" for="em-hero">Email address</label><input id="em-hero" type="email" name="email" required placeholder="Your email" autocomplete="email" inputmode="email" aria-describedby="em-hero-err"><button type="submit" class="pill">Get first dibs</button></form>
           <p class="err" id="em-hero-err" role="alert" hidden></p>
@@ -191,7 +194,6 @@ img{max-width:100%}
           <img class="bottle" src="/assets/bottle.png" alt="Toon Sauce Gold Rush bottle, matte black with a golden amber cap" data-slot="bottle.png">
           <div class="stats">
             <div class="stk" role="img" aria-label="70 grams of protein per bottle, 7 grams per serving"><b>70g</b><span>Protein per bottle</span><i>7g per serving</i></div>
-            <span class="cal">120 calories per serving</span>
           </div>
         </div>
       </div>
