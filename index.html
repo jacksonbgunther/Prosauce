@@ -60,6 +60,7 @@ img{max-width:100%}
 .hero .in{position:relative;min-height:clamp(600px,84vh,800px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:end;gap:20px;padding-top:40px;padding-bottom:clamp(56px,7vw,96px)}
 .hero h1{font-size:clamp(54px,6.4vw,96px)}
 .hero .stage{position:relative;align-self:stretch;min-height:520px}
+.hmob{display:none}@media (max-width:860px){.hmob{display:block;position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.6) 55%,rgba(0,0,0,.15) 100%)}}
 .hero .b{position:absolute;bottom:0;height:min(92%,640px);width:auto;filter:drop-shadow(0 40px 50px rgba(0,0,0,.6))}
 .hero .b1{left:14%;transform:rotate(-9deg);transform-origin:50% 100%}
 .hero .b2{left:44%;transform:rotate(8deg);transform-origin:50% 100%}
@@ -68,8 +69,8 @@ img{max-width:100%}
 .stk b{font-family:'Shrikhand',Georgia,serif;font-weight:400;font-size:calc(var(--s)*.4);color:#FFF8EE;text-shadow:calc(var(--s)*.018) calc(var(--s)*.018) 0 #D9401F}
 .stk span{font-family:'Schibsted Grotesk',system-ui,sans-serif;font-weight:800;font-size:calc(var(--s)*.11);letter-spacing:.12em;text-transform:uppercase;color:#FFC23D;margin-top:calc(var(--s)*.02)}
 .stk i{font-style:normal;font-family:'Schibsted Grotesk',system-ui,sans-serif;font-weight:600;font-size:calc(var(--s)*.065);letter-spacing:.14em;text-transform:uppercase;color:#E8E3DC;margin-top:calc(var(--s)*.035)}
-.hero .stk{right:4%;top:10%}
-@media (max-width:860px){.hero .in{grid-template-columns:1fr;align-items:start;padding-top:44px}.hero .stage{min-height:420px;order:2}.hero .b{height:400px}.hero .b1{left:6%}.hero .b2{left:40%}.hero .cat{width:130px}.hero .stk{--s:112px;right:0;top:0}}
+.hero .stk{--s:clamp(170px,15vw,230px);right:2%;top:8%}
+@media (max-width:860px){.hero .in{grid-template-columns:1fr;align-items:end;padding-top:44px}.hero .stage{min-height:150px;order:2}.hero .b{height:400px}.hero .b1{left:6%}.hero .b2{left:40%}.hero .cat{width:130px}.hero .stk{--s:124px;right:0;top:0}}
 .mq{overflow:hidden;background:#f3efe8;color:#000;border-top:1px solid var(--line);border-bottom:1px solid var(--line);white-space:nowrap}
 .mq .t{display:inline-flex;gap:0;padding:12px 0;animation:mq 40s linear infinite;font-size:14.5px}
 .mq .t span{padding:0 18px}.mq .t span:before{content:"\2022";margin-right:18px}
@@ -197,19 +198,17 @@ img{max-width:100%}
 
   <!-- HERO -->
   <section id="top" class="hero">
+    <img src="/assets/hero-pour2.jpg" alt="Thick golden sauce pouring over crispy fried chicken" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 55%">
+    <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.85) 0%, rgba(0,0,0,.55) 38%, rgba(0,0,0,0) 68%), linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 78%, rgba(0,0,0,.6) 100%)"></div>
+    <div class="hmob" aria-hidden="true"></div>
     <div class="wrap in">
       <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 22px; padding-bottom: 8px">
         <h1 class="serif">Sauce just had<br>a <em style="color: #F7A33B">glow-up.</em></h1>
         <p style="margin: 0; font-size: 19px; line-height: 1.5; max-width: 30ch; color: #ece6dd">High-protein sauces made with real honey. 7g of protein in every serving.</p>
         <div style="display: flex; flex-wrap: wrap; gap: 12px"><a href="#shop" class="pill">Shop the sauces</a><a href="#join" class="pill pill-ghost">Get early access</a></div>
       </div>
-      <div class="stage" aria-hidden="true">
-        <img class="b b1" src="/assets/cool-ranch-cutout.png" alt="">
-        <img class="b b2" src="/assets/gold-rush-cutout.png" alt="">
-        <img class="cat" src="/assets/mascot-cat.webp" alt="">
-        <div class="stk" role="img" aria-label="7 grams of protein per serving"><b>7g</b><span>protein</span><i>per serving</i></div>
-      </div>
-    </div>
+      <div class="stage"><div class="stk" role="img" aria-label="7 grams of protein per serving"><b>7g</b><span>protein</span><i>per serving</i></div></div>
+        </div>
   </section>
   <div class="mq" aria-label="Highlights"><div class="t"><span>7g protein per serving</span><span>Made with real honey</span><span>Non-GMO ingredients</span><span>Two flavors</span><span>Made for real food</span><span>7g protein per serving</span><span>Made with real honey</span><span>Non-GMO ingredients</span><span>Two flavors</span><span>Made for real food</span><span>7g protein per serving</span><span>Made with real honey</span><span>Non-GMO ingredients</span><span>Two flavors</span><span>Made for real food</span><span>7g protein per serving</span><span>Made with real honey</span><span>Non-GMO ingredients</span><span>Two flavors</span><span>Made for real food</span><span>7g protein per serving</span><span>Made with real honey</span><span>Non-GMO ingredients</span><span>Two flavors</span><span>Made for real food</span><span>7g protein per serving</span><span>Made with real honey</span><span>Non-GMO ingredients</span><span>Two flavors</span><span>Made for real food</span></div></div>
 
