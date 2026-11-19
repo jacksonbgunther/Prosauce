@@ -114,8 +114,9 @@ img{max-width:100%}
 .tq{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
 .tq figure:nth-child(-n+3){grid-column:span 2}.tq figure:nth-child(n+4){grid-column:span 3}
 @media (max-width:900px){.tq{grid-template-columns:1fr}.tq figure:nth-child(n){grid-column:auto}}
-.tq figure{margin:0;background:var(--card);border-radius:4px;padding:26px 24px 22px;display:flex;flex-direction:column;justify-content:space-between;gap:22px}
-.tq blockquote{margin:0;font-size:18px;line-height:1.5}
+.tq figure{margin:0;background:#f3efe8;color:#141414;border-radius:6px;padding:28px 26px 24px;display:flex;flex-direction:column;justify-content:space-between;gap:22px}
+.tq blockquote{margin:0;font-size:19px;line-height:1.5;font-weight:500}
+.tq figcaption b:before{content:"\2605\2605\2605\2605\2605";display:block;color:#E08A1E;letter-spacing:3px;font-size:13px;margin-bottom:8px}
 .tq figcaption{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:15px}
 .tq figcaption b{font-weight:600}
 .stars{color:var(--gold);letter-spacing:2px;font-size:14px}
@@ -185,7 +186,16 @@ img{max-width:100%}
 :focus-visible{outline:2px solid var(--or);outline-offset:3px}
 .pdp{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:start;padding-top:28px}
 @media (max-width:900px){.pdp{grid-template-columns:1fr}}
-.gal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.gal{display:flex;flex-direction:column;gap:12px}
+.gal .main{position:relative}
+.gal .sl{display:none;position:absolute;inset:0}
+.gal .sl>img{display:block}
+#g0:checked~.main .s0{display:block}#g0:checked~.thumbs label[for=g0]{outline:2px solid #fff;outline-offset:2px}#g0:checked~.thumbs label[for=g0] img{opacity:1}#g0:focus-visible~.thumbs label[for=g0]{outline:2px solid var(--or);outline-offset:3px}#g1:checked~.main .s1{display:block}#g1:checked~.thumbs label[for=g1]{outline:2px solid #fff;outline-offset:2px}#g1:checked~.thumbs label[for=g1] img{opacity:1}#g1:focus-visible~.thumbs label[for=g1]{outline:2px solid var(--or);outline-offset:3px}#g2:checked~.main .s2{display:block}#g2:checked~.thumbs label[for=g2]{outline:2px solid #fff;outline-offset:2px}#g2:checked~.thumbs label[for=g2] img{opacity:1}#g2:focus-visible~.thumbs label[for=g2]{outline:2px solid var(--or);outline-offset:3px}#g3:checked~.main .s3{display:block}#g3:checked~.thumbs label[for=g3]{outline:2px solid #fff;outline-offset:2px}#g3:checked~.thumbs label[for=g3] img{opacity:1}#g3:focus-visible~.thumbs label[for=g3]{outline:2px solid var(--or);outline-offset:3px}#g4:checked~.main .s4{display:block}#g4:checked~.thumbs label[for=g4]{outline:2px solid #fff;outline-offset:2px}#g4:checked~.thumbs label[for=g4] img{opacity:1}#g4:focus-visible~.thumbs label[for=g4]{outline:2px solid var(--or);outline-offset:3px}#g5:checked~.main .s5{display:block}#g5:checked~.thumbs label[for=g5]{outline:2px solid #fff;outline-offset:2px}#g5:checked~.thumbs label[for=g5] img{opacity:1}#g5:focus-visible~.thumbs label[for=g5]{outline:2px solid var(--or);outline-offset:3px}#g6:checked~.main .s6{display:block}#g6:checked~.thumbs label[for=g6]{outline:2px solid #fff;outline-offset:2px}#g6:checked~.thumbs label[for=g6] img{opacity:1}#g6:focus-visible~.thumbs label[for=g6]{outline:2px solid var(--or);outline-offset:3px}
+.thumbs{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+.thumbs label{cursor:pointer;aspect-ratio:1;border-radius:4px;overflow:hidden;background:#141414;box-shadow:inset 0 0 0 1px var(--line);display:block;line-height:0}
+.thumbs label img{width:100%;height:100%;object-fit:cover;opacity:.55;transition:opacity .2s ease;mix-blend-mode:normal}
+.thumbs label:hover img{opacity:1}
+@media (max-width:560px){.thumbs{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .gal .main{grid-column:1/-1;position:relative;border-radius:4px;overflow:hidden;min-height:clamp(440px,48vw,680px);display:flex;align-items:flex-end;justify-content:center}
 .gal .main img.bt{height:86%;width:auto;position:absolute;bottom:4%;left:50%;transform:translateX(-50%) rotate(var(--tilt,-6deg));filter:drop-shadow(0 34px 40px rgba(0,0,0,.6))}
 .gal .sm{border-radius:4px;overflow:hidden;background:var(--card);aspect-ratio:1}
