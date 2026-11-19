@@ -164,6 +164,23 @@ img{max-width:100%}
 .wm{font-family:'Instrument Serif',Georgia,serif;color:#2c2c2c;font-size:clamp(84px,21vw,330px);line-height:.8;letter-spacing:-.03em;white-space:nowrap;text-align:center;margin-top:20px;overflow:hidden}
 @media (max-width:560px){.ef{flex-direction:column;border-radius:20px;gap:6px;padding:6px}.ef input{height:48px;flex:0 0 auto}.ef .pill{width:100%}.shead>.mono{display:none}}
 @media (max-width:860px){.join .vs{min-height:0;height:280px;overflow:hidden}.join .vs img{width:140px !important}}
+.feat{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:12px}
+@media (max-width:900px){.feat{grid-template-columns:1fr}}
+.feat .fv{position:relative;overflow:hidden;border-radius:4px;min-height:clamp(480px,50vw,700px);background:radial-gradient(70% 70% at 50% 58%,#a85a17 0%,#4a230a 45%,#120803 100%);display:block;text-decoration:none}
+.feat .fv img.bt{position:absolute;left:50%;bottom:3%;height:88%;width:auto;transform:translateX(-50%) rotate(7deg);transform-origin:50% 100%;filter:drop-shadow(0 40px 50px rgba(0,0,0,.6));transition:transform .4s ease}
+.feat .fv:hover img.bt{transform:translateX(-50%) rotate(4deg) translateY(-6px)}
+.feat .fv .ms{position:absolute;left:5%;bottom:5%;width:24%;max-width:170px;transform:rotate(-8deg);filter:drop-shadow(0 16px 24px rgba(0,0,0,.45))}
+.feat .fi{background:var(--card);border-radius:4px;padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:20px}
+.cs{position:relative;overflow:hidden;min-height:clamp(560px,58vw,760px);background:radial-gradient(55% 75% at 72% 62%,#0d2b2b 0%,#051010 50%,#000 100%);border-top:1px solid rgba(95,211,209,.12);border-bottom:1px solid rgba(95,211,209,.12)}
+.cs .rim{position:absolute;right:16%;bottom:-6%;height:96%;width:auto;transform:rotate(-6deg);transform-origin:50% 100%;filter:brightness(.26) contrast(1.25) saturate(.7) drop-shadow(-2px 0 0 rgba(95,211,209,.55)) drop-shadow(0 0 46px rgba(95,211,209,.32))}
+.cs .sil{position:absolute;right:3%;bottom:-2%;width:clamp(150px,15vw,230px);filter:brightness(0) drop-shadow(0 0 1.5px rgba(95,211,209,.95)) drop-shadow(0 0 26px rgba(95,211,209,.35))}
+.cs .beam{position:absolute;right:8%;top:-20%;width:46%;height:140%;background:linear-gradient(180deg,rgba(95,211,209,.16) 0%,rgba(95,211,209,0) 70%);clip-path:polygon(42% 0,58% 0,100% 100%,0 100%);filter:blur(18px);animation:beam 7s ease-in-out infinite;pointer-events:none}
+@keyframes beam{0%,100%{opacity:.55}50%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.cs .beam{animation:none}}
+.cs:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#000 0%,rgba(0,0,0,.78) 34%,rgba(0,0,0,0) 62%),linear-gradient(0deg,#000 0%,rgba(0,0,0,0) 28%);pointer-events:none}
+.cs .tx{position:relative;z-index:2;min-height:inherit;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:20px;padding-top:80px;padding-bottom:80px}
+.cs .flg{width:min(80%,340px);filter:brightness(.55) saturate(.8) drop-shadow(0 0 18px rgba(95,211,209,.25))}
+@media (max-width:860px){.cs{min-height:880px}.cs .tx{justify-content:flex-start;padding-top:56px;min-height:0}.cs .rim{right:30%;height:50%}.cs .sil{width:130px;right:4%}.cs .beam{right:10%;width:80%;top:30%;height:80%}.cs:after{background:linear-gradient(180deg,#000 0%,rgba(0,0,0,.85) 38%,rgba(0,0,0,0) 58%),linear-gradient(0deg,#000 0%,rgba(0,0,0,0) 14%)}}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 :focus-visible{outline:2px solid var(--or);outline-offset:3px}
 .pdp{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:start;padding-top:28px}
@@ -191,7 +208,7 @@ img{max-width:100%}
   <header class="hdr"><div class="wrap in">
     <div style="display: flex; align-items: center; gap: clamp(20px, 3vw, 36px)">
       <a href="/" aria-label="Toon Sauce home" style="display: block; line-height: 0"><img src="/assets/logo.webp" alt="Toon Sauce" style="height: 52px; width: auto"></a>
-      <nav aria-label="Main"><a href="/#shop">Shop</a><a href="/#duo">The Duo</a><a href="/#reviews">Reviews</a><a href="/#nutrition">Nutrition</a></nav>
+      <nav aria-label="Main"><a href="/gold-rush">Gold Rush</a><a href="/#reviews">Reviews</a><a href="/#nutrition">Nutrition</a><a href="/#coming-soon">Coming soon</a></nav>
     </div>
     <a href="/#join" class="pill">Get early access</a>
   </div></header>
@@ -208,7 +225,7 @@ img{max-width:100%}
         <p class="serif" style="font-size: 34px">Stay saucy.</p>
         <p class="mut" style="margin: 0; font-size: 15.5px; max-width: 34ch; line-height: 1.5">High-protein sauces made with real honey. 7g of protein in every serving.</p>
       </div>
-      <div><h4>Shop</h4><nav aria-label="Shop"><a href="/cool-ranch">Cool Ranch</a><a href="/gold-rush">Gold Rush</a><a href="/#duo">The Duo</a></nav></div>
+      <div><h4>Shop</h4><nav aria-label="Shop"><a href="/gold-rush">Gold Rush</a><a href="/#coming-soon">Coming soon</a></nav></div>
       <div><h4>Learn</h4><nav aria-label="Learn"><a href="/#nutrition">Nutrition</a><a href="/#reviews">Reviews</a><a href="/#faq">FAQ</a></nav></div>
       <div><h4>Toon Sauce</h4><nav aria-label="Brand"><a href="/cartoons">Toon Stories</a><a href="/#join">Get early access</a></nav></div>
     </div>
