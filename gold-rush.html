@@ -178,11 +178,23 @@ img{max-width:100%}
 
 
 
-.cs .shot{position:absolute;right:0;top:0;height:100%;width:auto;max-width:none;filter:brightness(.5) contrast(1.15);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 55%),linear-gradient(0deg,transparent 0%,#000 18%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0%,#000 55%),linear-gradient(0deg,transparent 0%,#000 18%);mask-composite:intersect}
+.cs .shot{position:absolute;left:calc(50% - 160px);right:auto;top:0;height:100%;width:auto;max-width:none;filter:brightness(.5) contrast(1.15);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 55%),linear-gradient(0deg,transparent 0%,#000 18%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0%,#000 55%),linear-gradient(0deg,transparent 0%,#000 18%);mask-composite:intersect}
 .cs:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#000 0%,rgba(0,0,0,.4) 40%,rgba(0,0,0,0) 60%);pointer-events:none}
 .cs .tx{position:relative;z-index:2;min-height:inherit;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:20px;padding-top:80px;padding-bottom:80px}
 .cs .flg{width:min(80%,340px);filter:brightness(.55) saturate(.8) drop-shadow(0 0 18px rgba(95,211,209,.25))}
-@media (max-width:860px){.cs{min-height:900px}.cs .tx{justify-content:flex-start;padding-top:56px;min-height:0}.cs .shot{top:auto;bottom:0;height:62%;right:-8%;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 30%);mask-image:linear-gradient(180deg,transparent 0%,#000 30%)}.cs:after{background:linear-gradient(180deg,#000 0%,#000 42%,rgba(0,0,0,0) 62%)}}
+@media (max-width:860px){.cs{min-height:900px}.cs .tx{justify-content:flex-start;padding-top:56px;min-height:0}.cs .shot{top:auto;bottom:0;height:62%;left:auto;right:-8%;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 30%);mask-image:linear-gradient(180deg,transparent 0%,#000 30%)}.cs:after{background:linear-gradient(180deg,#000 0%,#000 42%,rgba(0,0,0,0) 62%)}}
+.gal .cap{position:absolute;left:0;right:0;bottom:0;padding:60px 26px 22px;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.7) 100%);font-size:clamp(28px,3vw,42px);color:#fff}
+.bnd{border:0;margin:0;padding:0;min-width:0}
+.bnd .bg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.bnd label{cursor:pointer;position:relative}
+.bnd input{position:absolute;opacity:0;pointer-events:none}
+.bnd label span{display:flex;flex-direction:column;gap:4px;padding:14px 14px;border-radius:6px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);transition:box-shadow .15s ease,background .15s ease}
+.bnd label span b{font-weight:600;font-size:15.5px}
+.bnd label span i{font-style:normal;font-family:'DM Mono',monospace;font-size:13.5px;color:var(--mut)}
+.bnd label:hover span{background:var(--card2)}
+.bnd input:checked+span{box-shadow:inset 0 0 0 2px #F7A33B;background:#1d150c}
+.bnd input:checked+span i{color:#F7A33B}
+.bnd input:focus-visible+span{outline:2px solid var(--or);outline-offset:2px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 :focus-visible{outline:2px solid var(--or);outline-offset:3px}
 .pdp{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:start;padding-top:28px}
@@ -231,10 +243,9 @@ img{max-width:100%}
         <div class="main" style="background: radial-gradient(80% 70% at 50% 55%,#8a4a14 0%,#3a1c08 50%,#0d0703 100%); --tilt: 7deg">
           <div class="sl s0">
             <img class="bt" src="/assets/gold-rush-cutout.png" alt="Gold Rush squeeze bottle">
-            <img src="/assets/mascot-chicken.webp" alt="" aria-hidden="true" style="position: absolute; width: 30%; left: 4%; bottom: 3%; filter: drop-shadow(0 20px 30px rgba(0,0,0,.5))">
             <div class="stk" style="--s: clamp(104px, 9vw, 136px); right: 5%; top: 6%"><b>7g</b><span>protein</span><i>per serving</i></div>
           </div>
-          <div class="sl s1"><img src="/assets/label-gold.jpg" alt="Gold Rush nutrition facts label" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; padding: 4%; background: #0b0b0b"></div><div class="sl s2"><img src="/assets/hero-tenders.jpg" alt="Chicken tenders splashed with golden sauce" loading="lazy" style="width: 100%; height: 100%; object-fit: cover"></div><div class="sl s3"><img src="/assets/meal-prep.jpg" alt="Meal prep containers of salmon, shrimp and rice with a bowl of golden sauce" loading="lazy" style="width: 100%; height: 100%; object-fit: cover"></div><div class="sl s4"><img src="/assets/bowl.jpg" alt="Rice bowl with seasoned ground beef, charred corn and pico de gallo" loading="lazy" style="width: 100%; height: 100%; object-fit: cover"></div><div class="sl s5"><img src="/assets/meal-prep-home.jpg" alt="Homemade meal prep containers with chicken, pasta, broccoli and carrots" loading="lazy" style="width: 100%; height: 100%; object-fit: cover"></div><div class="sl s6"><img src="/assets/hero-pour2.jpg" alt="Golden sauce pouring over fried chicken" loading="lazy" style="width: 100%; height: 100%; object-fit: cover"></div>
+          <div class="sl s1"><img src="/assets/label-gold.jpg" alt="Gold Rush nutrition facts label" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; padding: 4%; background: #0b0b0b"></div><div class="sl s2"><img src="/assets/hero-tenders.jpg" alt="Chicken tenders splashed with golden sauce" loading="lazy" style="width: 100%; height: 100%; object-fit: cover"></div><div class="sl s3"><img src="/assets/meal-prep.jpg" alt="Meal prep containers of salmon, shrimp and rice with a bowl of golden sauce" loading="lazy" style="width: 100%; height: 100%; object-fit: cover"><span class="cap serif">Made for meal prep.</span></div><div class="sl s4"><img src="/assets/bowl.jpg" alt="Rice bowl with seasoned ground beef, charred corn and pico de gallo" loading="lazy" style="width: 100%; height: 100%; object-fit: cover"><span class="cap serif">Built for bowls.</span></div><div class="sl s5"><img src="/assets/meal-prep-home.jpg" alt="Homemade meal prep containers with chicken, pasta, broccoli and carrots" loading="lazy" style="width: 100%; height: 100%; object-fit: cover"><span class="cap serif">Upgrade boring meals.</span></div><div class="sl s6"><img src="/assets/hero-pour2.jpg" alt="Golden sauce pouring over fried chicken" loading="lazy" style="width: 100%; height: 100%; object-fit: cover"></div>
         </div>
         <div class="thumbs"><label for="g0"><img src="/assets/gold-rush-cutout.png" alt="" loading="lazy" style="object-fit: contain; padding: 6px"></label><label for="g1"><img src="/assets/label-gold.jpg" alt="" loading="lazy" style=""></label><label for="g2"><img src="/assets/hero-tenders.jpg" alt="" loading="lazy" style=""></label><label for="g3"><img src="/assets/meal-prep.jpg" alt="" loading="lazy" style=""></label><label for="g4"><img src="/assets/bowl.jpg" alt="" loading="lazy" style=""></label><label for="g5"><img src="/assets/meal-prep-home.jpg" alt="" loading="lazy" style=""></label><label for="g6"><img src="/assets/hero-pour2.jpg" alt="" loading="lazy" style=""></label></div>
       </div>
@@ -246,6 +257,10 @@ img{max-width:100%}
         <p class="serif" style="font-size: 38px">$12.99</p>
         <p style="margin: 0; font-size: 17.5px; line-height: 1.55; color: #dedede">Sweet, smoky and golden, made with real honey. The one that turns a plain bowl into the main event.</p>
         <div class="specs"><div><b>7g</b><span>protein / serving</span></div><div><b>Real</b><span>honey</span></div><div><b>Non-GMO</b><span>ingredients</span></div></div>
+        <fieldset class="bnd">
+          <legend class="mono" style="font-size: 14px; color: #cfcfcf; margin-bottom: 12px">Choose your bundle</legend>
+          <div class="bg"><label><input type="radio" name="qty" value="1" checked><span><b>1 bottle</b><i>$12.99</i></span></label><label><input type="radio" name="qty" value="2"><span><b>2 bottles</b><i>$25.98</i></span></label><label><input type="radio" name="qty" value="3"><span><b>3 bottles</b><i>$38.97</i></span></label><label><input type="radio" name="qty" value="4"><span><b>4 bottles</b><i>$51.96</i></span></label><label><input type="radio" name="qty" value="5"><span><b>5 bottles</b><i>$64.95</i></span></label><label><input type="radio" name="qty" value="6"><span><b>6 bottles</b><i>$77.94</i></span></label></div>
+        </fieldset>
         <div class="box">
           <p style="margin: 0; font-size: 18px">Gold Rush drops first.</p>
           <p class="mut" style="margin: 0; font-size: 15px; line-height: 1.5">Get early access and we&#8217;ll email you the moment Gold Rush is ready to order.</p>
