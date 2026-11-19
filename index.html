@@ -67,6 +67,11 @@ a.card:hover{transform:translateY(-4px);background:#1F1C24}
 .nav a:hover,.nav a.on{border-bottom-color:#F5F3EF}
 @media (max-width:820px){.hide-sm{display:none !important}.nav{gap:18px;font-size:13px}}
 .trust{display:flex;align-items:center;gap:16px}
+.hbadge{--s:clamp(190px,17vw,250px);position:absolute;z-index:2;right:clamp(0px,4vw,80px);top:clamp(150px,20%,220px);width:var(--s);height:var(--s);border-radius:50%;background:radial-gradient(circle at 35% 30%,#2A2433 0%,#15121C 70%);border:calc(var(--s)*.035) solid #F7832B;box-shadow:0 0 0 calc(var(--s)*.025) #15121C,0 0 0 calc(var(--s)*.055) #FFC23D,0 24px 60px rgba(0,0,0,.6);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;transform:rotate(-8deg)}
+.hbadge b{font-family:'Shrikhand',Georgia,serif;font-weight:400;font-size:calc(var(--s)*.4);color:#FFF8EE;text-shadow:calc(var(--s)*.018) calc(var(--s)*.018) 0 #D9401F;letter-spacing:-.01em}
+.hbadge span{font-family:'Schibsted Grotesk',system-ui,sans-serif;font-weight:800;font-size:calc(var(--s)*.11);letter-spacing:.12em;text-transform:uppercase;color:#FFC23D;margin-top:calc(var(--s)*.02)}
+.hbadge i{font-style:normal;font-family:'Schibsted Grotesk',system-ui,sans-serif;font-weight:600;font-size:calc(var(--s)*.065);letter-spacing:.14em;text-transform:uppercase;color:#E8E3DC;margin-top:calc(var(--s)*.035)}
+@media (max-width:760px){.hbadge{--s:128px;position:relative;right:auto;top:auto;margin-top:18px;align-self:flex-end;margin-right:4px}}
 .mini{flex:0 0 auto;width:74px;height:74px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#2A2433 0%,#15121C 70%);border:3px solid #F7832B;box-shadow:0 0 0 2px #15121C,0 0 0 5px #FFC23D;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;transform:rotate(-8deg)}
 .mini b{font-family:'Shrikhand',system-ui,sans-serif;font-weight:700;font-size:26px;color:#FFF8EE;text-shadow:2px 2px 0 #D9401F}
 .mini span{font-family:'Shrikhand',system-ui,sans-serif;font-weight:700;font-size:8px;letter-spacing:.16em;color:#FFC23D;margin-top:2px}
@@ -145,7 +150,7 @@ a.card:hover{transform:translateY(-4px);background:#1F1C24}
       <h1 class="toon" style="margin: 0; font-size: clamp(50px, 6.6vw, 104px); line-height: 1; color: #F5F3EF; max-width: 11ch">Sauce just had a <span style="color: #F2622E; white-space: nowrap">glow-up.</span></h1>
       <p class="lede" style="max-width: 520px; color: #E8E3DC">High-protein sauces with big flavor. Built for chicken, bowls, wraps and everything in between.</p>
       <a href="#sauces" class="btn btn-o" style="margin-top: 6px">Shop the sauces</a>
-      <div class="trust" style="margin-top: 14px"><span class="mini" role="img" aria-label="7 grams of protein per serving"><b>7G</b><span>PROTEIN</span></span><p style="margin: 0; max-width: 300px; font-size: 16px; line-height: 1.45; color: #E8E3DC"><strong style="color: #FFFFFF">7g of protein</strong> in every serving, made with real honey.</p></div>
+      <div class="hbadge" role="img" aria-label="7 grams of protein per serving"><b>7g</b><span>protein</span><i>per serving</i></div>
     </div>
   </section>
 
