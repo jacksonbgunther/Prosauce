@@ -2,7 +2,7 @@ import sys
 P = sys.argv[1]
 B = lambda i: '/_blob/' + i
 LOGO = B('0dd5d257bfb9b2f73f03415c58960666')
-HERO = '/assets/hero-pour-cream.jpg'   # hero photo on cream; use a NEW filename when swapping (browsers cache assets for 4h)
+HERO = '/assets/hero-pour-cream-soft.jpg'   # hero photo on cream; use a NEW filename when swapping (browsers cache assets for 4h)
 BOTTLE = '/assets/bottle-clean.png'   # bottle cutout with cleaned edges (original: assets/bottle.png)
 WING = B('bd1337159890a5de5c304efec1cd41a0')     # assets/gary-wing.png
 
@@ -309,7 +309,7 @@ home = f'''
 
   <!-- HERO -->
   <section id="top" class="hero" aria-labelledby="h1">
-    <div class="bgw" aria-hidden="true"><img class="bgimg" src="{HERO}" alt="" data-slot="hero-pour-cream.jpg"><div class="shade"></div></div>
+    <div class="bgw" aria-hidden="true"><img class="bgimg" src="{HERO}" alt="" data-slot="hero-pour-cream-soft.jpg"><div class="shade"></div></div>
     <div class="wrap in">
       <div class="copy">
         <h1 id="h1" class="d"><span class="ln">Your favorite sauce.</span><br><span class="ln">Now with <span class="mark">70g of protein.</span></span></h1>
