@@ -41,7 +41,7 @@ img{max-width:100%}
 .hero .bgw{position:absolute;inset:0;overflow:hidden}
 .hero .bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 72%}
 .hero .shade{position:absolute;inset:0}
-@media (min-width:861px){.hero .bgimg{object-position:100% 50%}}
+@media (min-width:861px){.hero .bgimg{object-position:100% 50%}.hero .wrap.in{align-items:start;padding-top:clamp(36px,5.5vh,60px)}.hero .copy{gap:16px}.hero .stage{align-self:stretch}}
 .hero .sub,.hero .spec{text-shadow:0 0 3px rgba(246,238,223,1),0 0 10px rgba(246,238,223,.95),0 0 22px rgba(246,238,223,.9)}
 @media (min-width:861px){.hero .micro{display:inline-block;margin-top:12px;padding:6px 14px;border-radius:999px;background:rgba(246,238,223,.92);color:#2E2822}}
 @media (max-width:860px){.hero .bgw{bottom:auto;height:440px}.hero .shade{display:none}.hero .bgimg{object-position:62% 50%}.hero .in{padding-top:20px!important;padding-bottom:48px!important;gap:28px!important}.hero .stage{order:-1;min-height:420px}}
