@@ -1,5 +1,7 @@
 # Toon Sauce website (toonsauce.com)
 
+Read docs/brand.md for the full brand guide; it overrides the brand notes here if they conflict.
+
 Pre-launch landing page for **Toon Sauce**, a chicken sauce brand. First flavor: **Gold Rush** (sweet, smoky, made with real honey). Mascot: **Gary**, a very strong cowboy chicken who can't say no to anything. Next flavor teased: Cool Ranch (the cat mascot).
 
 The brand was formerly "ProSauce" (theprosauce.com — a separate old site, leave it untouched). "ProToon" was a short-lived name; never use it.
