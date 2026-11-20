@@ -58,19 +58,28 @@ img{max-width:100%}
 .hdr .pill{min-height:44px;padding:0 20px;font-size:15px}
 @media (max-width:640px){.hdr nav{display:none}}
 /* hero */
-.hero{position:relative}
+.hero{position:relative;background:var(--cream)}
 .hero .bgw{position:absolute;inset:0;overflow:hidden}
 .hero .bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 72%}
-.hero .shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,20,20,.97) 0%,rgba(20,20,20,.88) 32%,rgba(20,20,20,.45) 55%,rgba(20,20,20,0) 72%),linear-gradient(180deg,rgba(20,20,20,.45) 0%,rgba(20,20,20,0) 20%,rgba(20,20,20,0) 78%,rgba(20,20,20,.9) 100%)}
+.hero .shade{position:absolute;inset:0}
+@media (min-width:861px){.hero .bgimg{left:auto;right:0;width:74%;object-position:30% 70%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 24%);mask-image:linear-gradient(90deg,transparent 0,#000 24%)}}
 .hero .in{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);align-items:center;gap:24px;min-height:clamp(640px,86vh,820px);padding-top:56px;padding-bottom:56px}
 .hero .copy{display:flex;flex-direction:column;align-items:flex-start;gap:20px}
-.hero h1{font-size:clamp(38px,4.1vw,64px);color:var(--cream);text-shadow:0 3px 0 rgba(90,40,8,.55),0 14px 40px rgba(0,0,0,.7)}
-.hero h1 .amb{color:var(--amber)}
+.hero h1,.dk .hero h1{font-size:clamp(38px,4.1vw,64px);color:var(--ink);text-shadow:none}
 .hero h1 .ln{white-space:nowrap}@media (max-width:860px){.hero h1 .ln{white-space:normal}}
-.hero .sub{margin:0;font-size:19px;line-height:1.5;color:var(--cream);max-width:36ch}
+.hero .sub{margin:0;font-size:19px;line-height:1.5;color:#2E2822;max-width:36ch}
+.hero .spec{color:rgba(20,20,20,.72)}
+.hero .ef input{background:rgba(255,251,243,.92);border-color:rgba(20,20,20,.22);color:var(--ink)}
+.hero .ef input::placeholder{color:rgba(20,20,20,.5)}
+.hero .err{color:#B3261E}
+.hero .micro{color:#5B5348}
+.hero .ok .okh,.hero .ok .q{color:var(--ink)}
+.hero .qs button{background:rgba(255,251,243,.92);border-color:rgba(20,20,20,.2);color:var(--ink)}
+.hero .qs button:hover{background:rgba(242,169,59,.2)}
+.hero .ok .done{color:#8A5300}
 .stage{position:relative;align-self:stretch;min-height:520px}
 .bw{position:absolute;left:50%;bottom:0;height:min(94%,640px);transform:translateX(-50%)}
-.bw .bottle{display:block;height:100%;width:auto;max-width:none;filter:drop-shadow(0 34px 40px rgba(0,0,0,.7)) drop-shadow(0 6px 10px rgba(0,0,0,.5))}
+.bw .bottle{display:block;height:100%;width:auto;max-width:none;filter:drop-shadow(0 30px 36px rgba(60,32,8,.38)) drop-shadow(0 6px 10px rgba(20,20,20,.3))}
 .stats{position:absolute;right:calc(100% - 70px);bottom:8%;display:flex;flex-direction:row-reverse;align-items:center;gap:10px;z-index:2}
 .stk{--s:clamp(132px,11vw,160px);flex:0 0 auto;position:relative;width:var(--s);height:var(--s);border-radius:50%;background:radial-gradient(circle at 35% 30%,#2A2433 0%,#15121C 70%);border:calc(var(--s)*.035) solid #F7832B;box-shadow:0 0 0 calc(var(--s)*.025) #15121C,0 0 0 calc(var(--s)*.055) #FFC23D,0 20px 50px rgba(0,0,0,.55);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;line-height:1;transform:rotate(-10deg)}
 .stk b{font-family:'Shrikhand',Georgia,serif;font-weight:400;font-size:calc(var(--s)*.34);color:#FFF8EE;text-shadow:calc(var(--s)*.018) calc(var(--s)*.018) 0 #D9401F}
@@ -100,9 +109,9 @@ img{max-width:100%}
 .ok .done{margin:0;font-size:17px;color:var(--amber);font-weight:600}
 @media (max-width:560px){.ef{flex-direction:column}.ef input{flex:0 0 auto;width:100%}.ef .pill{width:100%}.qs{grid-template-columns:1fr}}
 /* strip */
-.mq{overflow:hidden;background:var(--cream);color:var(--ink);white-space:nowrap;position:relative;z-index:2}
+.mq{overflow:hidden;background:var(--ink);color:var(--cream);white-space:nowrap;position:relative;z-index:2}
 .mq .t{display:inline-flex;padding:13px 0;animation:mq 46s linear infinite;font-size:15px;font-weight:500}
-.mq .t span{padding:0 18px}.mq .t span:before{content:"\2022";margin-right:18px;color:#c98316}
+.mq .t span{padding:0 18px}.mq .t span:before{content:"\2022";margin-right:18px;color:var(--amber)}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.mq .t{animation:none}}
 /* sections */
@@ -110,8 +119,13 @@ img{max-width:100%}
 .cr{background:var(--cream);color:var(--ink)}
 .cr .d,.dk .cr .d{color:var(--ink);text-shadow:none}
 .mark{white-space:nowrap;background:linear-gradient(180deg,transparent 58%,rgba(242,169,59,.75) 58%,rgba(242,169,59,.75) 92%,transparent 92%);padding:0 .06em}
-.cmp{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:1040px;margin:clamp(32px,4vw,52px) auto 0}
-@media (max-width:760px){.cmp{grid-template-columns:1fr}}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,28px);max-width:1240px;margin:clamp(32px,4vw,52px) auto 0}
+.cg{display:flex;align-items:center;gap:clamp(12px,1.6vw,22px)}
+.cg .cc{flex:1;min-width:0}
+.cb{flex:0 0 auto;height:clamp(170px,16vw,240px);width:auto;max-width:none}
+.cb.ours{filter:drop-shadow(0 18px 22px rgba(60,32,8,.3))}
+.cb.theirs{height:clamp(140px,13vw,196px);opacity:.9}
+@media (max-width:760px){.cmp{grid-template-columns:1fr}.cb{height:130px}.cb.theirs{height:100px}.cc .big{font-size:44px}}
 .cc{border-radius:20px;padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;gap:12px;min-height:clamp(0px,18vw,250px)}
 .cc .lb{font-size:16px;font-weight:600;letter-spacing:.02em}
 .cc .big{font-family:'Lilita One',system-ui,sans-serif;font-size:clamp(52px,6vw,84px);line-height:1}
@@ -122,6 +136,13 @@ img{max-width:100%}
 .cc.hero2 .lb{color:var(--amber)}
 .cc.hero2 .big{color:var(--amber)}
 .note{text-align:center;margin:18px 0 0;font-size:14.5px;color:#6E665B}
+/* blandville */
+.bvh{max-width:760px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px}
+.bvh p{margin:0;font-size:19px;line-height:1.55;color:#3D362E;max-width:52ch}
+.vid{position:relative;max-width:1040px;margin:clamp(32px,4vw,52px) auto 0;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:var(--ink);box-shadow:0 0 0 2px var(--ink),0 28px 60px rgba(20,20,20,.25)}
+.vid img{display:block;width:100%;height:100%;object-fit:cover}
+.vtag{position:absolute;left:16px;bottom:16px;padding:9px 16px;border-radius:999px;background:rgba(20,20,20,.88);color:var(--cream);font-size:14.5px;font-weight:600}
+#faq{border-top:1px solid rgba(20,20,20,.1)}
 .gary{position:relative;overflow:hidden;background:var(--bg)}
 .gary .in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:24px;min-height:clamp(320px,30vw,420px)}
 .gary .tx{display:flex;flex-direction:column;align-items:flex-start;gap:20px;position:relative;z-index:1}
@@ -154,7 +175,7 @@ img{max-width:100%}
 .legaldoc ul{padding-left:22px}
 @media (max-width:860px){
  .hero .in{grid-template-columns:1fr;align-items:start;min-height:0;padding-top:32px;padding-bottom:0;gap:8px}
- .hero .shade{background:linear-gradient(180deg,rgba(20,20,20,.94) 0%,rgba(20,20,20,.86) 52%,rgba(20,20,20,.35) 78%,rgba(20,20,20,.75) 100%)}
+ .hero .shade{background:linear-gradient(180deg,rgba(246,238,223,.96) 0%,rgba(246,238,223,.9) 52%,rgba(246,238,223,.3) 78%,rgba(246,238,223,0) 100%)}
  .stage{min-height:420px}
  .bw{left:60%;height:400px}
  .stats{right:calc(100% - 56px);bottom:6%;flex-direction:column;align-items:flex-end}
@@ -180,7 +201,7 @@ img{max-width:100%}
     <div class="bgw" aria-hidden="true"><img class="bgimg" src="/assets/hero.jpg" alt="" data-slot="hero.jpg"><div class="shade"></div></div>
     <div class="wrap in">
       <div class="copy">
-        <h1 id="h1" class="d"><span class="ln">Your favorite sauce.</span><br><span class="ln">Now with <span class="amb">70g of protein.</span></span></h1>
+        <h1 id="h1" class="d"><span class="ln">Your favorite sauce.</span><br><span class="ln">Now with <span class="mark">70g of protein.</span></span></h1>
         <p class="sub">Restaurant-style chicken sauce made with real honey. 7g protein per serving. Same dinner, more protein.</p>
         <p class="spec"><span>7g protein</span><span>120 calories</span><span>per serving</span></p>
         <div class="signup" data-source="hero" id="signup">
@@ -206,8 +227,8 @@ img{max-width:100%}
     <div class="wrap">
       <h2 id="cmp-h" class="d h2" style="text-align: center">Sauce just had a <span class="mark">glow-up.</span></h2>
       <div class="cmp">
-        <div class="cc muted"><span class="lb">Regular chicken sauce</span><span class="big">0g protein</span><p>Delicious. Contributes nothing.</p></div>
-        <div class="cc hero2"><span class="lb">Toon Sauce Gold Rush</span><span class="big">7g protein</span><p>Same taste. Actually pulls its weight.</p></div>
+        <div class="cg"><img class="cb ours" src="/assets/bottle.png" alt="Toon Sauce Gold Rush bottle" loading="lazy"><div class="cc hero2"><span class="lb">Toon Sauce Gold Rush</span><span class="big">7g protein</span><p>Same taste. Actually pulls its weight.</p></div></div>
+        <div class="cg"><div class="cc muted"><span class="lb">Regular chicken sauce</span><span class="big">0g protein</span><p>Delicious. Contributes nothing.</p></div><img class="cb theirs" src="/assets/other-sauce.png" alt="A plain bottle of regular chicken sauce" loading="lazy"></div>
       </div>
       <p class="note">Per serving.</p>
     </div>
@@ -221,6 +242,21 @@ img{max-width:100%}
         <h2 id="g-h" class="d h2">Every flavor has a Toon.</h2>
         <p>Gold Rush belongs to Gary, a very strong chicken who can&#8217;t say no to anything. His show drops with the sauce.</p>
         <a href="#signup" class="pill js-dibs">Get first dibs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3b: BLANDVILLE TEASER -->
+  <section id="blandville" class="cr sec" aria-labelledby="bv-h">
+    <div class="wrap">
+      <div class="bvh">
+        <h2 id="bv-h" class="d h2">Something&#8217;s coming out of <span class="mark">Blandville.</span></h2>
+        <p>A perfectly normal town where nothing happens. Gary lives there with his roommate Plain, a boiled chicken breast who has never been excited about anything. That&#8217;s about to change.</p>
+      </div>
+      <!-- VIDEO PLACEHOLDER: swap this block for the "Welcome to Blandville" embed (16:9) when it's produced -->
+      <div class="vid" data-slot="blandville-video">
+        <img src="/assets/blandville.webp" alt="The town of Blandville, illustrated" loading="lazy">
+        <span class="vtag">Episode 1 &#183; Coming soon</span>
       </div>
     </div>
   </section>

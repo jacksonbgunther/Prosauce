@@ -15,7 +15,7 @@ The brand was formerly "ProSauce" (theprosauce.com — a separate old site, leav
   bash tools/build.sh
   ```
 - `tools/gen_site.py` writes intermediate `*.dc.html` files (a format from the Claude design canvas used earlier). Images are referenced as `/_blob/<id>`; `tools/build_html.py` has a `BLOBS` map from those IDs to files in `assets/`. **To add a new image:** put the file in `assets/` and reference it directly as `/assets/name.ext` in `gen_site.py` (the `/_blob/` indirection is only needed for the old canvas).
-- Swappable image slots: `assets/hero.jpg` (hero background), `assets/bottle.png` (transparent bottle cutout), `assets/gary-wing.png` (placeholder art — replace with real art). Replace the file, keep the name.
+- Swappable image slots: `assets/hero.jpg` (hero photo; black background replaced with cream #F6EEDF, food untouched; the dark original is `assets/hero-pour2.jpg`), `assets/bottle.png` (transparent bottle cutout), `assets/gary-wing.png` (placeholder art — replace with real art), `assets/other-sauce.png` (generic "regular sauce" bottle in the comparison), `assets/blandville.webp` (poster in the Blandville video slot). Replace the file, keep the name.
 - **Hosting:** Cloudflare Pages project **"toonsauce"**, auto-deploys on push. Custom domains toonsauce.com + www. DNS is on Cloudflare (registrar GoDaddy).
 - **Production branch is `claude/adoring-edison-q8icsx`.** Pushing to any other branch does NOT update the live site. Either push to that branch, or (recommended) change the Cloudflare Pages production branch to `main` and merge there.
 - Deploys take ~1 minute. Verify with `curl -s https://toonsauce.com/ | grep "<something you changed>"`.
@@ -44,7 +44,7 @@ The brand was formerly "ProSauce" (theprosauce.com — a separate old site, leav
 
 ## Current page structure (index.html)
 
-Announcement bar → sticky nav (Gold Rush → `#gold-rush`, Coming soon → `#coming-soon`, "Get first dibs" → focuses hero email) → hero (photo bg, headline "Your favorite sauce. / Now with 70g of protein.", subhead, spec line, email form; bottle + 70g badge right) → cream scrolling strip → `#gold-rush` comparison (cream) → `#coming-soon` "Every flavor has a Toon." (Gary wing) → FAQ (cream) → footer (logo, IG/TikTok/YouTube @toonsauce, email form, Privacy Policy). Cookie notice bottom-left. `/privacy` page.
+Announcement bar → sticky nav (Gold Rush → `#gold-rush`, Coming soon → `#coming-soon`, "Get first dibs" → focuses hero email) → hero (cream bg; food photo on the right ~74% with a left fade on desktop; dark ink text, headline "Your favorite sauce. / Now with 70g of protein." with amber highlight, subhead, spec line, email form; bottle + 70g badge right) → dark scrolling strip → `#gold-rush` comparison (cream; Toon Sauce card left with our bottle beside it, regular sauce card right with a generic bottle) → `#coming-soon` "Every flavor has a Toon." (Gary wing, dark) → `#blandville` teaser (cream; "Something's coming out of Blandville.", Plain intro, 16:9 video placeholder using blandville.webp — swap for the episode embed) → FAQ (cream) → footer (logo, IG/TikTok/YouTube @toonsauce, email form, Privacy Policy). Cookie notice bottom-left. `/privacy` page.
 
 ## Open items / known issues
 
