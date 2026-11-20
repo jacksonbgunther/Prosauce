@@ -121,7 +121,6 @@ img{max-width:100%}
 .vid{position:relative;max-width:1040px;margin:clamp(32px,4vw,52px) auto 0;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:var(--ink);box-shadow:0 0 0 2px var(--ink),0 28px 60px rgba(20,20,20,.25)}
 .vid img{display:block;width:100%;height:100%;object-fit:cover}
 .vtag{position:absolute;left:16px;bottom:16px;padding:9px 16px;border-radius:999px;background:rgba(20,20,20,.88);color:var(--cream);font-size:14.5px;font-weight:600}
-#faq{border-top:1px solid rgba(20,20,20,.1)}
 .gary{position:relative;overflow:hidden;background:var(--bg)}
 .gary .in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:24px;min-height:clamp(320px,30vw,420px)}
 .gary .tx{display:flex;flex-direction:column;align-items:flex-start;gap:20px;position:relative;z-index:1}
@@ -137,6 +136,58 @@ img{max-width:100%}
 .faq summary:after{content:"+";font-size:26px;font-weight:500;color:#b8740f;transition:transform .2s ease}
 .faq details[open] summary:after{transform:rotate(45deg)}
 .faq p{margin:0 0 22px;font-size:17px;line-height:1.6;color:#3D362E;max-width:60ch}
+/* gold rush product */
+.prod{background:var(--bg)}
+.pdp{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:start}
+@media (max-width:900px){.pdp{grid-template-columns:1fr}}
+.gal{display:flex;flex-direction:column;gap:10px}
+.gal .main{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:1/1;background:radial-gradient(70% 70% at 50% 58%,#a85a17 0%,#4a230a 45%,#120803 100%)}
+.gal .sl{display:none;position:absolute;inset:0}
+.gal .sl>img{display:block;width:100%;height:100%;object-fit:cover}
+.gal .sl.s0>img{object-fit:contain;padding:6% 0 3%;transform:rotate(7deg);filter:drop-shadow(0 30px 40px rgba(0,0,0,.6))}
+.gal .cap{position:absolute;left:0;right:0;bottom:0;padding:70px 26px 22px;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.72) 100%);font-family:'Lilita One',system-ui,sans-serif;font-size:clamp(28px,3vw,42px);color:var(--cream);text-shadow:0 2px 0 rgba(90,40,8,.5)}
+.thumbs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.thumbs label{cursor:pointer;aspect-ratio:1;border-radius:6px;overflow:hidden;background:#1c1c1c;display:block;line-height:0;min-height:44px}
+.thumbs label img{width:100%;height:100%;object-fit:cover;opacity:.55;transition:opacity .2s ease}
+.thumbs label:hover img{opacity:1}
+@media (max-width:560px){.thumbs{grid-template-columns:repeat(3,minmax(0,1fr))}}
+#g0:checked~.main .s0{display:block}#g0:checked~.thumbs label[for=g0]{outline:2px solid var(--amber);outline-offset:2px}#g0:checked~.thumbs label[for=g0] img{opacity:1}#g0:focus-visible~.thumbs label[for=g0]{outline:3px solid var(--amber);outline-offset:3px}#g1:checked~.main .s1{display:block}#g1:checked~.thumbs label[for=g1]{outline:2px solid var(--amber);outline-offset:2px}#g1:checked~.thumbs label[for=g1] img{opacity:1}#g1:focus-visible~.thumbs label[for=g1]{outline:3px solid var(--amber);outline-offset:3px}#g2:checked~.main .s2{display:block}#g2:checked~.thumbs label[for=g2]{outline:2px solid var(--amber);outline-offset:2px}#g2:checked~.thumbs label[for=g2] img{opacity:1}#g2:focus-visible~.thumbs label[for=g2]{outline:3px solid var(--amber);outline-offset:3px}#g3:checked~.main .s3{display:block}#g3:checked~.thumbs label[for=g3]{outline:2px solid var(--amber);outline-offset:2px}#g3:checked~.thumbs label[for=g3] img{opacity:1}#g3:focus-visible~.thumbs label[for=g3]{outline:3px solid var(--amber);outline-offset:3px}#g4:checked~.main .s4{display:block}#g4:checked~.thumbs label[for=g4]{outline:2px solid var(--amber);outline-offset:2px}#g4:checked~.thumbs label[for=g4] img{opacity:1}#g4:focus-visible~.thumbs label[for=g4]{outline:3px solid var(--amber);outline-offset:3px}#g5:checked~.main .s5{display:block}#g5:checked~.thumbs label[for=g5]{outline:2px solid var(--amber);outline-offset:2px}#g5:checked~.thumbs label[for=g5] img{opacity:1}#g5:focus-visible~.thumbs label[for=g5]{outline:3px solid var(--amber);outline-offset:3px}
+.info{display:flex;flex-direction:column;gap:18px;align-items:flex-start;position:sticky;top:96px}
+@media (max-width:900px){.info{position:static}}
+.info .eb{font-size:15px;font-weight:600;color:var(--amber)}
+.info p.ds{margin:0;font-size:18px;line-height:1.55;color:rgba(246,238,223,.88);max-width:44ch}
+.specs{width:100%;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.specs div{padding:16px 6px;text-align:center;border-left:1px solid var(--line)}.specs div:first-child{border-left:0}
+.specs b{display:block;font-family:'Lilita One',system-ui,sans-serif;font-weight:400;font-size:30px;line-height:1;color:var(--cream)}
+.specs span{font-size:13.5px;color:rgba(246,238,223,.65)}
+.drop{width:100%;background:#1c1c1c;border-radius:10px;padding:22px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px}
+.drop p{margin:0;font-size:17px;color:var(--cream)}
+/* cool ranch teaser */
+.cs{position:relative;overflow:hidden;min-height:clamp(560px,52vw,720px);background:#000}
+.cs .shot{position:absolute;left:calc(50% - 160px);top:0;height:100%;width:auto;max-width:none;filter:brightness(.5) contrast(1.15);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 55%),linear-gradient(0deg,transparent 0%,#000 18%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0%,#000 55%),linear-gradient(0deg,transparent 0%,#000 18%);mask-composite:intersect}
+.cs:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#000 0%,rgba(0,0,0,.4) 40%,rgba(0,0,0,0) 60%);pointer-events:none}
+.cs .tx{position:relative;z-index:2;min-height:inherit;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:20px}
+.cs .tx .k{font-size:15px;font-weight:600;color:#5FD3D1}
+.cs .tx p{margin:0;font-size:18px;line-height:1.55;color:#bdbdbd;max-width:36ch}
+.cs .flg{width:min(80%,340px);filter:brightness(.55) saturate(.8) drop-shadow(0 0 18px rgba(95,211,209,.25))}
+.pill-ghost{background:transparent;color:var(--cream);box-shadow:inset 0 0 0 1px rgba(246,238,223,.55)}.pill-ghost:hover{background:rgba(246,238,223,.08)}
+@media (max-width:860px){.cs{min-height:900px}.cs .tx{justify-content:flex-start;padding-top:56px;min-height:0}.cs .shot{left:auto;top:auto;bottom:0;height:62%;right:-8%;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 30%);mask-image:linear-gradient(180deg,transparent 0%,#000 30%)}.cs:after{background:linear-gradient(180deg,#000 0%,#000 42%,rgba(0,0,0,0) 62%)}}
+/* new flavors signup */
+.nf{padding-top:clamp(56px,6vw,96px);padding-bottom:clamp(56px,6vw,96px);background:var(--bg)}
+.join{border-radius:12px;background:var(--cream);color:var(--ink);display:grid;grid-template-columns:1.2fr 1fr;align-items:center;overflow:hidden}
+@media (max-width:860px){.join{grid-template-columns:1fr}}
+.join .tx{padding:clamp(32px,5vw,72px);display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.join .d{color:var(--ink);text-shadow:none}
+.join .tx>p{margin:0;font-size:18px;line-height:1.5;color:#3D362E;max-width:40ch}
+.join .vs{align-self:stretch;display:flex;align-items:flex-end;justify-content:center;min-height:300px}
+.join .vs img{width:min(52%,280px);margin-bottom:-2px}
+@media (max-width:860px){.join .vs{min-height:0;height:280px;overflow:hidden}.join .vs img{width:150px}}
+.join .ef input{background:#fff9ef;color:var(--ink);border-color:rgba(20,20,20,.25)}
+.join .ef input::placeholder{color:rgba(20,20,20,.5)}
+.join .micro,.join .err{color:#5b5248}
+.join .ok .okh,.join .ok .q{color:var(--ink)}
+.join .qs button{background:#fff9ef;color:var(--ink);border-color:rgba(20,20,20,.2)}
+.join .ok .done{color:#a8650c}
 /* footer */
 .ft{background:var(--bg);border-top:1px solid var(--line);color:var(--cream)}
 .ft .cols{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(32px,5vw,80px);align-items:start;padding-top:64px;padding-bottom:40px}
@@ -276,7 +327,7 @@ home = f'''
   {MQ}
 
   <!-- SECTION 2: COMPARISON -->
-  <section id="gold-rush" class="cr sec" aria-labelledby="cmp-h">
+  <section id="compare" class="cr sec" aria-labelledby="cmp-h">
     <div class="wrap">
       <h2 id="cmp-h" class="d h2" style="text-align: center">Sauce just had a <span class="mark">glow-up.</span></h2>
       <div class="cmp">
@@ -287,14 +338,16 @@ home = f'''
     </div>
   </section>
 
-  <!-- SECTION 3: MEET GARY -->
-  <section id="coming-soon" class="gary sec" aria-labelledby="g-h">
-    <img class="wing" src="{WING}" alt="" aria-hidden="true" loading="lazy" data-slot="gary-wing.png">
-    <div class="wrap in">
-      <div class="tx">
-        <h2 id="g-h" class="d h2">Every flavor has a Toon.</h2>
-        <p>Gold Rush belongs to Gary, a very strong chicken who can&#8217;t say no to anything. His show drops with the sauce.</p>
-        <a href="#signup" class="pill js-dibs">Get first dibs</a>
+  <!-- GOLD RUSH PRODUCT -->
+  <section id="gold-rush" class="prod sec" aria-labelledby="gr-h">
+    <div class="wrap pdp">
+      <div class="gal"><input type="radio" name="gal" id="g0" class="sr" checked aria-label="Show image 1: Toon Sauce Gold Rush bottle"><input type="radio" name="gal" id="g1" class="sr" aria-label="Show image 2: Meal prep containers of salmon, shrimp and rice with a bowl of golden sauce"><input type="radio" name="gal" id="g2" class="sr" aria-label="Show image 3: Rice bowl with seasoned ground beef, charred corn and pico de gallo"><input type="radio" name="gal" id="g3" class="sr" aria-label="Show image 4: Homemade meal prep containers with chicken, pasta, broccoli and carrots"><input type="radio" name="gal" id="g4" class="sr" aria-label="Show image 5: Crispy chicken tenders splashed with golden sauce"><input type="radio" name="gal" id="g5" class="sr" aria-label="Show image 6: Golden sauce pouring over fried chicken"><div class="main"><div class="sl s0"><img src="/assets/bottle.png" alt="Toon Sauce Gold Rush bottle"></div><div class="sl s1"><img src="/assets/meal-prep.jpg" alt="Meal prep containers of salmon, shrimp and rice with a bowl of golden sauce" loading="lazy"><span class="cap">Made for meal prep.</span></div><div class="sl s2"><img src="/assets/bowl.jpg" alt="Rice bowl with seasoned ground beef, charred corn and pico de gallo" loading="lazy"><span class="cap">Built for bowls.</span></div><div class="sl s3"><img src="/assets/meal-prep-home.jpg" alt="Homemade meal prep containers with chicken, pasta, broccoli and carrots" loading="lazy"><span class="cap">Upgrade boring meals.</span></div><div class="sl s4"><img src="/assets/hero-tenders.jpg" alt="Crispy chicken tenders splashed with golden sauce" loading="lazy"><span class="cap">Made for tenders.</span></div><div class="sl s5"><img src="/assets/hero-pour2.jpg" alt="Golden sauce pouring over fried chicken" loading="lazy"><span class="cap">Made for everything.</span></div></div><div class="thumbs"><label for="g0"><img src="/assets/bottle.png" alt="" loading="lazy" style="object-fit: contain; padding: 6px"></label><label for="g1"><img src="/assets/meal-prep.jpg" alt="" loading="lazy" style=""></label><label for="g2"><img src="/assets/bowl.jpg" alt="" loading="lazy" style=""></label><label for="g3"><img src="/assets/meal-prep-home.jpg" alt="" loading="lazy" style=""></label><label for="g4"><img src="/assets/hero-tenders.jpg" alt="" loading="lazy" style=""></label><label for="g5"><img src="/assets/hero-pour2.jpg" alt="" loading="lazy" style=""></label></div></div>
+      <div class="info">
+        <span class="eb">Sweet &amp; smoky</span>
+        <h2 id="gr-h" style="margin: 0; line-height: 0"><img src="/assets/flav-gold.webp" alt="Gold Rush" style="width: min(100%, 440px); height: auto"></h2>
+        <p class="ds">Restaurant-style chicken sauce made with real honey. Sweet, smoky and golden. Your favorite sauce, now with protein.</p>
+        <div class="specs"><div><b>70g</b><span>protein / bottle</span></div><div><b>7g</b><span>protein / serving</span></div><div><b>Real</b><span>honey</span></div></div>
+        <div class="drop"><p>Gold Rush drops first.</p><a href="#signup" class="pill js-dibs">Get first dibs</a></div>
       </div>
     </div>
   </section>
@@ -312,6 +365,30 @@ home = f'''
         <span class="vtag">Episode 1 &#183; Coming soon</span>
       </div>
     </div>
+  </section>
+
+  <!-- COOL RANCH COMING SOON -->
+  <section id="coming-soon" class="cs" aria-labelledby="cs-h">
+    <img class="shot" src="/assets/ranch-shadow.jpg" alt="" aria-hidden="true" loading="lazy">
+    <div class="wrap tx">
+      <span class="k">Coming soon</span>
+      <h2 id="cs-h" class="d h2">Something cool<br>is coming.</h2>
+      <img class="flg" src="/assets/flav-ranch.webp" alt="Cool Ranch">
+      <p>Creamy, herby and chill. The next flavor is already in the shadows.</p>
+      <a href="#new-flavors" class="pill pill-ghost">Get notified first</a>
+    </div>
+  </section>
+
+  <!-- NEW FLAVORS SIGNUP -->
+  <section id="new-flavors" class="nf" aria-labelledby="nf-h">
+    <div class="wrap"><div class="join">
+      <div class="tx">
+        <h2 id="nf-h" class="d h2">Be the first to try our new flavors.</h2>
+        <p>Join the list and we&#8217;ll let you know the moment a new flavor drops.</p>
+        {signup('flavors')}
+      </div>
+      <div class="vs" aria-hidden="true"><img src="/assets/gary.webp" alt="" loading="lazy"></div>
+    </div></div>
   </section>
 
   <!-- SECTION 4: FAQ -->
