@@ -58,3 +58,5 @@ Announcement bar → sticky nav (Gold Rush → `#gold-rush`, Coming soon → `#c
 - Make the change, rebuild, check it in Playwright at 1440×900 and 390×844, push, verify live, then report briefly with a screenshot.
 - Keep it premium and minimal; the owner dislikes "AI-looking" templates and clutter.
 - Commit messages end with the session's attribution lines if the harness provides them.
+
+Last handoff: 2026-11-20
