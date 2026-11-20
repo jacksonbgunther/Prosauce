@@ -37,7 +37,7 @@ src="https://www.facebook.com/tr?id=1495416545782879&ev=PageView&noscript=1"
 <meta name="description" content="{desc}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
-<meta property="og:image" content="https://toonsauce.com/assets/hero-cream.jpg">
+<meta property="og:image" content="https://toonsauce.com/assets/hero-pour-cream.jpg">
 <meta name="theme-color" content="#141414">
 <link rel="icon" href="/assets/favicon.png">
 {helmet.strip()}
