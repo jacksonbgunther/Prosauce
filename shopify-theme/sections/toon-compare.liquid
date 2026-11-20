@@ -1,0 +1,24 @@
+<section id="compare" class="cr sec" aria-labelledby="cmp-h">
+    <div class="wrap">
+      <h2 id="cmp-h" class="d h2" style="text-align: center">Sauce just had a <span class="mark">glow-up.</span></h2>
+      <div class="cmp">
+        <div class="cg"><img class="cb ours" src="{{ 'bottle-v3.png' | asset_url }}" alt="Toon Sauce Gold Rush bottle" loading="lazy"><div class="cc hero2"><span class="lb">Toon Sauce Gold Rush</span><span class="big">70g protein</span><p>Same taste. Actually pulls its weight.</p></div></div>
+        <div class="cg"><div class="cc muted"><span class="lb">Regular chicken sauce</span><span class="big">0g protein</span><p>Delicious. Contributes nothing.</p></div><img class="cb theirs" src="{{ 'other-sauce.png' | asset_url }}" alt="A plain bottle of regular chicken sauce" loading="lazy"></div>
+      </div>
+      <p class="note">Per bottle.</p>
+    </div>
+  </section>
+
+  <!-- GOLD RUSH PRODUCT -->
+{% schema %}
+{
+  "name": "Comparison",
+  "tag": "div",
+  "class": "ts-sec",
+  "presets": [
+    {
+      "name": "Toon: Comparison"
+    }
+  ]
+}
+{% endschema %}

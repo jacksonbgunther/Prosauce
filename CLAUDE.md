@@ -23,6 +23,14 @@ The brand was formerly "ProSauce" (theprosauce.com — a separate old site, leav
 - `_redirects`: old pages (/gold-rush, /cartoons, /cool-ranch, /blandville) redirect to `/`; `/functions/*` is hidden.
 - Local preview: `python3 -m http.server 8123` from repo root (the `/api/lead` function does not run locally; mock it in Playwright tests).
 
+## Shopify theme (in progress)
+
+- `shopify-theme/` is a Shopify Online Store 2.0 theme generated from the built pages by `tools/build_theme.py` (run automatically by `tools/build.sh`). Never hand-edit it.
+- Home page = one Shopify section per page block (`toon-hero`, `toon-compare`, …) so they can be reordered/hidden in the theme editor; copy is still edited in `gen_site.py`.
+- Signups use Shopify customer forms (tags `newsletter,launch-list,src-<source>`); Pixel `Lead`/`QualifiedLead` fire as before. Optional theme setting "Conversions API endpoint" also POSTs to a CAPI endpoint (needs CORS added to `functions/api/lead.js`).
+- Privacy lives at `/pages/privacy` (Shopify page with template `page.privacy`). Password page is branded (`toon-password`).
+- Plan: upload as an unpublished theme, keep the store password-protected, Gold Rush product as draft. Domain stays on Cloudflare until the owner approves the switch.
+
 ## Tracking (do not break)
 
 - **Meta Pixel ID `1495416545782879`** is in `tools/build_html.py` head. Only `PageView` fires on load. Never add a second pixel.

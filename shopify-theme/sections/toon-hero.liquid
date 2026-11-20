@@ -1,0 +1,35 @@
+<section id="top" class="hero" aria-labelledby="h1">
+    <div class="bgw" aria-hidden="true"><img class="bgimg" src="{{ 'hero-pour-cream-soft.jpg' | asset_url }}" alt="" data-slot="hero-pour-cream-soft.jpg"><div class="shade"></div></div>
+    <div class="wrap in">
+      <div class="copy">
+        <h1 id="h1" class="d"><span class="ln">Your favorite sauce.</span><br><span class="ln">Now with <span class="mark">70g of protein.</span></span></h1>
+        <p class="sub">Restaurant-style chicken sauce made with real honey. 7g protein per serving. Same dinner, more protein.</p>
+        <p class="spec"><span>7g protein</span><span>120 calories</span><span>per serving</span></p>
+        <div class="signup" data-source="hero" id="signup">
+          {% form 'customer', class: 'ef', novalidate: 'novalidate' %}<input type="hidden" name="contact[tags]" value="newsletter,launch-list,src-hero"><label class="sr" for="em-hero">Email address</label><input id="em-hero" type="email" name="contact[email]" required placeholder="Your email" autocomplete="email" inputmode="email" aria-describedby="em-hero-err"><button type="submit" class="pill">Get first dibs</button>{% endform %}
+          <p class="err" id="em-hero-err" role="alert" hidden></p>
+          <p class="micro">No spam. One email when it drops. By signing up you agree to our <a href="/pages/privacy">Privacy Policy</a>.</p>
+        </div>
+      </div>
+      <div class="stage">
+        <div class="bw">
+          <img class="bottle" src="{{ 'bottle-v3.png' | asset_url }}" alt="Toon Sauce Gold Rush bottle, matte black with a golden amber cap" data-slot="bottle-v3.png">
+          <div class="stats">
+            <div class="stk" role="img" aria-label="70 grams of protein per bottle, 7 grams per serving"><b>70g</b><span>Protein per bottle</span><i>7g per serving</i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% schema %}
+{
+  "name": "Hero",
+  "tag": "div",
+  "class": "ts-sec",
+  "presets": [
+    {
+      "name": "Toon: Hero"
+    }
+  ]
+}
+{% endschema %}

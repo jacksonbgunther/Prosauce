@@ -1,0 +1,24 @@
+<section id="coming-soon" class="cs" aria-labelledby="cs-h">
+    <img class="shot" src="{{ 'ranch-shadow.jpg' | asset_url }}" alt="" aria-hidden="true" loading="lazy">
+    <div class="wrap tx">
+      <span class="k">Coming soon</span>
+      <h2 id="cs-h" class="d h2">Something cool<br>is coming.</h2>
+      <img class="flg" src="{{ 'flav-ranch.webp' | asset_url }}" alt="Cool Ranch">
+      <p>Creamy, herby and chill. The next flavor is already in the shadows.</p>
+      <a href="#new-flavors" class="pill pill-ghost">Get notified first</a>
+    </div>
+  </section>
+
+  <!-- NEW FLAVORS SIGNUP -->
+{% schema %}
+{
+  "name": "Cool Ranch teaser",
+  "tag": "div",
+  "class": "ts-sec",
+  "presets": [
+    {
+      "name": "Toon: Cool Ranch teaser"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,33 @@
+<main class="wrap sec ts-product">
+  <div class="ts-pmedia">
+    {%- assign img = product.selected_or_first_available_variant.featured_image | default: product.featured_image -%}
+    {%- if img -%}{{ img | image_url: width: 1200 | image_tag: alt: product.title, sizes: '(min-width: 900px) 50vw, 100vw' }}{%- else -%}<img src="{{ 'bottle-v3.png' | asset_url }}" alt="{{ product.title | escape }}">{%- endif -%}
+  </div>
+  <div class="ts-pinfo">
+    <h1 class="d h2">{{ product.title | escape }}</h1>
+    <div class="ts-pdesc">{{ product.description }}</div>
+    {%- if product.available and product.price > 0 -%}
+      <p class="ts-price">{{ product.selected_or_first_available_variant.price | money }}</p>
+      {%- form 'product', product -%}
+        {%- if product.has_only_default_variant -%}
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        {%- else -%}
+          <label class="sr" for="v">Option</label>
+          <select id="v" name="id">{%- for v in product.variants -%}<option value="{{ v.id }}" {% unless v.available %}disabled{% endunless %}>{{ v.title | escape }}</option>{%- endfor -%}</select>
+        {%- endif -%}
+        <button type="submit" class="pill">Add to cart</button>
+      {%- endform -%}
+    {%- else -%}
+      <p class="ts-soon">Not on sale yet.</p>
+      <a class="pill js-dibs" href="{{ routes.root_url }}#signup">Get first dibs</a>
+    {%- endif -%}
+  </div>
+</main>
+
+{% schema %}
+{
+  "name": "Product",
+  "tag": "div",
+  "class": "ts-sec"
+}
+{% endschema %}

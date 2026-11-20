@@ -1,0 +1,28 @@
+<section id="new-flavors" class="nf" aria-labelledby="nf-h">
+    <div class="wrap"><div class="join">
+      <div class="tx">
+        <h2 id="nf-h" class="d h2">Be the first to try our new flavors.</h2>
+        <p>Join the list and we&#8217;ll let you know the moment a new flavor drops.</p>
+        <div class="signup" data-source="flavors">
+          {% form 'customer', class: 'ef', novalidate: 'novalidate' %}<input type="hidden" name="contact[tags]" value="newsletter,launch-list,src-flavors"><label class="sr" for="em-flavors">Email address</label><input id="em-flavors" type="email" name="contact[email]" required placeholder="Your email" autocomplete="email" inputmode="email" aria-describedby="em-flavors-err"><button type="submit" class="pill">Get first dibs</button>{% endform %}
+          <p class="err" id="em-flavors-err" role="alert" hidden></p>
+          <p class="micro">No spam. One email when it drops. By signing up you agree to our <a href="/pages/privacy">Privacy Policy</a>.</p>
+        </div>
+      </div>
+      <div class="vs" aria-hidden="true"><img src="{{ 'gary.webp' | asset_url }}" alt="" loading="lazy"></div>
+    </div></div>
+  </section>
+
+  <!-- SECTION 4: FAQ -->
+{% schema %}
+{
+  "name": "New flavors signup",
+  "tag": "div",
+  "class": "ts-sec",
+  "presets": [
+    {
+      "name": "Toon: New flavors signup"
+    }
+  ]
+}
+{% endschema %}

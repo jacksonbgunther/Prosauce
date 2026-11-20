@@ -1,0 +1,25 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Toon Sauce",
+    "theme_version": "1.0.0",
+    "theme_author": "Toon Sauce",
+    "theme_documentation_url": "https://toonsauce.com",
+    "theme_support_url": "https://toonsauce.com"
+  },
+  {
+    "name": "Tracking",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Meta Pixel 1495416545782879 and GA4 G-BTGXZ5LCFG are built into the theme. Do not also connect the Pixel in the Facebook & Instagram app, or events will double-count."
+      },
+      {
+        "type": "text",
+        "id": "lead_endpoint",
+        "label": "Conversions API endpoint (optional)",
+        "info": "If set, signups are also POSTed here with the same event_id as the Pixel, e.g. https://toonsauce.pages.dev/api/lead (the endpoint must allow CORS from this store)."
+      }
+    ]
+  }
+]

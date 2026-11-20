@@ -1,0 +1,43 @@
+<main class="wrap sec ts-main">
+  {%- case request.page_type -%}
+    {%- when 'page' -%}
+      <div class="legaldoc"><h1 class="d h2">{{ page.title | escape }}</h1>{{ page.content }}</div>
+    {%- when 'collection' -%}
+      <h1 class="d h2">{{ collection.title | escape }}</h1>
+      <div class="ts-grid">
+        {%- for p in collection.products -%}
+          <a class="ts-card" href="{{ p.url }}">{%- if p.featured_image -%}{{ p.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', alt: p.title }}{%- endif -%}<span>{{ p.title | escape }}</span></a>
+        {%- else -%}
+          <p>Nothing here yet. <a class="js-dibs" href="{{ routes.root_url }}#signup">Get first dibs</a> on launch day.</p>
+        {%- endfor -%}
+      </div>
+    {%- when 'cart' -%}
+      <h1 class="d h2">Your cart</h1>
+      {%- if cart.item_count > 0 -%}
+        <form action="{{ routes.cart_url }}" method="post" class="ts-cart">
+          {%- for item in cart.items -%}
+            <p>{{ item.quantity }} &times; {{ item.product.title | escape }} <span>{{ item.final_line_price | money }}</span></p>
+          {%- endfor -%}
+          <p class="ts-total">Subtotal <span>{{ cart.total_price | money }}</span></p>
+          <button type="submit" name="checkout" class="pill">Check out</button>
+        </form>
+      {%- else -%}
+        <p>Your cart is empty.</p>
+      {%- endif -%}
+    {%- when 'search' -%}
+      <h1 class="d h2">Search</h1>
+      <form action="{{ routes.search_url }}" class="ef"><label class="sr" for="q">Search</label><input id="q" type="search" name="q" value="{{ search.terms | escape }}" placeholder="Search"><button class="pill">Search</button></form>
+      {%- for r in search.results -%}<p><a href="{{ r.url }}">{{ r.title | escape }}</a></p>{%- endfor -%}
+    {%- else -%}
+      <h1 class="d h2">This page went to Blandville.</h1>
+      <p>It's not coming back. <a href="{{ routes.root_url }}">Head home</a>.</p>
+  {%- endcase -%}
+</main>
+
+{% schema %}
+{
+  "name": "Main content",
+  "tag": "div",
+  "class": "ts-sec"
+}
+{% endschema %}

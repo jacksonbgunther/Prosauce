@@ -1,0 +1,38 @@
+{
+  "sections": {
+    "hero": {
+      "type": "toon-hero"
+    },
+    "mq": {
+      "type": "toon-mq"
+    },
+    "compare": {
+      "type": "toon-compare"
+    },
+    "gold-rush": {
+      "type": "toon-gold-rush"
+    },
+    "blandville": {
+      "type": "toon-blandville"
+    },
+    "coming-soon": {
+      "type": "toon-coming-soon"
+    },
+    "new-flavors": {
+      "type": "toon-new-flavors"
+    },
+    "faq": {
+      "type": "toon-faq"
+    }
+  },
+  "order": [
+    "hero",
+    "mq",
+    "compare",
+    "gold-rush",
+    "blandville",
+    "coming-soon",
+    "new-flavors",
+    "faq"
+  ]
+}

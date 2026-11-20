@@ -7,3 +7,4 @@ TMP="$(mktemp -d)"
 python3 tools/gen_site.py "$TMP"
 python3 -W ignore tools/build_html.py "$TMP" .
 rm -rf "$TMP"
+python3 tools/build_theme.py
