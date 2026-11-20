@@ -87,7 +87,7 @@ export async function onRequestPost(context) {
   const eventId = clean(b.event_id, 100);
   if (!eventId) return json({ ok: false, error: 'missing_event_id' }, 400);
 
-  const source = b.source === 'footer' ? 'footer' : 'hero';
+  const source = ['hero', 'footer', 'flavors'].includes(b.source) ? b.source : 'hero';
   const proteinSource = ANSWERS.includes(b.protein_source) ? b.protein_source : '';
   if (eventName === 'QualifiedLead' && !proteinSource) return json({ ok: false, error: 'invalid_answer' }, 400);
 

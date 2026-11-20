@@ -44,7 +44,7 @@ The brand was formerly "ProSauce" (theprosauce.com — a separate old site, leav
 
 ## Current page structure (index.html)
 
-Announcement bar → sticky nav (Gold Rush → `#gold-rush`, Coming soon → `#coming-soon`, "Get first dibs" → focuses hero email) → hero (photo bg, headline "Your favorite sauce. / Now with 70g of protein.", subhead, spec line, email form; bottle + 70g badge right) → cream scrolling strip → `#gold-rush` comparison (cream) → `#coming-soon` "Every flavor has a Toon." (Gary wing) → FAQ (cream) → footer (logo, IG/TikTok/YouTube @toonsauce, email form, Privacy Policy). Cookie notice bottom-left. `/privacy` page.
+Announcement bar → sticky nav (Gold Rush → `#gold-rush`, Coming soon → `#coming-soon`, "Get first dibs" → focuses hero email) → hero (photo bg, "Your favorite sauce. / Now with 70g of protein.", subhead, spec line, email form; bottle + 70g badge right) → cream scrolling strip → `#compare` "Sauce just had a glow-up." comparison (cream) → `#gold-rush` product showcase (CSS-only photo gallery with captions: bottle, meal prep, bowls, homemade meal prep, tenders, pour; Gold Rush logo, specs 70g/7g/real honey, "Gold Rush drops first" → hero form) → `#coming-soon` Cool Ranch teaser (dark shadow photo `assets/ranch-shadow.jpg`, dimmed Cool Ranch logo) → `#new-flavors` cream card "Be the first to try our new flavors." with Gary + email form (source `flavors`) → FAQ (cream) → footer (email form, source `footer`). Cookie notice bottom-left. `/privacy` page.
 
 ## Open items / known issues
 
