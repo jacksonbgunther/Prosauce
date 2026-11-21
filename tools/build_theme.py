@@ -293,7 +293,7 @@ HEAD = r'''<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="facebook-domain-verification" content="r4as0ai3v45suzltbwqpyd1kb8acv7" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=''' + GA + r'''"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config',\'''' + GA + r'''');</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config',''' + "'" + GA + "'" + r''');</script>
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -304,7 +304,7 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', \'''' + PIXEL + r'''');
+fbq('init', ''' + "'" + PIXEL + "'" + r''');
 fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
